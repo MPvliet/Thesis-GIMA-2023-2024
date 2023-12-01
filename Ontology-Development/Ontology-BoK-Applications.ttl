@@ -1,0 +1,294 @@
+@prefix : <http://example.org/BOKA/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix boka: <http://example.org/BOKA#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obok: <http://example.org/OBOK/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://example.org/BOKA/> .
+
+<http://example.org/BOKA> rdf:type owl:Ontology ;
+                           dce:creator "Mark van Vliet"@en ;
+                           dce:date "2023-11-04" ;
+                           dce:description <https://github.com/MPvliet/Ontology-Development/blob/main/OverviewOfClassesAndProperties.drawio.png?raw=true> ,
+                                           "An ontology that extends the ontology for bodies of knowledge with semantics that describe BoK applications."@en ;
+                           dce:title "Ontology for Bodies of Knowledge Applications"@en ;
+                           owl:versionInfo 0.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dce:contributor rdf:type owl:AnnotationProperty ;
+                rdfs:comment "Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity."@en-us ;
+                rdfs:label "Contributor"@en-us ;
+                skos:definition "An entity responsible for making contributions to the resource."@en-us .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dce:creator rdf:type owl:AnnotationProperty ;
+            rdfs:comment "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."@en-us ;
+            rdfs:label "Creator"@en-us ;
+            skos:definition "An entity primarily responsible for making the resource."@en-us .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dce:date rdf:type owl:AnnotationProperty ;
+         rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601."@en-us ;
+         rdfs:label "Date"@en-us ;
+         rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> ;
+         skos:definition "A point or period of time associated with an event in the lifecycle of the resource."@en-us .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dce:description rdf:type owl:AnnotationProperty ;
+                rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en-us ;
+                rdfs:label "Description"@en-us ;
+                skos:definition "An account of the resource."@en-us .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dce:rights rdf:type owl:AnnotationProperty ;
+           rdfs:comment "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."@en-us ;
+           rdfs:label "Rights"@en-us ;
+           skos:definition "Information about rights held in and over the resource."@en-us .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dce:title rdf:type owl:AnnotationProperty ;
+          rdfs:comment "Typically, a Title will be a name by which the resource is formally known."@en-us ;
+          rdfs:label "Title"@en-us ;
+          skos:definition "A name given to the resource."@en-us .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty ;
+                    dcterms:issued "2008-01-14"^^xsd:date ;
+                    rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en-us ;
+                    rdfs:label "Description"@en-us ;
+                    skos:definition "An account of the resource."@en-us ;
+                    skos:scopeNote "Used to describe a bibliographic resource."@en ;
+                    rdfs:subPropertyOf dce:description ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:domain owl:Thing .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy rdfs:comment "The defininition of the subject resource." ;
+                 rdfs:isDefinedBy rdfs: ;
+                 rdfs:label "isDefinedBy" ;
+                 rdfs:subPropertyOf rdfs:seeAlso ;
+                 rdfs:range <http:example.org/OBOK/BodyOfKnowledge> ;
+                 rdfs:domain owl:Thing .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:comment "A human-readable name for the subject." ;
+           rdfs:isDefinedBy rdfs: ;
+           rdfs:label "label" ;
+           rdfs:range rdfs:Literal ;
+           rdfs:domain rdfs:Resource ,
+                       owl:Thing .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#seeAlso
+rdfs:seeAlso rdfs:comment "Further information about the subject resource." ;
+             rdfs:isDefinedBy rdfs: ;
+             rdfs:label "seeAlso" ;
+             rdfs:domain owl:Thing .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty ;
+          rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+          rdfs:label "note"@en ;
+          skos:definition "A general note, for any purpose."@en ;
+          skos:scopeNote "This property may be used directly, or as a super-property for more specific note types."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty ;
+               rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+               rdfs:label "scope note"@en ;
+               skos:definition "A note that helps to clarify the meaning and/or the use of a concept."@en ;
+               rdfs:subPropertyOf skos:note .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/BOKA/hasKnowledgeOf
+:hasKnowledgeOf rdf:type owl:ObjectProperty ;
+                owl:inverseOf :personWithKnowledge ;
+                rdfs:domain :Expert ;
+                rdfs:range obok:Concept .
+
+
+###  http://example.org/BOKA/personWithKnowledge
+:personWithKnowledge rdf:type owl:ObjectProperty ;
+                     rdfs:domain obok:Concept ;
+                     rdfs:range :Expert .
+
+
+###  http://www.w3.org/ns/org#hasMember
+org:hasMember rdf:type owl:ObjectProperty ;
+              owl:inverseOf org:memberOf ;
+              rdfs:domain org:Organization ;
+              rdfs:range foaf:Person ;
+              rdfs:comment "Indica una persona che è membro della data Organization. È l'inverso di `org:memberOf` ed è fornita per  compatibilità con `foaf:member`."@it ,
+                           "Indicates a person who is a member of the subject Organization. Inverse of `org:memberOf`, see that property for further clarification. Provided for compatibility with `foaf:member`."@en ,
+                           "Indique une personne membre de l'Organisation sujet. Inverse de `org:memberOf`, voyez la description de cette propriété pour plus de précisions. Fourni pour la compatibilité avec `foaf:member`."@fr ,
+                           "Persona que es miembro de la organización en cuestión. Es la relación inversa de `org:memberOf`, véase la descripción de esa propiedad para más detalles. Se prevé compatibilidad con foaf:member`."@es ,
+                           "対象組織のメンバーであるエージェント（人または他の組織）を示します。org:memberOfの逆。さらに明確な説明については、そのプロパティーを参照してください。"@ja ;
+              rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
+              rdfs:label "ha membro"@it ,
+                         "has member"@en ,
+                         "possède un membre"@fr ,
+                         "tiene miembro"@es .
+
+
+###  http://www.w3.org/ns/org#memberOf
+org:memberOf rdf:type owl:ObjectProperty ;
+             rdfs:domain org:Organization ,
+                         foaf:Person ;
+             rdfs:range org:Organization ;
+             rdfs:comment "Indica che una persona è membro di una Organization senza una precisa indicazione sulla natura di questa appartenenza e sul suo ruolo. Si noti che la scelta del nome di questa proprietà non intende limitarla alla sola  rappresentazione formalmente di un'appartenenza. La proprietà può coprire anche altri coinvolgimenti nell'organizzazione. Questa proprietà può essere specializzata per indicare ruoli all'interno organizzazione o relazioni di diverse tipologie. Ha `org:hasmember` come proprietà inversa opzionale."@it ,
+                          "Indicates that a person is a member of the Organization with no indication of the nature of that membership or the role played. Note that the choice of property name is not meant to limit the property to only formal membership arrangements, it is also indended to cover related concepts such as affilliation or other involvement in the organization. Extensions can specialize this relationship to indicate particular roles within the organization or more nuanced relationships to the organization. Has an optional inverse, `org:hasmember`."@en ,
+                          "Indique qu'une personne est membre de l'Organisation sans précision sur la nature de cet engagement ou du rôle joué. Notez que le choix du nom de cette propriété ne vise pas à la limiter aux seuls engagements formels, elle peut également couvrir des concepts reliés comme l'affiliation ou le bénévolat. Des extensions peuvent spécialiser cette relation pour indiquer des rôles particuliers au sein de l'Organisation or des relations plus nuancées avec elle. Possède une propriété inverse optionnelle, `org:hasmember`."@fr ,
+                          "Persona que pertenece a la organización o es miembro de la misma, sin que conste la naturaleza de dicha pertenencia o el papel que desempeña. Se debe tener en cuenta que la elección de una denominación para esta propiedad no significa que la propiedad esté limitada a ciertos tipos de pertenencia formales, sino que pretende cubrir conceptos relacionados como el de afiliación u otras formas de participación en la organización. Se puede hacer uso de extensiones para especializar esta relación de forma que incluya tipos específicos de pertenencia a las organizaciones o relaciones especiales con la organización."@es ,
+                          "エージェント（人または他の組織）が組織のメンバーであることを示します。ただし、その構成員の本質や担う役割は示しません。プロパティー名の選択は、プロパティーを正式な構成員配置のみに制限することが目的ではないことに注意してください。所属や組織へのその他の関与などの関連する概念をカバーすることも意図されています。拡張により、この関係を特殊化し、組織内の特定の役割やよりニュアンスを含んだ組織との関係を示すことができます。"@ja ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
+             rdfs:label "es miembro de"@es ,
+                        "member of"@en ,
+                        "membre de"@fr ,
+                        "membro di"@it .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:ObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:comment "A homepage for some thing." ;
+              rdfs:isDefinedBy foaf: ;
+              rdfs:label "homepage" ;
+              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" ;
+              skos:scopeNote "Used to link an agent to its homepage (which is a web page accessible using a URL)."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:DatatypeProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range rdfs:Literal ;
+          rdfs:comment "A name for some thing." ;
+          rdfs:isDefinedBy foaf: ;
+          rdfs:label "name" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/BOKA/Expert
+:Expert rdf:type owl:Class ;
+        rdfs:subClassOf foaf:Person ;
+        dce:description "A person who has shown to hold expertise of a concept within a Body of Knowledge."@en ;
+        dcterms:description "A person who has shown to hold expertise of a concept within a body of knowledge"@en .
+
+
+###  http://example.org/OBOK/Concept
+obok:Concept rdf:type owl:Class ;
+             owl:equivalentClass skos:Concept ;
+             dce:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en ;
+             dcterms:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "Concept"@en ;
+             skos:definition "An idea or notion; a unit of thought."@en .
+
+
+###  http://www.w3.org/ns/org#Organization
+org:Organization rdf:type owl:Class ;
+                 owl:equivalentClass foaf:Organization ;
+                 owl:disjointWith foaf:Person ;
+                 rdfs:comment "Grupo de personas que se organiza en una comunidad u otro tipo de estructura social, comercial o política. Dicho grupo tiene un objetivo o motivo común para su existencia que va más allá del conjunto de personas que lo forman y que puede actuar como “agente”. A menudo las organizaciones se pueden agrupar en estructuras jerárquicas. Se recomienda el uso de etiquetas de SKOS para denominar a cada “organización”. En concreto, `skos:prefLabel` para la denominación principal o recomendada (aquella reconocida legalmente, siempre que sea posible), `skos:altLabel` para denominaciones alternativas (nombre comercial, sigla, denominación por la que se conoce a la organización coloquialmente) y `skos:notation` para referirse al código que identifique a la organización en una lista de códigos. Denominaciones alternativas: _colectivo_ _corporación_ _grupo_"@es ,
+                              "Rappresenta una collezione di persone organizzate all'interno di una communità o di una qualche struttura sociale, commerciale o politica. Il gruppo condivide un obiettivo o una ragione d'essere che va oltre gli stessi membri appartenenti al gruppo e  può agire come un Agent. Le organizzazioni si possono spesso suddividere in strutture gerarchiche. Si raccomanda di usare le label per l'Organization mediante le proprietà di SKOS. In particolare, `skos:prefLabel` per il nome principale (possibilmente un nome legalmente riconosciuto)”, `skos:altLabel` come nome alternativo (denominazione commerciale, denominazione colloquiale) e `skos:notation` per indicare un codice di una lista di codici."@it ,
+                              "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"@en ,
+                              "Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que \"Agent\". Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé que des labels lexicaux SKOS soient utilisés pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de code."@fr ,
+                              "コミュニティー、その他の社会、商業、政治的な構造に共に編入された人々の集合を表わします。グループには、そこに属する人々を超えた、存在に対するある共通の目的や理由があり、エージェント（代理）を務めることができます。組織は、多くの場合、階層構造に分割できます。"@ja ;
+                 rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
+                 rdfs:label "Organisation"@fr ,
+                            "Organization"@en ,
+                            "Organizzazione"@it ,
+                            "organización"@es .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  owl:disjointWith foaf:Person ;
+                  rdfs:comment "An organization." ;
+                  rdfs:isDefinedBy foaf: ;
+                  rdfs:label "Organization" ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" ;
+                  skos:scopeNote "Ued to describe an organization related to bibliographic items such as a publishing company, etc."@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:comment "A person." ;
+            rdfs:isDefinedBy foaf: ;
+            rdfs:label "Person" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" ;
+            skos:scopeNote "Used to describe a Person related to a bibliographic ite such as an author, an editor, etc."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+rdfs:subClassOf rdfs:comment "The subject is a subclass of a class." ;
+                rdfs:isDefinedBy rdfs: ;
+                rdfs:label "subClassOf" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
