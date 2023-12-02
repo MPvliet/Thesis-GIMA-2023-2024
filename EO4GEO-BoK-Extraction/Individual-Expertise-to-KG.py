@@ -1,30 +1,33 @@
-import requests, json, time, re, uuid
+import json, time, re, uuid, os
 from rdflib import URIRef, Literal, BNode, Namespace, Dataset
+from openai import OpenAI
+from dotenv import load_dotenv
 
-# define ontologies that are used.
-obok = Namespace('http://example.org/OBOK/')
-boka = Namespace('http://example.org/BOKA/')
-dce = Namespace('http://purl.org/dc/elements/1.1/')
-org = Namespace('http://www.w3.org/ns/org#')
-rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
-bibo = Namespace('http://purl.org/ontology/bibo/')
-foaf = Namespace('http://xmlns.com/foaf/0.1/')
-rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
-schema = Namespace('https://schema.org/')
-dcterms = Namespace('http://purl.org/dc/terms/')
-skos = Namespace('http://www.w3.org/2004/02/skos/core#')
-eo4geo = Namespace('https://bok.eo4geo.eu/')
+load_dotenv()
 
 def main():
   start_time = time.time()
-  session = requests.Session()
-  importIndivudalExpertise()
+  parseIndividualExpertiseIntoRDF()
   duration = time.time() - start_time
   print("Scripte duurde: ", duration, "seconds")
 
-def importIndivudalExpertise():
+def parseIndividualExpertiseIntoRDF():
   ds = Dataset()
   g = ds.graph(identifier=URIRef("https://bok.eo4geo.eu/applications"))
+
+  # define ontologies that are used.
+  obok = Namespace('http://example.org/OBOK/')
+  boka = Namespace('http://example.org/BOKA/')
+  dce = Namespace('http://purl.org/dc/elements/1.1/')
+  org = Namespace('http://www.w3.org/ns/org#')
+  rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+  bibo = Namespace('http://purl.org/ontology/bibo/')
+  foaf = Namespace('http://xmlns.com/foaf/0.1/')
+  rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
+  schema = Namespace('https://schema.org/')
+  dcterms = Namespace('http://purl.org/dc/terms/')
+  skos = Namespace('http://www.w3.org/2004/02/skos/core#')
+  eo4geo = Namespace('https://bok.eo4geo.eu/')
 
   # bind ontologies, otherwise the prefixes are not correct. 
   g.bind('obok', obok)
@@ -48,33 +51,49 @@ def importIndivudalExpertise():
     conceptDict[data[eo4geoConcept]['name']] = {
       'id': data[eo4geoConcept]['id']
     }
+
+  with open ('EO4GEO-BoK-Extraction\input\sampleDataFrameInput.json', 'r') as file:
+    jsonSample = file.read() #json.load(file)
+
+  processed = processIndivudalExpertiseJson(jsonSample) #let openai parse the json in a better json structure
   
-  #print(conceptDict)
-
-  with open ('EO4GEO-BoK-Extraction\input\sampleDataFrame.json', 'r') as file:
-    jsonSample = json.load(file)
-
-  for expertise in jsonSample:
+  for expertise in json.loads(processed):
     doi = expertise['doi']
     concepts = expertise['concepts']
 
     organisationDict = {}
     for organisation in expertise['organisations']:
-      organisationNumber = organisation[0]
-      organisationDict[organisationNumber] = {
-        'name': organisation[1:],
-        'uri': str(uuid.uuid4())
-      }
+      if not re.match(r'^-?\d+(\.\d+)?$', organisation[0]):
+        organisationNumber = 1
+        organisationDict[organisationNumber] = {
+          'name': organisation,
+          'uri': str(uuid.uuid4())
+        }
+      else:
+        organisationNumber = organisation[0]
+        organisationDict[organisationNumber] = {
+          'name': organisation[1:],
+          'uri': str(uuid.uuid4())
+        }
     
     authorOrgDict = {}
-    for author in expertise['authors'].replace('and ','').split(', '):
-      authorOrgNumber = author[-1]
-      authorOrgDict[author[:-1]] = {
-        'organisationName': organisationDict[authorOrgNumber]['name'],
-        'organisationURI': organisationDict[authorOrgNumber]['uri'],
-        'authorURI': str(uuid.uuid4()),
-        'authorName': author[:-1]
-      }
+    for author in expertise['authors']:
+      if not re.match(r'^-?\d+(\.\d+)?$', author[-1]):
+        authorOrgNumber = 1
+        authorOrgDict[author] = {
+          'organisationName': organisationDict[authorOrgNumber]['name'],
+          'organisationURI': organisationDict[authorOrgNumber]['uri'],
+          'authorURI': str(uuid.uuid4()),
+          'authorName': author
+        }
+      else:
+        authorOrgNumber = author[-1]
+        authorOrgDict[author[:-1]] = {
+          'organisationName': organisationDict[authorOrgNumber]['name'],
+          'organisationURI': organisationDict[authorOrgNumber]['uri'],
+          'authorURI': str(uuid.uuid4()),
+          'authorName': author[:-1]
+        }
     
     doiURI = URIRef('{}'.format(doi))
     for concept in concepts:
@@ -87,9 +106,6 @@ def importIndivudalExpertise():
       #create document class
       g.add((doiURI, rdf.type, bibo.Report))
       g.add((doiURI, bibo.doi, Literal(doi)))
-      bNodeAuthorList = BNode('test')
-      g.add((doiURI, bibo.authorList, bNodeAuthorList))
-      g.add((bNodeAuthorList, rdf.type, rdf.List))
       
 
     #craeate Expert class and Organisation class
@@ -111,5 +127,33 @@ def importIndivudalExpertise():
       g.add((organisationURI, rdfs.label, Literal(authorOrgDict[author]['organisationName'])))
 
   g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG-individual.trig", format="trig")
+
+def processIndivudalExpertiseJson(jsonPrompt):
+  client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY")
+  )
+
+  #jsonPrompt = '{"DOI": "https://doi.org/10.5194/agile-giss-4-18-2023", "Title": "Predicting Pedestrian Counts using Machine Learning Molly Asher1 , Yannick Oswald1 , and Nick Malleson1 1School of Geography , University of Leeds , UK Correspondence : Nick Malleson ( n.s.malleson @ leeds.ac.uk )","Concepts": ["Discovery over linked open data","Open data","Machine learning","Approaches to point, line, and area generalization","Publishing linked open data","Decision trees","Time","Information-as-data-interpretation"]}'
+
+  expectedJSONResult = '[{"doi": "https://doi.org/10.5194/agile-giss-4-2-2023","authors": ["Reza Arabsheibani1","Ehsan Hamzei1","Kimia Amoozandeh1","Stephan Winter2","Martin Tomko1"],"organisations": ["1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia","2Second organisation name"],"concepts": ["Publishing linked open data","Discovery over linked open data"]}]'
+
+  messages = [
+    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname'},
+    {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-18-2023","Title": "Predicting Pedestrian Counts using Machine Learning Reza Arabsheibani1 Ehsan Hamzei1 Kimia Amoozandeh1 Stephan Winter2 Martin Tomko1 1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia 2Second organisation name Correspondence : Nick Malleson ( n.s.malleson @ leeds.ac.uk )", "Concepts": ["Discovery over linked open data","Publishing linked open data"]}'},
+    {"role": "assistant", "content": expectedJSONResult},
+    {"role": "user", "content": jsonPrompt}
+  ]
+
+  response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=messages,
+    temperature=1,
+    max_tokens=256,
+    top_p=1,
+    frequency_penalty=0,
+    presence_penalty=0
+  )
+
+  return response.choices[0].message.content
 
 main()
