@@ -1,4 +1,4 @@
-@prefix : <http://example.org/OBOK#> .
+@prefix : <http://example.org/OBOK/> .
 @prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,12 +8,11 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix boka: <http://example.org/BOKA/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix obok: <http://example.org/OBOK#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://example.org/OBOK#> .
+@base <http://example.org/OBOK/> .
 
 <http://example.org/OBOK> rdf:type owl:Ontology ;
                            dce:creator "Mark van Vliet"@en ;
@@ -155,82 +154,82 @@ xsd:date rdf:type rdfs:Datatype .
 boka:hasKnowledgeOf rdf:type owl:ObjectProperty ;
                     owl:inverseOf boka:personWithKnowledge ;
                     rdfs:domain boka:Expert ;
-                    rdfs:range <http://example.org/OBOK/Concept> .
+                    rdfs:range :Concept .
 
 
 ###  http://example.org/BOKA/personWithKnowledge
 boka:personWithKnowledge rdf:type owl:ObjectProperty ;
-                         rdfs:domain <http://example.org/OBOK/Concept> ;
+                         rdfs:domain :Concept ;
                          rdfs:range boka:Expert .
 
 
 ###  http://example.org/OBOK/contributedBy
-<http://example.org/OBOK/contributedBy> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <http://example.org/OBOK/Concept> ;
-                                        rdfs:range <http://example.org/OBOK/Contributor> .
+:contributedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Concept ;
+               rdfs:range :Contributor .
 
 
 ###  http://example.org/OBOK/hasBloomsLevel
-<http://example.org/OBOK/hasBloomsLevel> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <http://example.org/OBOK/Skill> ;
-                                         rdfs:range rdfs:Literal .
+:hasBloomsLevel rdf:type owl:ObjectProperty ;
+                rdfs:domain :Skill ;
+                rdfs:range rdfs:Literal .
 
 
 ###  http://example.org/OBOK/hasContributed
-<http://example.org/OBOK/hasContributed> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <http://example.org/OBOK/Contributor> ;
-                                         rdfs:range <http://example.org/OBOK/Concept> .
+:hasContributed rdf:type owl:ObjectProperty ;
+                rdfs:domain :Contributor ;
+                rdfs:range :Concept .
 
 
 ###  http://example.org/OBOK/hasKnowledgeArea
-<http://example.org/OBOK/hasKnowledgeArea> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <http://example.org/OBOK/BodyOfKnowledge> ;
-                                           rdfs:range <http://example.org/OBOK/Concept> ,
-                                                      <http://example.org/OBOK/KnowledgeArea> .
+:hasKnowledgeArea rdf:type owl:ObjectProperty ;
+                  rdfs:domain :BodyOfKnowledge ;
+                  rdfs:range :Concept ,
+                             :KnowledgeArea .
 
 
 ###  http://example.org/OBOK/hasRecommendedMaterial
-<http://example.org/OBOK/hasRecommendedMaterial> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://example.org/OBOK/Concept> ;
-                                                 rdfs:range bibo:Document ;
-                                                 dcterms:description "Documents that are contributed by the Contributor and are used for further reading, these documents can be seen as recommended material."@en .
+:hasRecommendedMaterial rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Concept ;
+                        rdfs:range bibo:Document ;
+                        dcterms:description "Documents that are contributed by the Contributor and are used for further reading, these documents can be seen as recommended material."@en .
 
 
 ###  http://example.org/OBOK/hasSkill
-<http://example.org/OBOK/hasSkill> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <http://example.org/OBOK/Concept> ;
-                                   rdfs:range <http://example.org/OBOK/Skill> .
+:hasSkill rdf:type owl:ObjectProperty ;
+          rdfs:domain :Concept ;
+          rdfs:range :Skill .
 
 
 ###  http://example.org/OBOK/isPreRequisiteOf
-<http://example.org/OBOK/isPreRequisiteOf> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <http://example.org/OBOK/Concept> ;
-                                           rdfs:range <http://example.org/OBOK/Concept> .
+:isPreRequisiteOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Concept ;
+                  rdfs:range :Concept .
 
 
 ###  http://example.org/OBOK/isProposedRelationWith
-<http://example.org/OBOK/isProposedRelationWith> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://example.org/OBOK/Concept> ;
-                                                 rdfs:range <http://example.org/OBOK/Concept> .
+:isProposedRelationWith rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Concept ;
+                        rdfs:range :Concept .
 
 
 ###  http://example.org/OBOK/isSimiliarTo
-<http://example.org/OBOK/isSimiliarTo> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain <http://example.org/OBOK/Concept> ;
-                                       rdfs:range <http://example.org/OBOK/Concept> .
+:isSimiliarTo rdf:type owl:ObjectProperty ;
+              rdfs:domain :Concept ;
+              rdfs:range :Concept .
 
 
 ###  http://example.org/OBOK/isSkillFor
-<http://example.org/OBOK/isSkillFor> rdf:type owl:ObjectProperty ;
-                                     rdfs:domain <http://example.org/OBOK/Skill> ;
-                                     rdfs:range <http://example.org/OBOK/Concept> .
+:isSkillFor rdf:type owl:ObjectProperty ;
+            rdfs:domain :Skill ;
+            rdfs:range :Concept .
 
 
 ###  http://example.org/OBOK/isSubconceptOf
-<http://example.org/OBOK/isSubconceptOf> rdf:type owl:ObjectProperty ;
-                                         owl:equivalentProperty skos:broader ;
-                                         rdfs:domain <http://example.org/OBOK/Concept> ;
-                                         rdfs:range <http://example.org/OBOK/Concept> .
+:isSubconceptOf rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty skos:broader ;
+                rdfs:domain :Concept ;
+                rdfs:range :Concept .
 
 
 ###  http://purl.org/ontology/bibo/authorList
@@ -359,7 +358,7 @@ foaf:homepage rdf:type owl:ObjectProperty ;
 
 ###  https://schema.org/version
 schema:version rdf:type owl:ObjectProperty ;
-               rdfs:domain <http://example.org/OBOK/BodyOfKnowledge> ;
+               rdfs:domain :BodyOfKnowledge ;
                rdfs:range rdfs:Literal ;
                rdfs:comment "The version of the CreativeWork embodied by a specified resource."@en ;
                rdfs:isDefinedBy schema:version ;
@@ -412,7 +411,7 @@ foaf:name rdf:type owl:DatatypeProperty ;
 
 ###  https://schema.org/dateModified
 schema:dateModified rdf:type owl:DatatypeProperty ;
-                    rdfs:domain <http://example.org/OBOK/BodyOfKnowledge> ;
+                    rdfs:domain :BodyOfKnowledge ;
                     rdfs:range rdfs:Literal ,
                                xsd:date ,
                                xsd:dateTime ;
@@ -433,34 +432,34 @@ boka:Expert rdf:type owl:Class ;
 
 
 ###  http://example.org/OBOK/BodyOfKnowledge
-<http://example.org/OBOK/BodyOfKnowledge> rdf:type owl:Class ;
-                                          dce:description "A comprehensive inventory of the intellectual content that defines a field"@en ;
-                                          rdfs:label "Body of Knowledge"^^rdfs:Literal .
+:BodyOfKnowledge rdf:type owl:Class ;
+                 dce:description "A comprehensive inventory of the intellectual content that defines a field"@en ;
+                 rdfs:label "Body of Knowledge"^^rdfs:Literal .
 
 
 ###  http://example.org/OBOK/Concept
-<http://example.org/OBOK/Concept> rdf:type owl:Class ;
-                                  owl:equivalentClass skos:Concept ;
-                                  dce:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en ;
-                                  dcterms:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en .
+:Concept rdf:type owl:Class ;
+         owl:equivalentClass skos:Concept ;
+         dce:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en ;
+         dcterms:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en .
 
 
 ###  http://example.org/OBOK/Contributor
-<http://example.org/OBOK/Contributor> rdf:type owl:Class ;
-                                      rdfs:subClassOf foaf:Person ;
-                                      dce:description "A person who has contributed knowledge to a concept within a Body of Knowledge"@en ;
-                                      dcterms:description "A person who has contributed knowledge to a concept within a Body of Knowledge."@en .
+:Contributor rdf:type owl:Class ;
+             rdfs:subClassOf foaf:Person ;
+             dce:description "A person who has contributed knowledge to a concept within a Body of Knowledge"@en ;
+             dcterms:description "A person who has contributed knowledge to a concept within a Body of Knowledge."@en .
 
 
 ###  http://example.org/OBOK/KnowledgeArea
-<http://example.org/OBOK/KnowledgeArea> rdf:type owl:Class ;
-                                        owl:equivalentClass skos:ConceptScheme ;
-                                        rdfs:subClassOf <http://example.org/OBOK/Concept> .
+:KnowledgeArea rdf:type owl:Class ;
+               owl:equivalentClass skos:ConceptScheme ;
+               rdfs:subClassOf :Concept .
 
 
 ###  http://example.org/OBOK/Skill
-<http://example.org/OBOK/Skill> rdf:type owl:Class ;
-                                dcterms:description "A skill can be interpreted as ‘learning outcomes’ for academia, or as a ‘skill’ - competence or ability to perform a task for industry."@en .
+:Skill rdf:type owl:Class ;
+       dcterms:description "A skill can be interpreted as ‘learning outcomes’ for academia, or as a ‘skill’ - competence or ability to perform a task for industry."@en .
 
 
 ###  http://purl.org/ontology/bibo/Book

@@ -6,7 +6,6 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix boka: <http://example.org/BOKA#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obok: <http://example.org/OBOK/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -151,6 +150,20 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://example.org/BOKA/authorOF
+:authorOF rdf:type owl:ObjectProperty ;
+          rdfs:domain foaf:Person ;
+          rdfs:range bibo:Document ;
+          dcterms:description "Construct used to link a foaf:Person to the document that person has written"^^rdfs:Literal .
+
+
+###  http://example.org/BOKA/describedIn
+:describedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain obok:Concept ;
+             rdfs:range bibo:Document ;
+             dcterms:description "Documents related to Experts, In these documents the concepts are described ."^^rdfs:Literal .
+
+
 ###  http://example.org/BOKA/hasKnowledgeOf
 :hasKnowledgeOf rdf:type owl:ObjectProperty ;
                 owl:inverseOf :personWithKnowledge ;
@@ -163,17 +176,7 @@ xsd:date rdf:type rdfs:Datatype .
                      rdfs:domain obok:Concept ;
                      rdfs:range :Expert .
 
-###  http://example.org/BOKA/describedIn
-:describedIn rdf:type owl:ObjectProperty ;
-                rdfs:domain obok:Concept ;
-                rdfs:range bibo:Document ;
-                dcterms:description "Documents related to Experts, In these documents the concepts are described ."^^rdfs:Literal .
 
-:authorOF rdf:type owl:ObjectProperty ;
-                rdfs:domain foaf:Person ;
-                rdfs:range bibo:Document ;
-                dcterms:description "Construct used to link a foaf:Person to the document that person has written"^^rdfs:Literal .
-        
 ###  http://www.w3.org/ns/org#hasMember
 org:hasMember rdf:type owl:ObjectProperty ;
               owl:inverseOf org:memberOf ;
@@ -248,6 +251,10 @@ obok:Concept rdf:type owl:Class ;
              owl:equivalentClass skos:Concept ;
              dce:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en ;
              dcterms:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en .
+
+
+###  http://purl.org/ontology/bibo/Document
+bibo:Document rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
