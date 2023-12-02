@@ -1,6 +1,21 @@
 import requests, json, time, re, uuid
+from rdflib import URIRef, Literal, BNode, Namespace, Dataset
 
 API_Base_URL = "https://eo4geo-bok.firebaseio.com/current/concepts/.json"
+
+# define ontologies that are used.
+obok = Namespace('http://example.org/OBOK/')
+boka = Namespace('http://example.org/BOKA/')
+dce = Namespace('http://purl.org/dc/elements/1.1/')
+org = Namespace('http://www.w3.org/ns/org#')
+rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+bibo = Namespace('http://purl.org/ontology/bibo/')
+foaf = Namespace('http://xmlns.com/foaf/0.1/')
+rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
+schema = Namespace('https://schema.org/')
+dcterms = Namespace('http://purl.org/dc/terms/')
+skos = Namespace('http://www.w3.org/2004/02/skos/core#')
+eo4geo = Namespace('https://bok.eo4geo.eu/')
 
 def main():
     start_time = time.time()
@@ -37,23 +52,8 @@ def mergeJSON(eo4geoConcepts, eo4geoDescriptions):
      json.dump(eo4geoConcepts, f)  
 
 def serializeIntoRDF():
-  from rdflib import Graph, URIRef, RDF, Literal, BNode, Namespace, XSD, Dataset
   ds = Dataset()
   g = ds.graph(identifier=URIRef("https://bok.eo4geo.eu/concepts")) # create RDF graph
-
-  # define ontologies that are used.
-  obok = Namespace('http://example.org/OBOK/')
-  boka = Namespace('http://example.org/BOKA/')
-  dce = Namespace('http://purl.org/dc/elements/1.1/')
-  org = Namespace('http://www.w3.org/ns/org#')
-  rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
-  bibo = Namespace('http://purl.org/ontology/bibo/')
-  foaf = Namespace('http://xmlns.com/foaf/0.1/')
-  rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
-  schema = Namespace('https://schema.org/')
-  dcterms = Namespace('http://purl.org/dc/terms/')
-  skos = Namespace('http://www.w3.org/2004/02/skos/core#')
-  eo4geo = Namespace('https://bok.eo4geo.eu/')
 
   # bind ontologies, otherwise the prefixes are not correct. 
   g.bind('obok', obok)
@@ -245,24 +245,8 @@ def retrieveSkillsInformation(data):
 
 
 def importIndivudalExpertise():
-  import csv
-  from rdflib import Graph, URIRef, RDF, Literal, BNode, Namespace, XSD, Dataset
   ds = Dataset()
   g = ds.graph(identifier=URIRef("https://bok.eo4geo.eu/applications"))
-
-  # define ontologies that are used.
-  obok = Namespace('http://example.org/OBOK/')
-  boka = Namespace('http://example.org/BOKA/')
-  dce = Namespace('http://purl.org/dc/elements/1.1/')
-  org = Namespace('http://www.w3.org/ns/org#')
-  rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
-  bibo = Namespace('http://purl.org/ontology/bibo/')
-  foaf = Namespace('http://xmlns.com/foaf/0.1/')
-  rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
-  schema = Namespace('https://schema.org/')
-  dcterms = Namespace('http://purl.org/dc/terms/')
-  skos = Namespace('http://www.w3.org/2004/02/skos/core#')
-  eo4geo = Namespace('https://bok.eo4geo.eu/')
 
   # bind ontologies, otherwise the prefixes are not correct. 
   g.bind('obok', obok)
