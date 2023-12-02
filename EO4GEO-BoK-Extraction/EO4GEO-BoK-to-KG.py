@@ -5,7 +5,7 @@ API_Base_URL = "https://eo4geo-bok.firebaseio.com/current/concepts/.json"
 def main():
     start_time = time.time()
     session = requests.Session()
-    #extractEo4geoJson(session)
+    extractEo4geoJson(session)
     serializeIntoRDF()
     duration = time.time() - start_time
     print("Scripte duurde: ", duration, "seconds")
@@ -33,7 +33,7 @@ def mergeJSON(eo4geoConcepts, eo4geoDescriptions):
     if key in descriptionDict:
        eo4geoConcepts[key].update(descriptionDict[key])
 
-  with open('EO4GEOBOKDATA.json', 'w') as f:
+  with open('EO4GEO-BoK-Extraction\input\EO4GEOBOKDATA.json', 'w') as f:
      json.dump(eo4geoConcepts, f)  
 
 def serializeIntoRDF():
@@ -70,7 +70,7 @@ def serializeIntoRDF():
   g.bind('eo4geo', eo4geo)
 
 
-  with open('EO4GEOBOKDATA.json', 'r') as f:
+  with open('EO4GEO-BoK-Extraction\input\EO4GEOBOKDATA.json', 'r') as f:
     data = json.load(f)
   
   bodyOfKnowledgeURI = URIRef('{}'.format("https://bok.eo4geo.eu/"))
@@ -169,9 +169,9 @@ def serializeIntoRDF():
       
 
   # Write to turtle file.
-  # g.serialize(destination="EO4GEO-KG.ttl", format='turtle')
+  # g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG.ttl", format='turtle')
   # Write to TriG
-  g.serialize(destination="EO4GEO-KG.trig", format="trig")
+  g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG.trig", format="trig")
 
   # Write to JsonLD file
   # context = {
@@ -188,7 +188,7 @@ def serializeIntoRDF():
   #   'skos': 'http://www.w3.org/2004/02/skos/core#',
   #   'eo4geo': 'https://bok.eo4geo.eu/'
   # }
-  # g.serialize(destination="EO4GEO-KG.json", format='json-ld', context=context)
+  # g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG.json", format='json-ld', context=context)
 
 
 def returnHighestBloomLevel(skill):
@@ -278,7 +278,7 @@ def importIndivudalExpertise():
   g.bind('skos', skos)
   g.bind('eo4geo', eo4geo)
 
-  with open('EO4GEOBOKDATA.json', 'r') as f:
+  with open('EO4GEO-BoK-Extraction\input\EO4GEOBOKDATA.json', 'r') as f:
     data = json.load(f)
 
   conceptDict = {}
@@ -289,7 +289,7 @@ def importIndivudalExpertise():
   
   #print(conceptDict)
 
-  with open ('sampleDataFrame.json', 'r') as file:
+  with open ('EO4GEO-BoK-Extraction\input\sampleDataFrame.json', 'r') as file:
     jsonSample = json.load(file)
 
   for expertise in jsonSample:
@@ -320,7 +320,7 @@ def importIndivudalExpertise():
       
 
       #link document to EO4GEO concept
-      g.add((conceptURI, obok.describedIn, doiURI))
+      g.add((conceptURI, boka.describedIn, doiURI))
 
       #create document class
       g.add((doiURI, rdf.type, bibo.Report))
@@ -348,8 +348,8 @@ def importIndivudalExpertise():
       g.add((organisationURI, foaf.name, Literal(authorOrgDict[author]['organisationName'])))
       g.add((organisationURI, rdfs.label, Literal(authorOrgDict[author]['organisationName'])))
 
-  g.serialize(destination="EO4GEO-KG-individual.trig", format="trig")
+  g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG-individual.trig", format="trig")
 
 main()
 
-#importIndivudalExpertise()
+importIndivudalExpertise()

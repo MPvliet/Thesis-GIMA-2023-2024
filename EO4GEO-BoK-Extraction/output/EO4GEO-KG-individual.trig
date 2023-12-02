@@ -1,0 +1,84 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix boka: <http://example.org/BOKA/> .
+@prefix eo4geo: <https://bok.eo4geo.eu/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obok: <http://example.org/OBOK/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+eo4geo:applications {
+    eo4geo:db49cdf6-9606-40ce-b18f-d679101999c6 a org:Organization ;
+        rdfs:label "Second organisation name" ;
+        org:hasMember eo4geo:4ac1c07a-a00f-443a-b412-8b78564b68b3 ;
+        foaf:name "Second organisation name" .
+
+    eo4geo:4ac1c07a-a00f-443a-b412-8b78564b68b3 a boka:Expert ;
+        rdfs:label "Stephan Winter" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-2-2023> ;
+        boka:hasKnowledgeOf eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:db49cdf6-9606-40ce-b18f-d679101999c6 ;
+        foaf:name "Stephan Winter" .
+
+    eo4geo:567b645b-f16b-47c0-95ed-265039e74dd6 a boka:Expert ;
+        rdfs:label "Kimia Amoozandeh" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-2-2023> ;
+        boka:hasKnowledgeOf eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:a3b2d933-3ed7-4eee-b6a3-9083963e9d2f ;
+        foaf:name "Kimia Amoozandeh" .
+
+    eo4geo:6278a314-11f2-4cfa-96e7-ae922cf361d8 a boka:Expert ;
+        rdfs:label "Martin Tomko" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-2-2023> ;
+        boka:hasKnowledgeOf eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:a3b2d933-3ed7-4eee-b6a3-9083963e9d2f ;
+        foaf:name "Martin Tomko" .
+
+    eo4geo:9a517274-4bd2-4f05-91c6-10fc5934c864 a boka:Expert ;
+        rdfs:label "Ehsan Hamzei" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-2-2023> ;
+        boka:hasKnowledgeOf eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:a3b2d933-3ed7-4eee-b6a3-9083963e9d2f ;
+        foaf:name "Ehsan Hamzei" .
+
+    eo4geo:d2c6a137-ada5-4a4d-9232-2e6e05eb4e3d a boka:Expert ;
+        rdfs:label "Reza Arabsheibani" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-2-2023> ;
+        boka:hasKnowledgeOf eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:a3b2d933-3ed7-4eee-b6a3-9083963e9d2f ;
+        foaf:name "Reza Arabsheibani" .
+
+    eo4geo:a3b2d933-3ed7-4eee-b6a3-9083963e9d2f a org:Organization ;
+        rdfs:label "Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia" ;
+        org:hasMember eo4geo:567b645b-f16b-47c0-95ed-265039e74dd6,
+            eo4geo:6278a314-11f2-4cfa-96e7-ae922cf361d8,
+            eo4geo:9a517274-4bd2-4f05-91c6-10fc5934c864,
+            eo4geo:d2c6a137-ada5-4a4d-9232-2e6e05eb4e3d ;
+        foaf:name "Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia" .
+
+    eo4geo:WB3-6 boka:personWithKnowledge eo4geo:4ac1c07a-a00f-443a-b412-8b78564b68b3,
+            eo4geo:567b645b-f16b-47c0-95ed-265039e74dd6,
+            eo4geo:6278a314-11f2-4cfa-96e7-ae922cf361d8,
+            eo4geo:9a517274-4bd2-4f05-91c6-10fc5934c864,
+            eo4geo:d2c6a137-ada5-4a4d-9232-2e6e05eb4e3d ;
+        obok:describedIn <https://doi.org/10.5194/agile-giss-4-2-2023> .
+
+    eo4geo:WB4-3 boka:personWithKnowledge eo4geo:4ac1c07a-a00f-443a-b412-8b78564b68b3,
+            eo4geo:567b645b-f16b-47c0-95ed-265039e74dd6,
+            eo4geo:6278a314-11f2-4cfa-96e7-ae922cf361d8,
+            eo4geo:9a517274-4bd2-4f05-91c6-10fc5934c864,
+            eo4geo:d2c6a137-ada5-4a4d-9232-2e6e05eb4e3d ;
+        obok:describedIn <https://doi.org/10.5194/agile-giss-4-2-2023> .
+
+    <https://doi.org/10.5194/agile-giss-4-2-2023> a bibo:Report ;
+        bibo:authorList _:test ;
+        bibo:doi "https://doi.org/10.5194/agile-giss-4-2-2023" .
+
+    _:test a rdf:List .
+}
+
