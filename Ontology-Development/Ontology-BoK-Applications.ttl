@@ -163,7 +163,17 @@ xsd:date rdf:type rdfs:Datatype .
                      rdfs:domain obok:Concept ;
                      rdfs:range :Expert .
 
+###  http://example.org/BOKA/describedIn
+:describedIn rdf:type owl:ObjectProperty ;
+                rdfs:domain obok:Concept ;
+                rdfs:range bibo:Document ;
+                dcterms:description "Documents related to Experts, In these documents the concepts are described ."^^rdfs:Literal .
 
+:authorOF rdf:type owl:ObjectProperty ;
+                rdfs:domain foaf:Person ;
+                rdfs:range bibo:Document ;
+                dcterms:description "Construct used to link a foaf:Person to the document that person has written"^^rdfs:Literal .
+        
 ###  http://www.w3.org/ns/org#hasMember
 org:hasMember rdf:type owl:ObjectProperty ;
               owl:inverseOf org:memberOf ;
