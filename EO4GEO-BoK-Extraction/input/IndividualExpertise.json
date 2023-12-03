@@ -1,0 +1,40 @@
+[
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-18-2023",
+    "authors": ["Molly Asher1", "Yannick Oswald1", "Nick Malleson1"],
+    "organisations": ["1School of Geography, University of Leeds, UK"],
+    "concepts": [
+      "Discovery over linked open data",
+      "Open data",
+      "Machine learning",
+      "Approaches to point, line, and area generalization",
+      "Publishing linked open data",
+      "Decision trees",
+      "Time",
+      "Information-as-data-interpretation"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-17-2023",
+    "authors": [
+      "Marko Stroef2",
+      "Yannick Oswald2",
+      "Peter Frits1",
+      "Nick Malleson1"
+    ],
+    "organisations": [
+      "1School of Geography, University of Leeds, UK",
+      "2SecondOrganisation"
+    ],
+    "concepts": [
+      "Publishing linked open data",
+      "Open data",
+      "Machine learning",
+      "Approaches to point, line, and area generalization",
+      "Discovery over linked open data",
+      "Decision trees",
+      "Time",
+      "Information-as-data-interpretation"
+    ]
+  }
+]

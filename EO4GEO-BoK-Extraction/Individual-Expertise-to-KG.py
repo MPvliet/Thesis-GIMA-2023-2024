@@ -7,6 +7,7 @@ load_dotenv()
 
 def main():
   start_time = time.time()
+  #processAllInputJSON()
   parseIndividualExpertiseIntoRDF()
   duration = time.time() - start_time
   print("Scripte duurde: ", duration, "seconds")
@@ -46,85 +47,85 @@ def parseIndividualExpertiseIntoRDF():
   with open('EO4GEO-BoK-Extraction\input\EO4GEOBOKDATA.json', 'r') as f:
     data = json.load(f)
 
-  conceptDict = {}
+  # creates a dictionary including the concept notatation and the full name. The full name is received from the NLP ouptut. But needs to be matched with the notation ex. WB4 
+  conceptDict = {} 
   for eo4geoConcept in data:
     conceptDict[data[eo4geoConcept]['name']] = {
       'id': data[eo4geoConcept]['id']
     }
 
-  with open ('EO4GEO-BoK-Extraction\input\sampleDataFrameInput.json', 'r') as file:
-    jsonSample = file.read() #json.load(file)
-
-  processed = processIndivudalExpertiseJson(jsonSample) #let openai parse the json in a better json structure
+  # opens 
+  with open ('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'r') as file:
+    indivudalExpertise = json.load(file)
   
-  for expertise in json.loads(processed):
-    doi = expertise['doi']
-    concepts = expertise['concepts']
+  uniqueOrganisationDict = {}
+  uniqueAuthorDict = {}
 
-    organisationDict = {}
-    for organisation in expertise['organisations']:
-      if not re.match(r'^-?\d+(\.\d+)?$', organisation[0]):
-        organisationNumber = 1
-        organisationDict[organisationNumber] = {
-          'name': organisation,
-          'uri': str(uuid.uuid4())
-        }
-      else:
-        organisationNumber = organisation[0]
-        organisationDict[organisationNumber] = {
-          'name': organisation[1:],
-          'uri': str(uuid.uuid4())
-        }
-    
-    authorOrgDict = {}
+  #Create uniqueAuthorDict with all necessarily information to make RDF triples
+  for expertise in indivudalExpertise:
     for author in expertise['authors']:
-      if not re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-        authorOrgNumber = 1
-        authorOrgDict[author] = {
-          'organisationName': organisationDict[authorOrgNumber]['name'],
-          'organisationURI': organisationDict[authorOrgNumber]['uri'],
-          'authorURI': str(uuid.uuid4()),
-          'authorName': author
-        }
-      else:
+      if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
         authorOrgNumber = author[-1]
-        authorOrgDict[author[:-1]] = {
-          'organisationName': organisationDict[authorOrgNumber]['name'],
-          'organisationURI': organisationDict[authorOrgNumber]['uri'],
-          'authorURI': str(uuid.uuid4()),
-          'authorName': author[:-1]
-        }
+        if author[:-1] not in uniqueAuthorDict:
+          uniqueAuthorDict[author[:-1]] = {
+            'authorName': author[:-1],
+            'authorURI': str(uuid.uuid4()),
+            'worksAt': []
+          }
+
+        for organisation in expertise['organisations']:
+          if organisation.startswith(authorOrgNumber):
+            uniqueAuthorDict[author[:-1]]['worksAt'].append({'organisationName': organisation[1:]})
+          if re.match(r'^-?\d+(\.\d+)?$', organisation[0]):
+            if organisation[0] not in uniqueOrganisationDict:
+              uniqueOrganisationDict[organisation[1:]] = {
+                'organisationName': organisation[1:],
+                'organisationURI': str(uuid.uuid4())
+              }
+
+    for author in uniqueAuthorDict:
+      for orgDict in uniqueAuthorDict[author]['worksAt']:
+        if orgDict['organisationName'] in uniqueOrganisationDict:
+          orgDict['organisationURI'] = uniqueOrganisationDict[orgDict['organisationName']]['organisationURI']
     
-    doiURI = URIRef('{}'.format(doi))
+  print(uniqueAuthorDict)
+  doi = expertise['doi']
+  concepts = expertise['concepts']
+
+  doiURI = URIRef('{}'.format(doi))
+  for concept in concepts:
+    conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
+
+    #link document to EO4GEO concept
+    g.add((conceptURI, boka.describedIn, doiURI))
+
+    #create document class
+    g.add((doiURI, rdf.type, bibo.Report))
+    g.add((doiURI, bibo.doi, Literal(doi)))
+    
+
+  #create Expert class and Organisation class
+  for author in uniqueAuthorDict:
+    expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[author]['authorURI']))
+    g.add((expertURI, rdf.type, boka.Expert))
+    g.add((expertURI, foaf.name, Literal(uniqueAuthorDict[author]['authorName'])))
+    g.add((expertURI, rdfs.label, Literal(uniqueAuthorDict[author]['authorName'])))
+    g.add((expertURI, boka.authorOf, doiURI))
+
+
+    for organisation in uniqueAuthorDict[author]['worksAt']:
+      organisationURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',organisation['organisationURI']))
+      g.add((organisationURI, rdf.type, org.Organization))
+      g.add((expertURI, org.memberOf, organisationURI))
+      g.add((organisationURI, org.hasMember, expertURI))
+      g.add((organisationURI, foaf.name, Literal(organisation['organisationName'])))
+      g.add((organisationURI, rdfs.label, Literal(organisation['organisationName'])))
+
+
     for concept in concepts:
       conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
-      
-
-      #link document to EO4GEO concept
-      g.add((conceptURI, boka.describedIn, doiURI))
-
-      #create document class
-      g.add((doiURI, rdf.type, bibo.Report))
-      g.add((doiURI, bibo.doi, Literal(doi)))
-      
-
-    #craeate Expert class and Organisation class
-    for author in authorOrgDict:
-      expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',authorOrgDict[author]['authorURI']))
-      organisationURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',authorOrgDict[author]['organisationURI']))
-      g.add((expertURI, rdf.type, boka.Expert))
-      g.add((expertURI, foaf.name, Literal(authorOrgDict[author]['authorName'])))
-      g.add((expertURI, rdfs.label, Literal(authorOrgDict[author]['authorName'])))
-      g.add((expertURI, org.memberOf, organisationURI))
-      g.add((expertURI, boka.authorOf, doiURI))
-      for concept in concepts:
-        conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
-        g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
-        g.add((conceptURI, boka.personWithKnowledge, expertURI))
-      g.add((organisationURI, org.hasMember, expertURI))
-      g.add((organisationURI, rdf.type, org.Organization))
-      g.add((organisationURI, foaf.name, Literal(authorOrgDict[author]['organisationName'])))
-      g.add((organisationURI, rdfs.label, Literal(authorOrgDict[author]['organisationName'])))
+      g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
+      g.add((conceptURI, boka.personWithKnowledge, expertURI))
 
   g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG-individual.trig", format="trig")
 
@@ -141,7 +142,7 @@ def processIndivudalExpertiseJson(jsonPrompt):
     {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname'},
     {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-18-2023","Title": "Predicting Pedestrian Counts using Machine Learning Reza Arabsheibani1 Ehsan Hamzei1 Kimia Amoozandeh1 Stephan Winter2 Martin Tomko1 1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia 2Second organisation name Correspondence : Nick Malleson ( n.s.malleson @ leeds.ac.uk )", "Concepts": ["Discovery over linked open data","Publishing linked open data"]}'},
     {"role": "assistant", "content": expectedJSONResult},
-    {"role": "user", "content": jsonPrompt}
+    {"role": "user", "content": '{}'.format(jsonPrompt)}
   ]
 
   response = client.chat.completions.create(
@@ -155,5 +156,26 @@ def processIndivudalExpertiseJson(jsonPrompt):
   )
 
   return response.choices[0].message.content
+
+
+def mergeToTotalExpertiseFile(newParsesdData):
+  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'r') as file:
+    existingData = json.load(file)
+  
+  existingData.extend(newParsesdData)
+
+  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'w') as file:
+    json.dump(existingData, file)
+
+def processAllInputJSON():
+  indivudalExpertiseFolder = 'EO4GEO-BoK-Extraction\input\Individual-Expertise'
+  for file in os.listdir(indivudalExpertiseFolder):
+    file_path = os.path.join(indivudalExpertiseFolder, file)
+    if os.path.isfile(file_path):
+      with open (file_path, 'r') as file:
+        jsonAsText = file.read()
+      parsedData = processIndivudalExpertiseJson(json.loads(jsonAsText)) #let openai parse the json in a better json structure
+      newJson = json.loads(parsedData)
+      mergeToTotalExpertiseFile(newJson)
 
 main()

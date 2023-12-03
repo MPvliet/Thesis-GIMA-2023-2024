@@ -6,70 +6,79 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 eo4geo:applications {
-    eo4geo:22768105-50bb-445f-acdd-75fb1f7e4962 a org:Organization ;
+    eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 a org:Organization ;
+        rdfs:label "SecondOrganisation" ;
+        org:hasMember eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989 ;
+        foaf:name "SecondOrganisation" .
+
+    eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e a org:Organization ;
         rdfs:label "School of Geography, University of Leeds, UK" ;
-        org:hasMember eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 ;
+        org:hasMember eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 ;
         foaf:name "School of Geography, University of Leeds, UK" .
 
-    eo4geo:AM14-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:AM14-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:CF4-2b boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:CF4-2b boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:GS1-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:GS1-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:IP3-13-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:IP3-13-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:IP3-4-5 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:IP3-4-5 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:IP3-4-7 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:IP3-4-7 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:WB3-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:WB3-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:WB4-3 boka:describedIn <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:personWithKnowledge eo4geo:160966ae-888d-48a9-a574-8a84e81111b0,
-            eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da,
-            eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 .
+    eo4geo:WB4-3 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
+            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
+            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
+            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
+            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
 
-    eo4geo:160966ae-888d-48a9-a574-8a84e81111b0 a boka:Expert ;
-        rdfs:label "Nick Malleson" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-18-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
-            eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:22768105-50bb-445f-acdd-75fb1f7e4962 ;
-        foaf:name "Nick Malleson" .
-
-    eo4geo:c407ebcc-80bc-48cb-995a-05bf06f248da a boka:Expert ;
+    eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8 a boka:Expert ;
         rdfs:label "Molly Asher" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-18-2023> ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
         boka:hasKnowledgeOf eo4geo:AM14-2,
             eo4geo:CF4-2b,
             eo4geo:GS1-6,
@@ -78,12 +87,12 @@ eo4geo:applications {
             eo4geo:IP3-4-7,
             eo4geo:WB3-6,
             eo4geo:WB4-3 ;
-        org:memberOf eo4geo:22768105-50bb-445f-acdd-75fb1f7e4962 ;
+        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
         foaf:name "Molly Asher" .
 
-    eo4geo:ef03e8d9-1a4e-4c44-b92c-08cb102c0758 a boka:Expert ;
-        rdfs:label "Yannick Oswald" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-18-2023> ;
+    eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207 a boka:Expert ;
+        rdfs:label "Peter Frits" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
         boka:hasKnowledgeOf eo4geo:AM14-2,
             eo4geo:CF4-2b,
             eo4geo:GS1-6,
@@ -92,10 +101,53 @@ eo4geo:applications {
             eo4geo:IP3-4-7,
             eo4geo:WB3-6,
             eo4geo:WB4-3 ;
-        org:memberOf eo4geo:22768105-50bb-445f-acdd-75fb1f7e4962 ;
+        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
+        foaf:name "Peter Frits" .
+
+    eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989 a boka:Expert ;
+        rdfs:label "Marko Stroef" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM14-2,
+            eo4geo:CF4-2b,
+            eo4geo:GS1-6,
+            eo4geo:IP3-13-2,
+            eo4geo:IP3-4-5,
+            eo4geo:IP3-4-7,
+            eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 ;
+        foaf:name "Marko Stroef" .
+
+    eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 a boka:Expert ;
+        rdfs:label "Nick Malleson" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM14-2,
+            eo4geo:CF4-2b,
+            eo4geo:GS1-6,
+            eo4geo:IP3-13-2,
+            eo4geo:IP3-4-5,
+            eo4geo:IP3-4-7,
+            eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
+        foaf:name "Nick Malleson" .
+
+    eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94 a boka:Expert ;
+        rdfs:label "Yannick Oswald" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM14-2,
+            eo4geo:CF4-2b,
+            eo4geo:GS1-6,
+            eo4geo:IP3-13-2,
+            eo4geo:IP3-4-5,
+            eo4geo:IP3-4-7,
+            eo4geo:WB3-6,
+            eo4geo:WB4-3 ;
+        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e,
+            eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 ;
         foaf:name "Yannick Oswald" .
 
-    <https://doi.org/10.5194/agile-giss-4-18-2023> a bibo:Report ;
-        bibo:doi "https://doi.org/10.5194/agile-giss-4-18-2023" .
+    <https://doi.org/10.5194/agile-giss-4-17-2023> a bibo:Report ;
+        bibo:doi "https://doi.org/10.5194/agile-giss-4-17-2023" .
 }
 
