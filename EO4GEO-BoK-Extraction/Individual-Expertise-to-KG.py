@@ -1,5 +1,6 @@
 import json, time, re, uuid, os
 from rdflib import URIRef, Literal, BNode, Namespace, Dataset
+from rdflib.collection import Collection
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -64,11 +65,13 @@ def parseIndividualExpertiseIntoRDF():
   #Create uniqueAuthorDict with all necessarily information to make RDF triples
   for expertise in indivudalExpertise:
     print(expertise['doi'])
+    
     for author in expertise['authors']:
       if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
         authorName = re.match(r'^(.*?)\d', author).group(1)
         authorOrgNumberList = re.findall(r'\d+', author)
         authorOrgNumberListStr = [str(number) for number in authorOrgNumberList]
+
         if authorName not in uniqueAuthorDict:
           uniqueAuthorDict[authorName] = {
             'authorName': authorName,
@@ -102,29 +105,64 @@ def parseIndividualExpertiseIntoRDF():
               'organisationName': organisation,
               'organisationURI': str(uuid.uuid4())
             }
-
+        
     for author in uniqueAuthorDict:
       for orgDict in uniqueAuthorDict[author]['worksAt']:
         if orgDict['organisationName'] in uniqueOrganisationDict:
           orgDict['organisationURI'] = uniqueOrganisationDict[orgDict['organisationName']]['organisationURI']
     
-    print(uniqueAuthorDict)
-    doi = expertise['doi']
-    concepts = expertise['concepts']
-
-    doiURI = URIRef('{}'.format(doi))
     #create document class
+    doi = expertise['doi']
+    doiURI = URIRef('{}'.format(doi))
     g.add((doiURI, rdf.type, bibo.Report))
     g.add((doiURI, bibo.doi, Literal(doi)))
-    
-    for concept in concepts:
+
+    for concept in expertise['concepts']:
       conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
 
       #link document to EO4GEO concept
       g.add((conceptURI, boka.describedIn, doiURI))
-
-
+      
+      # create hasknowledeOf and personWithKNowledge constructs
+      for author in expertise['authors']:
+        if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
+          authorName = re.match(r'^(.*?)\d', author).group(1)
+        else:
+          authorName = author
+        expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[authorName]['authorURI']))
+        g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
+        g.add((conceptURI, boka.personWithKnowledge, expertURI))
     
+    # Creates the bibo:authorList relation
+    collection_node = BNode()
+    authorsList = []
+    for author in expertise['authors']:
+      if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
+          authorName = re.match(r'^(.*?)\d', author).group(1)
+      else:
+        authorName = author
+      expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[authorName]['authorURI']))
+      authorsList.append(expertURI)
+
+
+    collection = Collection(g, collection_node, authorsList)
+    g.add((doiURI, bibo.authorList, collection_node))
+    # prev_node = None
+    # for author in reversed(expertise['authors']):
+    #   if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
+    #     authorName = re.match(r'^(.*?)\d', author).group(1)
+    #     current_node = BNode()
+    #     g.add((doiURI, bibo.authorList, current_node))
+    #     g.add((current_node, rdf.type, rdf.List))
+    #     g.add((current_node, rdf.first, URIRef('{}{}'.format('https://bok.eo4geo.eu/', uniqueAuthorDict[authorName]['authorURI']))))
+
+    #     if prev_node is None:
+    #       g.add((current_node, rdf.rest, rdf.nil))
+    #     else:
+    #       g.add((current_node, rdf.rest, prev_node))
+
+    #     prev_node = current_node
+
 
   #create Expert class and Organisation class
   for author in uniqueAuthorDict:
@@ -134,7 +172,6 @@ def parseIndividualExpertiseIntoRDF():
     g.add((expertURI, rdfs.label, Literal(uniqueAuthorDict[author]['authorName'])))
     g.add((expertURI, boka.authorOf, doiURI))
 
-
     for organisation in uniqueAuthorDict[author]['worksAt']:
       organisationURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',organisation['organisationURI']))
       g.add((organisationURI, rdf.type, org.Organization))
@@ -142,12 +179,6 @@ def parseIndividualExpertiseIntoRDF():
       g.add((organisationURI, org.hasMember, expertURI))
       g.add((organisationURI, foaf.name, Literal(organisation['organisationName'])))
       g.add((organisationURI, rdfs.label, Literal(organisation['organisationName'])))
-
-
-    for concept in concepts:
-      conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
-      g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
-      g.add((conceptURI, boka.personWithKnowledge, expertURI))
 
   g.serialize(destination="EO4GEO-BoK-Extraction\output\EO4GEO-KG-individual.trig", format="trig")
 
@@ -161,7 +192,7 @@ def processIndivudalExpertiseJson(jsonPrompt):
   expectedJSONResult = '{"doi": "https://doi.org/10.5194/agile-giss-4-20-2023","authors": ["Nick Bearman1","Rongbo Xu2","Patrick J. Roddy3","James D. Gaboardi4","Qunshan Zhao5","Huanfa Chen6","Levi Wolf7"],"organisations": ["1Geospatial Training Solutions and University College London, London, UK","2Urban Big Data Centre, University of Glasgow, Glasgow, UK","3Advanced Research Computing, University College London, London, UK","4Geospatial Science and Human Security Division, Oak Ridge National Laboratory, USA","5Urban Big Data Centre, University of Glasgow, Glasgow, UK","6CASA, University College London, London, UK","7University of Bristol, Bristol, UK"],"concepts": ["Time","Information-as-data-interpretation"]}'
 
   messages = [
-    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname and remove the "and" before the last author name. Also make sure to enclose property names in the json with double quotes'},
+    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname and remove the "and" before the last author name. Also make sure to enclose property names in the json with double quotes. At last double check if the created output is indeed the specified format, othwerise adjust. Thanks!'},
     {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-20-2023","Title": "Developing capacitated p median location allocation model in the spopt library to allow UCL student teacher placements using public transport Nick Bearman \ufffd1 , Rongbo Xu2 , Patrick J. Roddy \ufffd3 , James D. Gaboardi \ufffd4 , Qunshan Zhao \ufffd5 , Huanfa Chen \ufffd6 , and Levi Wolf \ufffd7 1Geospatial Training Solutions and University College London , London , UK 2Urban Big Data Centre , University of Glasgow , Glasgow , UK 3Advanced Research Computing , University College London , London , UK 4Geospatial Science and Human Security Division , Oak Ridge National Laboratory , USA 5Urban Big Data Centre , University of Glasgow , Glasgow , UK 6CASA , University College London , London , UK 7University of Bristol , Bristol , UK Correspondence : Nick Bearman ( nick @ nickbearman.com )", "Concepts": ["Time","Information-as-data-interpretation"]}'},
     {"role": "assistant", "content": expectedJSONResult},
     {"role": "user", "content": '{}'.format(jsonPrompt)}
