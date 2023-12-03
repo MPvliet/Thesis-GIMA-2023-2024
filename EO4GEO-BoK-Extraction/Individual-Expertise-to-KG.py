@@ -65,23 +65,44 @@ def parseIndividualExpertiseIntoRDF():
   for expertise in indivudalExpertise:
     for author in expertise['authors']:
       if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-        authorOrgNumber = author[-1]
-        if author[:-1] not in uniqueAuthorDict:
-          uniqueAuthorDict[author[:-1]] = {
-            'authorName': author[:-1],
+        authorName = re.match(r'^(.*?)\d', author).group(1)
+        print(authorName)
+        authorOrgNumberList = re.findall(r'\d+', author)
+        authorOrgNumberListStr = [str(number) for number in authorOrgNumberList]
+        if authorName not in uniqueAuthorDict:
+          uniqueAuthorDict[authorName] = {
+            'authorName': authorName,
             'authorURI': str(uuid.uuid4()),
             'worksAt': []
           }
 
         for organisation in expertise['organisations']:
-          if organisation.startswith(authorOrgNumber):
-            uniqueAuthorDict[author[:-1]]['worksAt'].append({'organisationName': organisation[1:]})
+          if any(organisation.startswith(num) for num in authorOrgNumberListStr):
+            uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation[1:]})
           if re.match(r'^-?\d+(\.\d+)?$', organisation[0]):
             if organisation[0] not in uniqueOrganisationDict:
               uniqueOrganisationDict[organisation[1:]] = {
                 'organisationName': organisation[1:],
                 'organisationURI': str(uuid.uuid4())
               }
+      else:
+        print(expertise)
+        authorName = author
+        authorOrgNumberListStr = ['1']
+        if authorName not in uniqueAuthorDict:
+          uniqueAuthorDict[authorName] = {
+            'authorName': authorName,
+            'authorURI': str(uuid.uuid4()),
+            'worksAt': []
+          }
+        
+        for organisation in expertise['organisations']:
+          uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation})
+          if organisation not in uniqueOrganisationDict:
+            uniqueOrganisationDict[organisation] = {
+              'organisationName': organisation,
+              'organisationURI': str(uuid.uuid4())
+            }
 
     for author in uniqueAuthorDict:
       for orgDict in uniqueAuthorDict[author]['worksAt']:
@@ -136,11 +157,11 @@ def processIndivudalExpertiseJson(jsonPrompt):
 
   #jsonPrompt = '{"DOI": "https://doi.org/10.5194/agile-giss-4-18-2023", "Title": "Predicting Pedestrian Counts using Machine Learning Molly Asher1 , Yannick Oswald1 , and Nick Malleson1 1School of Geography , University of Leeds , UK Correspondence : Nick Malleson ( n.s.malleson @ leeds.ac.uk )","Concepts": ["Discovery over linked open data","Open data","Machine learning","Approaches to point, line, and area generalization","Publishing linked open data","Decision trees","Time","Information-as-data-interpretation"]}'
 
-  expectedJSONResult = '[{"doi": "https://doi.org/10.5194/agile-giss-4-2-2023","authors": ["Reza Arabsheibani1","Ehsan Hamzei1","Kimia Amoozandeh1","Stephan Winter2","Martin Tomko1"],"organisations": ["1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia","2Second organisation name"],"concepts": ["Publishing linked open data","Discovery over linked open data"]}]'
+  expectedJSONResult = '{"doi": "https://doi.org/10.5194/agile-giss-4-20-2023","authors": ["Nick Bearman1","Rongbo Xu2","Patrick J. Roddy3","James D. Gaboardi4","Qunshan Zhao5","Huanfa Chen6","Levi Wolf7"],"organisations": ["1Geospatial Training Solutions and University College London, London, UK","2Urban Big Data Centre, University of Glasgow, Glasgow, UK","3Advanced Research Computing, University College London, London, UK","4Geospatial Science and Human Security Division, Oak Ridge National Laboratory, USA","5Urban Big Data Centre, University of Glasgow, Glasgow, UK","6CASA, University College London, London, UK","7University of Bristol, Bristol, UK"],"concepts": ["Time","Information-as-data-interpretation"]}'
 
   messages = [
-    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname'},
-    {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-18-2023","Title": "Predicting Pedestrian Counts using Machine Learning Reza Arabsheibani1 Ehsan Hamzei1 Kimia Amoozandeh1 Stephan Winter2 Martin Tomko1 1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia 2Second organisation name Correspondence : Nick Malleson ( n.s.malleson @ leeds.ac.uk )", "Concepts": ["Discovery over linked open data","Publishing linked open data"]}'},
+    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname and remove the "and" before the last author name. Also make sure to enclose property names in the json with double quotes'},
+    {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-20-2023","Title": "Developing capacitated p median location allocation model in the spopt library to allow UCL student teacher placements using public transport Nick Bearman \ufffd1 , Rongbo Xu2 , Patrick J. Roddy \ufffd3 , James D. Gaboardi \ufffd4 , Qunshan Zhao \ufffd5 , Huanfa Chen \ufffd6 , and Levi Wolf \ufffd7 1Geospatial Training Solutions and University College London , London , UK 2Urban Big Data Centre , University of Glasgow , Glasgow , UK 3Advanced Research Computing , University College London , London , UK 4Geospatial Science and Human Security Division , Oak Ridge National Laboratory , USA 5Urban Big Data Centre , University of Glasgow , Glasgow , UK 6CASA , University College London , London , UK 7University of Bristol , Bristol , UK Correspondence : Nick Bearman ( nick @ nickbearman.com )", "Concepts": ["Time","Information-as-data-interpretation"]}'},
     {"role": "assistant", "content": expectedJSONResult},
     {"role": "user", "content": '{}'.format(jsonPrompt)}
   ]
@@ -154,15 +175,17 @@ def processIndivudalExpertiseJson(jsonPrompt):
     frequency_penalty=0,
     presence_penalty=0
   )
-
+  print(response.choices[0].message.content)
   return response.choices[0].message.content
 
 
-def mergeToTotalExpertiseFile(newParsesdData):
+def mergeToTotalExpertiseFile(newParsedData):
   with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'r') as file:
     existingData = json.load(file)
   
-  existingData.extend(newParsesdData)
+  # Append the new data
+  existingData.append(newParsedData)
+  #existingData.extend(newParsesdData)
 
   with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'w') as file:
     json.dump(existingData, file)

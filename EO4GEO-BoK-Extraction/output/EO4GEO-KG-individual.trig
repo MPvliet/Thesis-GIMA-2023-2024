@@ -6,148 +6,3613 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 eo4geo:applications {
-    eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 a org:Organization ;
-        rdfs:label "SecondOrganisation" ;
-        org:hasMember eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989 ;
-        foaf:name "SecondOrganisation" .
+    eo4geo:2dec6ab6-924f-4fbc-ac3d-10a4f74e9005 a org:Organization ;
+        rdfs:label "Chair of Geoinformatics, TU Dresden, Germany" ;
+        org:hasMember eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee ;
+        foaf:name "Chair of Geoinformatics, TU Dresden, Germany" .
 
-    eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e a org:Organization ;
+    eo4geo:31970a3f-340d-4f5f-b318-b0de6aefb81e a org:Organization ;
+        rdfs:label "International Research Institute for Climate and Society, Columbia University, United States of America" ;
+        org:hasMember eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090 ;
+        foaf:name "International Research Institute for Climate and Society, Columbia University, United States of America" .
+
+    eo4geo:3c5605e3-4cbf-494b-bd82-8670932304d1 a org:Organization ;
+        rdfs:label "Eduardo Mondlane University, Department of Physics, Mozambique" ;
+        org:hasMember eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f ;
+        foaf:name "Eduardo Mondlane University, Department of Physics, Mozambique" .
+
+    eo4geo:413c7c47-4b9d-41ce-98f4-5f56c21196ef a org:Organization ;
+        rdfs:label "GIScience Research Group, Institute of Geography, Heidelberg University, Heidelberg, Germany" ;
+        org:hasMember eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046 ;
+        foaf:name "GIScience Research Group, Institute of Geography, Heidelberg University, Heidelberg, Germany" .
+
+    eo4geo:41a0830e-542c-4ca6-8eb2-94e6daf0cfb3 a org:Organization ;
+        rdfs:label "Geospatial Training Solutions and University College London, London, UK" ;
+        org:hasMember eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81 ;
+        foaf:name "Geospatial Training Solutions and University College London, London, UK" .
+
+    eo4geo:48d9dd4b-5a14-46a9-97e8-ad571e7f2fb7 a org:Organization ;
+        rdfs:label "Department of Computer Science, University of Helsinki, Helsinki, Finland" ;
+        org:hasMember eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda ;
+        foaf:name "Department of Computer Science, University of Helsinki, Helsinki, Finland" .
+
+    eo4geo:4e0a0a3d-1d5b-42e6-a7ab-edb953db9389 a org:Organization ;
+        rdfs:label "Advanced Research Computing, University College London, London, UK" ;
+        org:hasMember eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa ;
+        foaf:name "Advanced Research Computing, University College London, London, UK" .
+
+    eo4geo:58c8d8cc-1691-4a2f-b8f5-580daf52622a a org:Organization ;
+        rdfs:label "Red Cross Red Crescent Climate Centre, the Hague, the Netherlands" ;
+        org:hasMember eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090 ;
+        foaf:name "Red Cross Red Crescent Climate Centre, the Hague, the Netherlands" .
+
+    eo4geo:65042f2e-43c5-476f-9b88-144aee432340 a org:Organization ;
+        rdfs:label "Leica Geosystems/Hexagon, Switzerland" ;
+        org:hasMember eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e ;
+        foaf:name "Leica Geosystems/Hexagon, Switzerland" .
+
+    eo4geo:7bac59ff-c8e4-4379-b412-6736e5d4955c a org:Organization ;
+        rdfs:label "University of Bristol, Bristol, UK" ;
+        org:hasMember eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8 ;
+        foaf:name "University of Bristol, Bristol, UK" .
+
+    eo4geo:7c70b2e8-4e9c-4662-a3ac-62d86a118cf5 a org:Organization ;
+        rdfs:label "Department of Industrial Engineering and Management, Ort Braude College, Karmiel, Israel" ;
+        org:hasMember eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906 ;
+        foaf:name "Department of Industrial Engineering and Management, Ort Braude College, Karmiel, Israel" .
+
+    eo4geo:83be9e8c-dfa5-48cf-a376-68f31097240d a org:Organization ;
+        rdfs:label "CNRS & University of Toulouse, IRIT, France" ;
+        org:hasMember eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf ;
+        foaf:name "CNRS & University of Toulouse, IRIT, France" .
+
+    eo4geo:a51db802-f8ad-4e31-9aae-6dc291b738dd a org:Organization ;
+        rdfs:label "Helmholtz Centre Potsdam German Research Centre GFZ, Germany" ;
+        org:hasMember eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3 ;
+        foaf:name "Helmholtz Centre Potsdam German Research Centre GFZ, Germany" .
+
+    eo4geo:ab2c2d10-4516-429f-aabe-6e5f3c57dcb4 a org:Organization ;
+        rdfs:label "CASA, University College London, London, UK" ;
+        org:hasMember eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9 ;
+        foaf:name "CASA, University College London, London, UK" .
+
+    eo4geo:aca7aaeb-5df3-43de-b8ad-1d047caff7c9 a org:Organization ;
+        rdfs:label "Faculty of Aerospace Engineering, Delft University of Technology, Delft, the Netherlands" ;
+        org:hasMember eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e ;
+        foaf:name "Faculty of Aerospace Engineering, Delft University of Technology, Delft, the Netherlands" .
+
+    eo4geo:c15b00b1-c300-4a3a-afb4-b03245ffcb7b a org:Organization ;
+        rdfs:label "CNRS, IPAL, Singapore, Singapore" ;
+        org:hasMember eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf ;
+        foaf:name "CNRS, IPAL, Singapore, Singapore" .
+
+    eo4geo:cdd7d2a4-4590-4e20-83df-1ea03c1fe797 a org:Organization ;
+        rdfs:label "Geospatial Science and Human Security Division, Oak Ridge National Laboratory, USA" ;
+        org:hasMember eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7 ;
+        foaf:name "Geospatial Science and Human Security Division, Oak Ridge National Laboratory, USA" .
+
+    eo4geo:d62e5cc0-c8aa-4342-9646-9e669c055a29 a org:Organization ;
+        rdfs:label "National Institute of Health, Mozambique" ;
+        org:hasMember eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c ;
+        foaf:name "National Institute of Health, Mozambique" .
+
+    eo4geo:dc7a00b5-0a73-4cf0-bc7a-124aba88606e a org:Organization ;
+        rdfs:label "Department of computer science, University of Duhok, Duhok, Iraq" ;
+        org:hasMember eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c ;
+        foaf:name "Department of computer science, University of Duhok, Duhok, Iraq" .
+
+    eo4geo:2e5582a3-2e2c-4e1e-940d-794f6b3de958 a org:Organization ;
+        rdfs:label "Department of Civil and Environmental Engineering, Polytechnic University of Milan, Milan, Italy" ;
+        org:hasMember eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6 ;
+        foaf:name "Department of Civil and Environmental Engineering, Polytechnic University of Milan, Milan, Italy" .
+
+    eo4geo:2e7b8d27-d0ca-4691-823d-e8b430b9bcce a org:Organization ;
+        rdfs:label "Department of Geography and Human Environment, Porter School of Environmental Studies, Tel Aviv University, Tel Aviv, Israel" ;
+        org:hasMember eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba ;
+        foaf:name "Department of Geography and Human Environment, Porter School of Environmental Studies, Tel Aviv University, Tel Aviv, Israel" .
+
+    eo4geo:718ebd41-334f-41e9-a519-0d83c4a2f06e a org:Organization ;
+        rdfs:label "Urban Big Data Centre, University of Glasgow, Glasgow, UK" ;
+        org:hasMember eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a ;
+        foaf:name "Urban Big Data Centre, University of Glasgow, Glasgow, UK" .
+
+    eo4geo:797acecd-a816-4a1a-9e57-71be73a35c55 a org:Organization ;
+        rdfs:label "Geoinformatics Group, Institute of Geography, University of Augsburg, Augsburg, Germany" ;
+        org:hasMember eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f ;
+        foaf:name "Geoinformatics Group, Institute of Geography, University of Augsburg, Augsburg, Germany" .
+
+    eo4geo:8bb44c1f-af20-4ac3-877f-4ca5706944e9 a org:Organization ;
+        rdfs:label "Laboratory for Geoinformation Science and Remote Sensing, Wageningen University and Research, Wageningen, The Netherlands" ;
+        org:hasMember eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9 ;
+        foaf:name "Laboratory for Geoinformation Science and Remote Sensing, Wageningen University and Research, Wageningen, The Netherlands" .
+
+    eo4geo:9748a706-433a-435b-b6cc-2a6f22cfc4b1 a org:Organization ;
+        rdfs:label " Digital Society Initiative, University of Zurich, Zurich, Switzerland" ;
+        org:hasMember eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1 ;
+        foaf:name " Digital Society Initiative, University of Zurich, Zurich, Switzerland" .
+
+    eo4geo:d055753d-8831-4578-9c13-c386a3d471ed a org:Organization ;
+        rdfs:label "Department of Geoinformation Processing (GIP), University of Twente, Enschede, The Netherlands" ;
+        org:hasMember eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464 ;
+        foaf:name "Department of Geoinformation Processing (GIP), University of Twente, Enschede, The Netherlands" .
+
+    eo4geo:da304e0e-6dce-45ea-8a75-adc358542945 a org:Organization ;
+        rdfs:label "Geo Information Science and Earth Observation (ITC, University of Twente, Enschede, Netherlands)" ;
+        org:hasMember eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84 ;
+        foaf:name "Geo Information Science and Earth Observation (ITC, University of Twente, Enschede, Netherlands)" .
+
+    eo4geo:e67749ec-4386-4232-ac81-44221df24d77 a org:Organization ;
+        rdfs:label "Department of Electronics, Information and Bioengineering, Polytechnic University of Milan, Milan, Italy" ;
+        org:hasMember eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208 ;
+        foaf:name "Department of Electronics, Information and Bioengineering, Polytechnic University of Milan, Milan, Italy" .
+
+    eo4geo:03ff2cbf-e523-4d4f-ae35-b51e15613ff1 a org:Organization ;
+        rdfs:label "Univ Gustave Eiffel, ENSG, IGN, LASTIG, F 94160 Saint Mandé, France" ;
+        org:hasMember eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de ;
+        foaf:name "Univ Gustave Eiffel, ENSG, IGN, LASTIG, F 94160 Saint Mandé, France" .
+
+    eo4geo:14e2a9f7-c8d0-4b42-a813-ee9720abf47d a org:Organization ;
+        rdfs:label "Institute for Geoinformatics, University of Münster, Germany" ;
+        org:hasMember eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75 ;
+        foaf:name "Institute for Geoinformatics, University of Münster, Germany" .
+
+    eo4geo:28540f60-9b86-4bd0-b31c-832efef27d1d a org:Organization ;
+        rdfs:label "Department of Geoinformatics and Cartography, Finnish Geospatial Research Institute FGI, National Land Survey of Finland, Espoo, Finland" ;
+        org:hasMember eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda ;
+        foaf:name "Department of Geoinformatics and Cartography, Finnish Geospatial Research Institute FGI, National Land Survey of Finland, Espoo, Finland" .
+
+    eo4geo:2f9eb514-1001-476f-81d7-29075c79f40d a org:Organization ;
+        rdfs:label "LASTIG, Univ Gustave Eiffel, IGN ENSG, F 94160 Saint Mande, France" ;
+        org:hasMember eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf ;
+        foaf:name "LASTIG, Univ Gustave Eiffel, IGN ENSG, F 94160 Saint Mande, France" .
+
+    eo4geo:4b7fd41e-4776-44da-ad97-6954f2cdb613 a org:Organization ;
+        rdfs:label "Chalmers University of Technology, Department of Architecture and Civil Engineering, Gothenburg, Sweden" ;
+        org:hasMember eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7 ;
+        foaf:name "Chalmers University of Technology, Department of Architecture and Civil Engineering, Gothenburg, Sweden" .
+
+    eo4geo:4bc0c78f-b9e5-45e2-90ee-1fb74928e768 a org:Organization ;
+        rdfs:label "Laboratory of Geo information Science and Remote Sensing, Wageningen University & Research, Wageningen, The Netherlands" ;
+        org:hasMember eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb ;
+        foaf:name "Laboratory of Geo information Science and Remote Sensing, Wageningen University & Research, Wageningen, The Netherlands" .
+
+    eo4geo:98b4fb94-daf3-4e1c-9142-85e4e0daa15a a org:Organization ;
+        rdfs:label "Faculty of Geo Information Science and Earth Observation (ITC), University of Twente, Enschede, the Netherlands" ;
+        org:hasMember eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766 ;
+        foaf:name "Faculty of Geo Information Science and Earth Observation (ITC), University of Twente, Enschede, the Netherlands" .
+
+    eo4geo:a30e9ddc-5b95-48be-bedc-df94a723c3ba a org:Organization ;
+        rdfs:label "Faculty of Geo Information Science and Earth Observation – ITC, University of Twente, Enschede, The Netherlands" ;
+        org:hasMember eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688 ;
+        foaf:name "Faculty of Geo Information Science and Earth Observation – ITC, University of Twente, Enschede, The Netherlands" .
+
+    eo4geo:ebb63de7-4cc8-4521-8e84-94e49a0c3fa7 a org:Organization ;
         rdfs:label "School of Geography, University of Leeds, UK" ;
-        org:hasMember eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 ;
+        org:hasMember eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566 ;
         foaf:name "School of Geography, University of Leeds, UK" .
 
-    eo4geo:AM14-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:3ed22081-832a-436e-bc7c-c6092adf3793 a org:Organization ;
+        rdfs:label "School of Rural, Surveying and Geoinformatics Engineering, National Technical University of Athens, Athens, Greece" ;
+        org:hasMember eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 ;
+        foaf:name "School of Rural, Surveying and Geoinformatics Engineering, National Technical University of Athens, Athens, Greece" .
 
-    eo4geo:CF4-2b boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:48646fc3-e5cc-462b-b803-4c433ccd6b0d a org:Organization ;
+        rdfs:label "School of Geography, University of Leeds, Leeds, United Kingdom" ;
+        org:hasMember eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566 ;
+        foaf:name "School of Geography, University of Leeds, Leeds, United Kingdom" .
 
-    eo4geo:GS1-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:5d985986-5dd8-4794-8ad1-06582ba87ba9 a org:Organization ;
+        rdfs:label " Department of Geography, University of Zurich, Zurich, Switzerland" ;
+        org:hasMember eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1 ;
+        foaf:name " Department of Geography, University of Zurich, Zurich, Switzerland" .
 
-    eo4geo:IP3-13-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:b45aff79-cfac-4eca-ac59-6b6103502ba1 a org:Organization ;
+        rdfs:label "Univ de Tours, LIFAT, BDTLN, Blois, France" ;
+        org:hasMember eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724 ;
+        foaf:name "Univ de Tours, LIFAT, BDTLN, Blois, France" .
 
-    eo4geo:IP3-4-5 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:b71d2f90-b53e-4fb3-a0ba-b28954a0f84e a org:Organization ;
+        rdfs:label "Department of the Built Environment, Eindhoven University of Technology, Eindhoven, The Netherlands" ;
+        org:hasMember eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59 ;
+        foaf:name "Department of the Built Environment, Eindhoven University of Technology, Eindhoven, The Netherlands" .
 
-    eo4geo:IP3-4-7 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:e7e34911-539b-4a5c-91e4-fb029447fac7 a org:Organization ;
+        rdfs:label "Department of Geo Information Process (GIP), University of Twente, Enschede, The Netherlands" ;
+        org:hasMember eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e ;
+        foaf:name "Department of Geo Information Process (GIP), University of Twente, Enschede, The Netherlands" .
 
-    eo4geo:WB3-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:f95bd5f4-6c47-43e9-b253-5fa6aa557844 a org:Organization ;
+        rdfs:label "Department of Geoinformatics, Paris Lodron University of Salzburg, Salzburg, Austria" ;
+        org:hasMember eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678 ;
+        foaf:name "Department of Geoinformatics, Paris Lodron University of Salzburg, Salzburg, Austria" .
 
-    eo4geo:WB4-3 boka:describedIn <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:personWithKnowledge eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94,
-            eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8,
-            eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207,
-            eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989,
-            eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 .
+    eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb a org:Organization ;
+        rdfs:label "Institute of Cartography and Geoinformation, ETH Zurich, Switzerland" ;
+        org:hasMember eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34 ;
+        foaf:name "Institute of Cartography and Geoinformation, ETH Zurich, Switzerland" .
 
-    eo4geo:4de9b253-5dda-4983-b45b-adb91af79bd8 a boka:Expert ;
-        rdfs:label "Molly Asher" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
+    eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a a org:Organization ;
+        rdfs:label "Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia" ;
+        org:hasMember eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78 ;
+        foaf:name "Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia" .
+
+    eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 a org:Organization ;
+        rdfs:label "Department of Human Geography and Spatial Planning, Utrecht University, Vening Meineszgebouw A, Princetonlaan 8a, 3584 CB Utrecht, The Netherlands" ;
+        org:hasMember eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e ;
+        foaf:name "Department of Human Geography and Spatial Planning, Utrecht University, Vening Meineszgebouw A, Princetonlaan 8a, 3584 CB Utrecht, The Netherlands" .
+
+    eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb a org:Organization ;
+        rdfs:label "Faculty of Architecture and the Built Environment, Delft University of Technology, Delft, the Netherlands" ;
+        org:hasMember eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095 ;
+        foaf:name "Faculty of Architecture and the Built Environment, Delft University of Technology, Delft, the Netherlands" .
+
+    eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c a boka:Expert ;
+        rdfs:label "Tatiana Marrufo" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
             eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
-        foaf:name "Molly Asher" .
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:d62e5cc0-c8aa-4342-9646-9e669c055a29 ;
+        foaf:name "Tatiana Marrufo" .
 
-    eo4geo:760019e7-6733-4f4e-8cee-5a7d0d01f207 a boka:Expert ;
-        rdfs:label "Peter Frits" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
+    eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1 a boka:Expert ;
+        rdfs:label "Néstor DelaPaz Ruíz" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
             eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
-        foaf:name "Peter Frits" .
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:e7e34911-539b-4a5c-91e4-fb029447fac7 ;
+        foaf:name "Néstor DelaPaz Ruíz" .
 
-    eo4geo:bbeb045f-7f3f-43b1-b1d0-4b6547f4c989 a boka:Expert ;
-        rdfs:label "Marko Stroef" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
+    eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d a boka:Expert ;
+        rdfs:label "Joris Senn" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
             eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 ;
-        foaf:name "Marko Stroef" .
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:5d985986-5dd8-4794-8ad1-06582ba87ba9 ;
+        foaf:name "Joris Senn" .
 
-    eo4geo:cb71eee3-36f6-4ba3-8af6-439c6530cd19 a boka:Expert ;
-        rdfs:label "Nick Malleson" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
+    eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188 a boka:Expert ;
+        rdfs:label "Alexander Klippel" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
             eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e ;
-        foaf:name "Nick Malleson" .
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4bc0c78f-b9e5-45e2-90ee-1fb74928e768 ;
+        foaf:name "Alexander Klippel" .
 
-    eo4geo:23a979f4-e726-40b9-b751-2335d32e2d94 a boka:Expert ;
+    eo4geo:073d6fc3-3493-442a-a327-6809903067c9 a boka:Expert ;
+        rdfs:label "Eleni Tomai" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:3ed22081-832a-436e-bc7c-c6092adf3793 ;
+        foaf:name "Eleni Tomai" .
+
+    eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1 a boka:Expert ;
+        rdfs:label "Pauline E. W. van den Berg" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b71d2f90-b53e-4fb3-a0ba-b28954a0f84e ;
+        foaf:name "Pauline E. W. van den Berg" .
+
+    eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e a boka:Expert ;
+        rdfs:label "Justine I. Blanford" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:da304e0e-6dce-45ea-8a75-adc358542945 ;
+        foaf:name "Justine I. Blanford" .
+
+    eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02 a boka:Expert ;
+        rdfs:label "Alvaro Lau Sarmiento" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4bc0c78f-b9e5-45e2-90ee-1fb74928e768 ;
+        foaf:name "Alvaro Lau Sarmiento" .
+
+    eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7 a boka:Expert ;
+        rdfs:label "James D. Gaboardi" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:cdd7d2a4-4590-4e20-83df-1ea03c1fe797 ;
+        foaf:name "James D. Gaboardi" .
+
+    eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9 a boka:Expert ;
+        rdfs:label "Reza Arabsheibani" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a ;
+        foaf:name "Reza Arabsheibani" .
+
+    eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3 a boka:Expert ;
+        rdfs:label "Rongbo Xu" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:718ebd41-334f-41e9-a519-0d83c4a2f06e ;
+        foaf:name "Rongbo Xu" .
+
+    eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c a boka:Expert ;
+        rdfs:label "Shaheen Abdulkareem" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:dc7a00b5-0a73-4cf0-bc7a-124aba88606e ;
+        foaf:name "Shaheen Abdulkareem" .
+
+    eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5 a boka:Expert ;
+        rdfs:label "Veronika Peralta" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b45aff79-cfac-4eca-ac59-6b6103502ba1 ;
+        foaf:name "Veronika Peralta" .
+
+    eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0 a boka:Expert ;
+        rdfs:label "Flavia Lopes" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4b7fd41e-4776-44da-ad97-6954f2cdb613 ;
+        foaf:name "Flavia Lopes" .
+
+    eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4 a boka:Expert ;
         rdfs:label "Yannick Oswald" ;
-        boka:authorOf <https://doi.org/10.5194/agile-giss-4-17-2023> ;
-        boka:hasKnowledgeOf eo4geo:AM14-2,
-            eo4geo:CF4-2b,
-            eo4geo:GS1-6,
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
             eo4geo:IP3-13-2,
-            eo4geo:IP3-4-5,
-            eo4geo:IP3-4-7,
-            eo4geo:WB3-6,
-            eo4geo:WB4-3 ;
-        org:memberOf eo4geo:be2a3945-06e6-418f-8bb4-962c1816705e,
-            eo4geo:d4e3b46b-e5fc-4d9a-8f6e-b5bbd4f62be3 ;
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ebb63de7-4cc8-4521-8e84-94e49a0c3fa7 ;
         foaf:name "Yannick Oswald" .
 
-    <https://doi.org/10.5194/agile-giss-4-17-2023> a bibo:Report ;
-        bibo:doi "https://doi.org/10.5194/agile-giss-4-17-2023" .
+    eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8 a boka:Expert ;
+        rdfs:label "Levi Wolf" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:7bac59ff-c8e4-4379-b412-6736e5d4955c ;
+        foaf:name "Levi Wolf" .
+
+    eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899 a boka:Expert ;
+        rdfs:label "Alexander K. A. J. Klippel" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8bb44c1f-af20-4ac3-877f-4ca5706944e9 ;
+        foaf:name "Alexander K. A. J. Klippel" .
+
+    eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa a boka:Expert ;
+        rdfs:label "Enrico Gianluca Caiani" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:e67749ec-4386-4232-ac81-44221df24d77 ;
+        foaf:name "Enrico Gianluca Caiani" .
+
+    eo4geo:36469846-bddb-4f16-9845-55264f46e8d4 a boka:Expert ;
+        rdfs:label "Molly Asher" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ebb63de7-4cc8-4521-8e84-94e49a0c3fa7 ;
+        foaf:name "Molly Asher" .
+
+    eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85 a boka:Expert ;
+        rdfs:label "Justine I. Blanford " ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:a30e9ddc-5b95-48be-bedc-df94a723c3ba ;
+        foaf:name "Justine I. Blanford " .
+
+    eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02 a boka:Expert ;
+        rdfs:label "Katharina Henggeler" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb ;
+        foaf:name "Katharina Henggeler" .
+
+    eo4geo:50f405d5-158a-4023-9fd0-8742375fea83 a boka:Expert ;
+        rdfs:label "Niels Steenbergen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 ;
+        foaf:name "Niels Steenbergen" .
+
+    eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189 a boka:Expert ;
+        rdfs:label "Gudrun Wallentin" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:f95bd5f4-6c47-43e9-b253-5fa6aa557844 ;
+        foaf:name "Gudrun Wallentin" .
+
+    eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d a boka:Expert ;
+        rdfs:label "Ville Mäkinen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:28540f60-9b86-4bd0-b31c-832efef27d1d ;
+        foaf:name "Ville Mäkinen" .
+
+    eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e a boka:Expert ;
+        rdfs:label "Sherif Amer " ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:a30e9ddc-5b95-48be-bedc-df94a723c3ba ;
+        foaf:name "Sherif Amer " .
+
+    eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844 a boka:Expert ;
+        rdfs:label "Jessica Monahan" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Jessica Monahan" .
+
+    eo4geo:616b8739-f474-42a5-9570-a2482155e2aa a boka:Expert ;
+        rdfs:label "Margarita Kokla" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:3ed22081-832a-436e-bc7c-c6092adf3793 ;
+        foaf:name "Margarita Kokla" .
+
+    eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7 a boka:Expert ;
+        rdfs:label "Julia Pille" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Julia Pille" .
+
+    eo4geo:64318868-337e-43f0-9a0f-406b54b68500 a boka:Expert ;
+        rdfs:label "Simon Scheider" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 ;
+        foaf:name "Simon Scheider" .
+
+    eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17 a boka:Expert ;
+        rdfs:label "Forest Irada Ismayilova" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:797acecd-a816-4a1a-9e57-71be73a35c55 ;
+        foaf:name "Forest Irada Ismayilova" .
+
+    eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b a boka:Expert ;
+        rdfs:label "Mahdi Farnaghi" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:e7e34911-539b-4a5c-91e4-fb029447fac7 ;
+        foaf:name "Mahdi Farnaghi" .
+
+    eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59 a boka:Expert ;
+        rdfs:label "Thierry Weber" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb ;
+        foaf:name "Thierry Weber" .
+
+    eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59 a boka:Expert ;
+        rdfs:label "Carmel Verhaeghe" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Carmel Verhaeghe" .
+
+    eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee a boka:Expert ;
+        rdfs:label "Kimia Amoozandeh" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a ;
+        foaf:name "Kimia Amoozandeh" .
+
+    eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c a boka:Expert ;
+        rdfs:label "Nicola Maiani" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:5d985986-5dd8-4794-8ad1-06582ba87ba9 ;
+        foaf:name "Nicola Maiani" .
+
+    eo4geo:76353bba-dcf6-4272-96f0-590f601424d9 a boka:Expert ;
+        rdfs:label "Timon Verduijn" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8bb44c1f-af20-4ac3-877f-4ca5706944e9 ;
+        foaf:name "Timon Verduijn" .
+
+    eo4geo:76736d58-eb21-42fc-91e3-94acc997325a a boka:Expert ;
+        rdfs:label "Qunshan Zhao" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:718ebd41-334f-41e9-a519-0d83c4a2f06e ;
+        foaf:name "Qunshan Zhao" .
+
+    eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3 a boka:Expert ;
+        rdfs:label "Benjamin Brede" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:a51db802-f8ad-4e31-9aae-6dc291b738dd ;
+        foaf:name "Benjamin Brede" .
+
+    eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c a boka:Expert ;
+        rdfs:label "Alexis Comber" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:48646fc3-e5cc-462b-b803-4c433ccd6b0d ;
+        foaf:name "Alexis Comber" .
+
+    eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4 a boka:Expert ;
+        rdfs:label "Raul Zurita Milla" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:e7e34911-539b-4a5c-91e4-fb029447fac7 ;
+        foaf:name "Raul Zurita Milla" .
+
+    eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688 a boka:Expert ;
+        rdfs:label "Adel Al Huraibi" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:a30e9ddc-5b95-48be-bedc-df94a723c3ba ;
+        foaf:name "Adel Al Huraibi" .
+
+    eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f a boka:Expert ;
+        rdfs:label "Sabine Timpf" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:797acecd-a816-4a1a-9e57-71be73a35c55 ;
+        foaf:name "Sabine Timpf" .
+
+    eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54 a boka:Expert ;
+        rdfs:label "Ana Maria Olteanu Raimond" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:03ff2cbf-e523-4d4f-ae35-b51e15613ff1 ;
+        foaf:name "Ana Maria Olteanu Raimond" .
+
+    eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934 a boka:Expert ;
+        rdfs:label "Martin Loidl" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:f95bd5f4-6c47-43e9-b253-5fa6aa557844 ;
+        foaf:name "Martin Loidl" .
+
+    eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837 a boka:Expert ;
+        rdfs:label "Martin Raubal" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb ;
+        foaf:name "Martin Raubal" .
+
+    eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9 a boka:Expert ;
+        rdfs:label "Cyril de Runz" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b45aff79-cfac-4eca-ac59-6b6103502ba1 ;
+        foaf:name "Cyril de Runz" .
+
+    eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f a boka:Expert ;
+        rdfs:label "Marinos Kavouras" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:3ed22081-832a-436e-bc7c-c6092adf3793 ;
+        foaf:name "Marinos Kavouras" .
+
+    eo4geo:ac05d121-364c-4013-a024-5e9d520c4754 a boka:Expert ;
+        rdfs:label "Hendrik Ploeger" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Hendrik Ploeger" .
+
+    eo4geo:acc08859-9684-457b-a971-fa569dd61ba7 a boka:Expert ;
+        rdfs:label "Eric J. Top" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 ;
+        foaf:name "Eric J. Top" .
+
+    eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac a boka:Expert ;
+        rdfs:label "Sidonie Christophe" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2f9eb514-1001-476f-81d7-29075c79f40d ;
+        foaf:name "Sidonie Christophe" .
+
+    eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3 a boka:Expert ;
+        rdfs:label "Dana Kaziyeva" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:f95bd5f4-6c47-43e9-b253-5fa6aa557844 ;
+        foaf:name "Dana Kaziyeva" .
+
+    eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30 a boka:Expert ;
+        rdfs:label "Nan Cui" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:48646fc3-e5cc-462b-b803-4c433ccd6b0d ;
+        foaf:name "Nan Cui" .
+
+    eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6 a boka:Expert ;
+        rdfs:label "Suzan Evers" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b71d2f90-b53e-4fb3-a0ba-b28954a0f84e ;
+        foaf:name "Suzan Evers" .
+
+    eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca a boka:Expert ;
+        rdfs:label "Juha Oksanen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:28540f60-9b86-4bd0-b31c-832efef27d1d ;
+        foaf:name "Juha Oksanen" .
+
+    eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f a boka:Expert ;
+        rdfs:label "Ioanna Stavroulaki" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4b7fd41e-4776-44da-ad97-6954f2cdb613 ;
+        foaf:name "Ioanna Stavroulaki" .
+
+    eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84 a boka:Expert ;
+        rdfs:label "Caroline K. Kioko" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:da304e0e-6dce-45ea-8a75-adc358542945 ;
+        foaf:name "Caroline K. Kioko" .
+
+    eo4geo:b873b807-c337-497c-8c00-f981e4d7beba a boka:Expert ;
+        rdfs:label "Itzhak Benenson" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2e7b8d27-d0ca-4691-823d-e8b430b9bcce ;
+        foaf:name "Itzhak Benenson" .
+
+    eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69 a boka:Expert ;
+        rdfs:label "Phil Hüffer" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:14e2a9f7-c8d0-4b42-a813-ee9720abf47d ;
+        foaf:name "Phil Hüffer" .
+
+    eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678 a boka:Expert ;
+        rdfs:label "Petra Stutz" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:f95bd5f4-6c47-43e9-b253-5fa6aa557844 ;
+        foaf:name "Petra Stutz" .
+
+    eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014 a boka:Expert ;
+        rdfs:label "Vikki Houlden" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:48646fc3-e5cc-462b-b803-4c433ccd6b0d ;
+        foaf:name "Vikki Houlden" .
+
+    eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de a boka:Expert ;
+        rdfs:label "Arnaud Le Guilcher" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:03ff2cbf-e523-4d4f-ae35-b51e15613ff1 ;
+        foaf:name "Arnaud Le Guilcher" .
+
+    eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae a boka:Expert ;
+        rdfs:label "Daniele Oxoli" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2e5582a3-2e2c-4e1e-940d-794f6b3de958 ;
+        foaf:name "Daniele Oxoli" .
+
+    eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748 a boka:Expert ;
+        rdfs:label "Gamze Z. Dane" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b71d2f90-b53e-4fb3-a0ba-b28954a0f84e ;
+        foaf:name "Gamze Z. Dane" .
+
+    eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7 a boka:Expert ;
+        rdfs:label "Stephan Winter" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a ;
+        foaf:name "Stephan Winter" .
+
+    eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e a boka:Expert ;
+        rdfs:label "Kristian Cuervo" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:aca7aaeb-5df3-43de-b8ad-1d047caff7c9 ;
+        foaf:name "Kristian Cuervo" .
+
+    eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218 a boka:Expert ;
+        rdfs:label "Enkhbold Nyamsuren" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 ;
+        foaf:name "Enkhbold Nyamsuren" .
+
+    eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81 a boka:Expert ;
+        rdfs:label "Nick Bearman" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:41a0830e-542c-4ca6-8eb2-94e6daf0cfb3 ;
+        foaf:name "Nick Bearman" .
+
+    eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487 a boka:Expert ;
+        rdfs:label "Yuhao Jiang" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2f9eb514-1001-476f-81d7-29075c79f40d ;
+        foaf:name "Yuhao Jiang" .
+
+    eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f a boka:Expert ;
+        rdfs:label "Genito Maure" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:3c5605e3-4cbf-494b-bd82-8670932304d1 ;
+        foaf:name "Genito Maure" .
+
+    eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e a boka:Expert ;
+        rdfs:label "Haiqi Xu" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ca979045-076b-4a19-8fcc-23c64e5e5f06 ;
+        foaf:name "Haiqi Xu" .
+
+    eo4geo:d342baa3-1743-47d2-be83-0becde1e6253 a boka:Expert ;
+        rdfs:label "Justine Blanford" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:98b4fb94-daf3-4e1c-9142-85e4e0daa15a ;
+        foaf:name "Justine Blanford" .
+
+    eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf a boka:Expert ;
+        rdfs:label "María Jesús Lobo" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2f9eb514-1001-476f-81d7-29075c79f40d ;
+        foaf:name "María Jesús Lobo" .
+
+    eo4geo:daedd74b-6e49-465a-98a3-88a779c29464 a boka:Expert ;
+        rdfs:label "Rosa Aguilar Bolivar" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:d055753d-8831-4578-9c13-c386a3d471ed ;
+        foaf:name "Rosa Aguilar Bolivar" .
+
+    eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75 a boka:Expert ;
+        rdfs:label "Eftychia Koukouraki" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:14e2a9f7-c8d0-4b42-a813-ee9720abf47d ;
+        foaf:name "Eftychia Koukouraki" .
+
+    eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff a boka:Expert ;
+        rdfs:label "Bastiaan van Loenen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Bastiaan van Loenen" .
+
+    eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9 a boka:Expert ;
+        rdfs:label "Huanfa Chen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:ab2c2d10-4516-429f-aabe-6e5f3c57dcb4 ;
+        foaf:name "Huanfa Chen" .
+
+    eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906 a boka:Expert ;
+        rdfs:label "Maria Marinov" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:7c70b2e8-4e9c-4662-a3ac-62d86a118cf5 ;
+        foaf:name "Maria Marinov" .
+
+    eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7 a boka:Expert ;
+        rdfs:label "Jorge Gil" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4b7fd41e-4776-44da-ad97-6954f2cdb613 ;
+        foaf:name "Jorge Gil" .
+
+    eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095 a boka:Expert ;
+        rdfs:label "Noor van Everdingen" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:8a250671-bc88-4e4b-8edf-df88ff9e41bb ;
+        foaf:name "Noor van Everdingen" .
+
+    eo4geo:e5c247fe-355f-4900-8294-349cae563b59 a boka:Expert ;
+        rdfs:label "Theo A. Arentze" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b71d2f90-b53e-4fb3-a0ba-b28954a0f84e ;
+        foaf:name "Theo A. Arentze" .
+
+    eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f a boka:Expert ;
+        rdfs:label "Martin Tomko" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a ;
+        foaf:name "Martin Tomko" .
+
+    eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623 a boka:Expert ;
+        rdfs:label "Adrian Sarbach" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb ;
+        foaf:name "Adrian Sarbach" .
+
+    eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766 a boka:Expert ;
+        rdfs:label "Carolina Pereira Marghidan" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:98b4fb94-daf3-4e1c-9142-85e4e0daa15a ;
+        foaf:name "Carolina Pereira Marghidan" .
+
+    eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34 a boka:Expert ;
+        rdfs:label "Luis Lutnyk" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:1ab618f2-c67b-4636-87e2-63b841a57cdb ;
+        foaf:name "Luis Lutnyk" .
+
+    eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa a boka:Expert ;
+        rdfs:label "Patrick J. Roddy" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4e0a0a3d-1d5b-42e6-a7ab-edb953db9389 ;
+        foaf:name "Patrick J. Roddy" .
+
+    eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78 a boka:Expert ;
+        rdfs:label "Ehsan Hamzei" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:9a9d783c-ce2f-48d5-9b81-17003977e16a ;
+        foaf:name "Ehsan Hamzei" .
+
+    eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e a boka:Expert ;
+        rdfs:label "Raphael Zürcher" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:65042f2e-43c5-476f-9b88-144aee432340 ;
+        foaf:name "Raphael Zürcher" .
+
+    eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb a boka:Expert ;
+        rdfs:label "Jiayan Zhao" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:4bc0c78f-b9e5-45e2-90ee-1fb74928e768 ;
+        foaf:name "Jiayan Zhao" .
+
+    eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724 a boka:Expert ;
+        rdfs:label "Thomas Devogele" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:b45aff79-cfac-4eca-ac59-6b6103502ba1 ;
+        foaf:name "Thomas Devogele" .
+
+    eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6 a boka:Expert ;
+        rdfs:label "Maria Antonia Brovelli" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2e5582a3-2e2c-4e1e-940d-794f6b3de958 ;
+        foaf:name "Maria Antonia Brovelli" .
+
+    eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208 a boka:Expert ;
+        rdfs:label "Lorenzo Gianquintieri" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:e67749ec-4386-4232-ac81-44221df24d77 ;
+        foaf:name "Lorenzo Gianquintieri" .
+
+    eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 a boka:Expert ;
+        rdfs:label "Christos Charcharos" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:3ed22081-832a-436e-bc7c-c6092adf3793 ;
+        foaf:name "Christos Charcharos" .
+
+    eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee a boka:Expert ;
+        rdfs:label "Auriol Degbelo" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:14e2a9f7-c8d0-4b42-a813-ee9720abf47d,
+            eo4geo:2dec6ab6-924f-4fbc-ac3d-10a4f74e9005 ;
+        foaf:name "Auriol Degbelo" .
+
+    eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046 a boka:Expert ;
+        rdfs:label "Nir Fulman" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:2e7b8d27-d0ca-4691-823d-e8b430b9bcce,
+            eo4geo:413c7c47-4b9d-41ce-98f4-5f56c21196ef ;
+        foaf:name "Nir Fulman" .
+
+    eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf a boka:Expert ;
+        rdfs:label "Christophe Jouffrais" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:83be9e8c-dfa5-48cf-a376-68f31097240d,
+            eo4geo:c15b00b1-c300-4a3a-afb4-b03245ffcb7b ;
+        foaf:name "Christophe Jouffrais" .
+
+    eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389 a boka:Expert ;
+        rdfs:label "Raphaël Bres" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:03ff2cbf-e523-4d4f-ae35-b51e15613ff1,
+            eo4geo:b45aff79-cfac-4eca-ac59-6b6103502ba1 ;
+        foaf:name "Raphaël Bres" .
+
+    eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b a boka:Expert ;
+        rdfs:label "Hoda Allahbakhshi" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:5d985986-5dd8-4794-8ad1-06582ba87ba9,
+            eo4geo:9748a706-433a-435b-b6cc-2a6f22cfc4b1 ;
+        foaf:name "Hoda Allahbakhshi" .
+
+    eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e a boka:Expert ;
+        rdfs:label "Ellen Wien Augustijn" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:d055753d-8831-4578-9c13-c386a3d471ed,
+            eo4geo:e7e34911-539b-4a5c-91e4-fb029447fac7 ;
+        foaf:name "Ellen Wien Augustijn" .
+
+    eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1 a boka:Expert ;
+        rdfs:label "Alexandra Georgescu " ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:5d985986-5dd8-4794-8ad1-06582ba87ba9,
+            eo4geo:9748a706-433a-435b-b6cc-2a6f22cfc4b1 ;
+        foaf:name "Alexandra Georgescu " .
+
+    eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda a boka:Expert ;
+        rdfs:label "Anna Brauer" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:28540f60-9b86-4bd0-b31c-832efef27d1d,
+            eo4geo:48d9dd4b-5a14-46a9-97e8-ad571e7f2fb7 ;
+        foaf:name "Anna Brauer" .
+
+    eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566 a boka:Expert ;
+        rdfs:label "Nick Malleson" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:48646fc3-e5cc-462b-b803-4c433ccd6b0d,
+            eo4geo:ebb63de7-4cc8-4521-8e84-94e49a0c3fa7 ;
+        foaf:name "Nick Malleson" .
+
+    eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090 a boka:Expert ;
+        rdfs:label "Maarten van Aalst" ;
+        boka:authorOf <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:hasKnowledgeOf eo4geo:AM13-2,
+            eo4geo:CF2-2,
+            eo4geo:CF5-4b,
+            eo4geo:CV2-1,
+            eo4geo:CV4-4,
+            eo4geo:DM2-4,
+            eo4geo:DM4,
+            eo4geo:DM4-6,
+            eo4geo:GD4,
+            eo4geo:GD4-1,
+            eo4geo:IP3-13-2,
+            eo4geo:TA11-5,
+            eo4geo:TA12-10 ;
+        org:memberOf eo4geo:31970a3f-340d-4f5f-b318-b0de6aefb81e,
+            eo4geo:58c8d8cc-1691-4a2f-b8f5-580daf52622a,
+            eo4geo:98b4fb94-daf3-4e1c-9142-85e4e0daa15a ;
+        foaf:name "Maarten van Aalst" .
+
+    eo4geo:AM13-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:CF2-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:CF5-4b boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:CV2-1 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:CV4-4 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:DM2-4 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:DM4 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:DM4-6 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:GD4 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:GD4-1 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:IP3-13-2 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:TA11-5 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    eo4geo:TA12-10 boka:describedIn <https://doi.org/10.5194/agile-giss-4-32-2023> ;
+        boka:personWithKnowledge eo4geo:00a7c881-765c-47e1-935b-a6cfb314686c,
+            eo4geo:04d646a6-3ce5-409a-89bf-f9bd63bacce1,
+            eo4geo:053576f6-3b83-4a2c-86e3-364451d3a44d,
+            eo4geo:061863ca-56f0-46ba-8ba4-27e6244f8188,
+            eo4geo:073d6fc3-3493-442a-a327-6809903067c9,
+            eo4geo:0cc8374f-2cb5-482d-982e-b552b836a3c1,
+            eo4geo:0de195dc-cf44-4a2c-ae7a-1a3486b36b4e,
+            eo4geo:0e2ceda3-2f6a-4974-a4a3-bdcd9025ad02,
+            eo4geo:1033f08e-1e44-4dce-a670-65bf8fd1f1f7,
+            eo4geo:136b5381-9992-41ca-b142-bf7a35f783a9,
+            eo4geo:171e2338-d340-43ec-baf3-aa29ae52eac3,
+            eo4geo:1a7a238d-2996-46ed-b3e0-ed6fe72aed8c,
+            eo4geo:1ee5bdaa-b3be-41fc-bce9-ed55fafadef5,
+            eo4geo:24b4f6b1-23d9-4508-afab-17afea61efc0,
+            eo4geo:2814bff6-9847-4ea4-9c7f-1d4b6420edb4,
+            eo4geo:2c343d92-3ca0-4c8a-a050-5ec0e27d70b8,
+            eo4geo:2d2d9194-b4b0-41e5-9249-14b32a616899,
+            eo4geo:2f290feb-b9a3-4b93-89a2-e1743c3adcfa,
+            eo4geo:2ffd8bee-a6e5-45b6-bd8f-854bb6d4a1ee,
+            eo4geo:36469846-bddb-4f16-9845-55264f46e8d4,
+            eo4geo:46c254c1-ebcb-4ddc-b73a-4a8688129c85,
+            eo4geo:49730e69-2d69-4cf5-b202-81f704aefc02,
+            eo4geo:50f405d5-158a-4023-9fd0-8742375fea83,
+            eo4geo:53aab5af-2fa6-4d76-8277-b36cf4638189,
+            eo4geo:53c304c0-857a-4e84-b019-90c327c85e1d,
+            eo4geo:5a12ea0d-e2b4-4dc6-87f1-a43aaebdcc0e,
+            eo4geo:5b237664-8d50-4d47-9d72-77e9f21ac844,
+            eo4geo:616b8739-f474-42a5-9570-a2482155e2aa,
+            eo4geo:625a9fdc-8964-4c95-bde7-0b4c945ddfb7,
+            eo4geo:64318868-337e-43f0-9a0f-406b54b68500,
+            eo4geo:6443edf1-ab3b-4bca-a2ab-4c89fb1b7f17,
+            eo4geo:6725096e-e8b4-4a22-8d34-d25d4c4d723b,
+            eo4geo:6a59b71d-becb-493d-b1fb-013c3aab9e59,
+            eo4geo:6b2ce127-17ae-4060-823d-aad83d908d59,
+            eo4geo:6da77cbe-cf86-4436-a53d-2431894e56ee,
+            eo4geo:723dd997-5b8d-49ad-b89c-95352a43557c,
+            eo4geo:74fce5cc-f649-45ea-9005-6deca96c3046,
+            eo4geo:76353bba-dcf6-4272-96f0-590f601424d9,
+            eo4geo:76736d58-eb21-42fc-91e3-94acc997325a,
+            eo4geo:7f4f685f-d405-4adc-a3ba-17a0ac6baebf,
+            eo4geo:820f0998-b10b-4dd0-9630-74bcdebb2389,
+            eo4geo:82c9dfcf-5161-48b1-ba6b-0de71b1082f3,
+            eo4geo:878d1ed7-94d5-4b7e-aff5-47d46f5f4d1c,
+            eo4geo:8a0989ed-d005-473c-9cb9-8765d48d92b4,
+            eo4geo:8be58327-a3da-4193-a2c8-4b5484c08688,
+            eo4geo:910d3e5a-400d-4752-91ff-311e2832f88f,
+            eo4geo:91c08c2b-7d4d-4670-af3c-1ceb4cc8cf54,
+            eo4geo:9dabcb33-1d33-407c-87d9-ed84055c6934,
+            eo4geo:a163d0ce-fff1-4de0-b217-0ae66e218837,
+            eo4geo:a3652fc3-114a-4fb6-9056-8c3c8331d9e9,
+            eo4geo:a6b107c9-f97f-4c4d-96a3-34c183be111f,
+            eo4geo:ac05d121-364c-4013-a024-5e9d520c4754,
+            eo4geo:acc08859-9684-457b-a971-fa569dd61ba7,
+            eo4geo:ad4d7b5c-92cf-47fe-a32f-31c4a5f284ac,
+            eo4geo:b127d59a-2652-4b01-a1c1-79c2c3f69fe3,
+            eo4geo:b1473579-6a6b-4aa6-b0e7-da09444bba30,
+            eo4geo:b4480f59-74ae-4b99-9de9-12bd9e5a6de6,
+            eo4geo:b4c8f642-d903-4925-9d2f-6251a9a75aca,
+            eo4geo:b6a0215e-b992-452a-9ce4-8e2c54fba73f,
+            eo4geo:b7812cd8-e505-4e17-a6f8-f65440058a84,
+            eo4geo:b873b807-c337-497c-8c00-f981e4d7beba,
+            eo4geo:ba52552f-da26-43e8-b98f-7697a4b7ff69,
+            eo4geo:bb1c8ac0-f461-4244-9340-0f4bf9c33678,
+            eo4geo:c09b9ca0-2114-44b3-87e2-39a68532fa6b,
+            eo4geo:c2dc6d84-5588-4904-9907-42f1cb77a014,
+            eo4geo:c5584470-db98-4fc6-aed4-afb6d7c7a9de,
+            eo4geo:c71ec978-7f02-47d0-9ecf-0f36b41847ae,
+            eo4geo:c98692a1-8ade-4aff-8b92-a656afb27748,
+            eo4geo:cc4b13d2-6122-453f-90e4-5ce15ba4a8a7,
+            eo4geo:cce5a8db-782d-4d6f-9108-0e21238c4a5e,
+            eo4geo:cf2b348c-96aa-4e90-beb2-55a4468d173e,
+            eo4geo:cfb641d2-c28f-45ae-9d53-adee45e26218,
+            eo4geo:d07e94e3-c723-47da-baa4-fb9b54778b81,
+            eo4geo:d1f1809d-3a2c-4c7d-8d33-c60713e38487,
+            eo4geo:d2607fd1-a176-4202-8789-70845fc0d17f,
+            eo4geo:d26c2c96-d0c0-4dbf-b646-1bfa886eda4e,
+            eo4geo:d342baa3-1743-47d2-be83-0becde1e6253,
+            eo4geo:d6efe97d-c7c0-4e47-b4c6-e8acf38006bf,
+            eo4geo:daedd74b-6e49-465a-98a3-88a779c29464,
+            eo4geo:dca9368e-3a9f-4f52-8a1c-2cc9d83ca090,
+            eo4geo:dd934136-1cd4-4d8a-b969-532395da2f75,
+            eo4geo:ded45942-a20f-44e8-8a8e-e35f7933ddc1,
+            eo4geo:dffac724-7c1e-4490-aadd-be1171ec10ff,
+            eo4geo:e2f5365c-0d38-49b8-8f0f-aea6c3dc67f9,
+            eo4geo:e33d18d8-cd69-4088-9e32-97fe4fa6e906,
+            eo4geo:e4a62395-03fd-4f22-8803-983bc6a665c7,
+            eo4geo:e4e855b8-3559-47a5-8d9a-f4b7a932a095,
+            eo4geo:e5c247fe-355f-4900-8294-349cae563b59,
+            eo4geo:e5c5d592-4a69-464b-b477-3c126856c48f,
+            eo4geo:e5e00304-e7ea-4038-b50c-d3550fa1b623,
+            eo4geo:ec76f896-1354-43b9-ad59-53f2cfeb1766,
+            eo4geo:ed86cb29-ab6e-4ad4-b07c-885f26132a34,
+            eo4geo:eee61b75-082f-4fbc-9870-c01990419ffa,
+            eo4geo:ef37fbf8-c02c-4523-8aaf-998672855b78,
+            eo4geo:f4fedcf6-f439-4d5c-8dca-73112ff1ce1e,
+            eo4geo:f52fd78e-cfb0-4204-849e-31efd875f3fb,
+            eo4geo:f861f52a-8eee-4d38-9624-3586009c3dda,
+            eo4geo:f8ce6649-0a75-4ef2-924d-806b61fb8566,
+            eo4geo:f998c7ef-5eca-49e5-982c-d35c68cdc724,
+            eo4geo:fc0472de-38e3-47ec-8fa1-4f39cf4387d6,
+            eo4geo:ff45e7f0-d04c-4748-b4c9-9de3964fd208,
+            eo4geo:ffb79aa3-36b3-4a7a-8bac-5ed8326c88e7 .
+
+    <https://doi.org/10.5194/agile-giss-4-32-2023> a bibo:Report ;
+        bibo:doi "https://doi.org/10.5194/agile-giss-4-32-2023" .
 }
 
