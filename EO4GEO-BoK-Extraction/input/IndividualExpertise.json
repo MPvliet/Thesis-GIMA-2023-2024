@@ -48,10 +48,10 @@
   {
     "doi": "https://doi.org/10.5194/agile-giss-4-13-2023",
     "authors": [
-      "Eleni Tomai\uf8d21",
-      "Margarita Kokla\uf8d21",
+      "Eleni Tomai\u8d21",
+      "Margarita Kokla\u8d21",
       "Christos Charcharos1",
-      "Marinos Kavouras\uf8d21"
+      "Marinos Kavouras\u8d21"
     ],
     "organisations": [
       "1School of Rural, Surveying and Geoinformatics Engineering, National Technical University of Athens, Athens, Greece"
@@ -76,8 +76,8 @@
       "Carmel Verhaeghe1"
     ],
     "organisations": [
-      "1Faculty of Architecture and the Built Environment, Delft University of Technology, Delft, the Netherlands",
-      "2Faculty of Aerospace Engineering, Delft University of Technology, Delft, the Netherlands"
+      "1 Faculty of Architecture and the Built Environment, Delft University of Technology, Delft, the Netherlands",
+      "2 Faculty of Aerospace Engineering, Delft University of Technology, Delft, the Netherlands"
     ],
     "concepts": [
       "Publishing open data",
@@ -117,7 +117,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-4-16-2023",
     "authors": ["Adel Al Huraibi1", "Sherif Amer 1", "Justine I. Blanford 1"],
     "organisations": [
-      "1Faculty of Geo Information Science and Earth Observation \u2013 ITC, University of Twente, Enschede, The Netherlands"
+      "1 Faculty of Geo Information Science and Earth Observation \u2013 ITC, University of Twente, Enschede, The Netherlands"
     ],
     "concepts": [
       "Standards for Spatial Data Modeling",
@@ -175,24 +175,10 @@
       "Shaheen Abdulkareem2"
     ],
     "organisations": [
-      "1Department of Geoinformation Processing (GIP), University of Twente, Enschede, The Netherlands",
-      "2Department of computer science, University of Duhok, Duhok, Iraq"
+      "1 Department of Geoinformation Processing ( GIP ), University of Twente, Enschede, The Netherlands",
+      "2 Department of computer science, University of Duhok, Duhok, Iraq"
     ],
     "concepts": ["Machine learning"]
-  },
-  {
-    "doi": "https://doi.org/10.5194/agile-giss-4-2-2023",
-    "authors": [
-      "Reza Arabsheibani1",
-      "Ehsan Hamzei1",
-      "Kimia Amoozandeh1",
-      "Stephan Winter1",
-      "Martin Tomko1"
-    ],
-    "organisations": [
-      "1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia"
-    ],
-    "concepts": ["Area", "Topological relationships", "Space"]
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-4-20-2023",
@@ -242,7 +228,7 @@
       "Alexis Comber1"
     ],
     "organisations": [
-      "1School of Geography, University of Leeds, Leeds, United Kingdom"
+      "1 School of Geography, University of Leeds, Leeds, United Kingdom"
     ],
     "concepts": [
       "Space-time dynamics",
@@ -276,11 +262,11 @@
     "doi": "https://doi.org/10.5194/agile-giss-4-24-2023",
     "authors": [
       "Suzan Evers1",
-      "Gamze Z. Dane1",
-      "Pauline E. W. van den Berg1",
-      "Alexander K. A. J. Klippel2",
+      "Gamze Z. Dane 1",
+      "Pauline E. W. van den Berg 1",
+      "Alexander K. A. J. Klippel 2",
       "Timon Verduijn2",
-      "Theo A. Arentze1"
+      "Theo A. Arentze 1"
     ],
     "organisations": [
       "1Department of the Built Environment, Eindhoven University of Technology, Eindhoven, The Netherlands",
@@ -309,11 +295,11 @@
       "Lorenzo Gianquintieri1",
       "Daniele Oxoli2",
       "Enrico Gianluca Caiani1",
-      "Maria Antonia Brovelli2"
+      "Maria Antonia Brovelli 2"
     ],
     "organisations": [
-      "1Department of Electronics, Information and Bioengineering, Polytechnic University of Milan, Milan, Italy",
-      "2Department of Civil and Environmental Engineering, Polytechnic University of Milan, Milan, Italy"
+      "1 Department of Electronics, Information and Bioengineering, Polytechnic University of Milan, Milan, Italy",
+      "2 Department of Civil and Environmental Engineering, Polytechnic University of Milan, Milan, Italy"
     ],
     "concepts": [
       "Monitor urban areas",
@@ -402,7 +388,7 @@
       "Martin Loidl1"
     ],
     "organisations": [
-      "1Department of Geoinformatics, Paris Lodron University of Salzburg, Salzburg, Austria"
+      "1 Department of Geoinformatics, Paris Lodron University of Salzburg, Salzburg, Austria"
     ],
     "concepts": [
       "Agent-based modelling",
@@ -417,7 +403,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-4-31-2023",
     "authors": ["Caroline K. Kioko1", "Justine I. Blanford1"],
     "organisations": [
-      "1Geo Information Science and Earth Observation (ITC, University of Twente, Enschede, Netherlands)"
+      "1 Geo Information Science and Earth Observation (ITC, University of Twente, Enschede, Netherlands)"
     ],
     "concepts": ["Spatial sampling for statistical analysis"]
   },
@@ -441,6 +427,445 @@
       "Data quality",
       "Data Quality, Metadata and Data Infrastructure",
       "Model based interoperability, model transformations"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-34-2023",
+    "authors": ["Nikita Murin1", "Alexander Kmoch 2", "Evelyn Uuemaa 2"],
+    "organisations": [
+      "1 Estonian Land Board, Tartu, Estonia",
+      "2 Department of Geography, University of Tartu, Tartu, Estonia"
+    ],
+    "concepts": [
+      "Image processing and analysis",
+      "Machine learning",
+      "Physical-model based analysis",
+      "Spatial resolution",
+      "Map algebra",
+      "Object-based image analysis (OBIA)",
+      "Remote sensing"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-35-2023",
+    "authors": ["Per Ola Olsson1", "Hugo Bergman1", "Karl Piltz1"],
+    "organisations": [
+      "1Department of Physical Geography and Ecosystem Science, Lund University, Lund, Sweden"
+    ],
+    "concepts": [
+      "Area",
+      "Normalized Difference Vegetation Index (NDVI)",
+      "Land cover maps"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-36-2023",
+    "authors": ["Innocensia Owuor1", "Hartwig H. Hochmair1"],
+    "organisations": [
+      "1Fort Lauderdale Research and Education Center, Geomatics Sciences, University of Florida, Florida, USA"
+    ],
+    "concepts": []
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-37-2023",
+    "authors": [
+      "Niloufar Pourshir Sefidircid1",
+      "Amin Shoari Nejad or1",
+      "Peter Mooney or2"
+    ],
+    "organisations": [
+      "1Hamilton Institute, Maynooth University, Kildare, Ireland",
+      "2Department of Computer Science, Maynooth University, Kildare, Ireland"
+    ],
+    "concepts": ["Data Quality, Metadata and Data Infrastructure"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-2-2023",
+    "authors": [
+      "Reza Arabsheibani1",
+      "Ehsan Hamzei1",
+      "Kimia Amoozandeh1",
+      "Stephan Winter1",
+      "Martin Tomko1"
+    ],
+    "organisations": [
+      "1Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia"
+    ],
+    "concepts": ["Area", "Topological relationships", "Space"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-3-2023",
+    "authors": [
+      "Rapha\u00ebl Bres1,2",
+      "Veronika Peralta1",
+      "Arnaud Le Guilcher2",
+      "Thomas Devogele1",
+      "Ana Maria Olteanu Raimond2",
+      "Cyril de Runz1"
+    ],
+    "organisations": [
+      "1Univ de Tours, LIFAT, BDTLN, Blois, France",
+      "2Univ Gustave Eiffel, ENSG, IGN, LASTIG, F 94160 Saint Mand\u00e9, France"
+    ],
+    "concepts": [
+      "Image data quality",
+      "Information-as-data-interpretation",
+      "Data quality",
+      "Data Quality, Metadata and Data Infrastructure",
+      "Data quality standards"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-38-2023",
+    "authors": ["Denis Reiter1", "Mathias Jehling1", "Robert Hecht1"],
+    "organisations": [
+      "1Leibniz Institute of Ecological Urban and Regional Development, Dresden, Germany"
+    ],
+    "concepts": [
+      "Data Quality, Metadata and Data Infrastructure",
+      "Data Collection",
+      "Information-as-data-interpretation"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-39-2023",
+    "authors": ["Qilin Ren1", "Pengxiang Zhao1", "Ali Mansourian1"],
+    "organisations": [
+      "1Department of Physical Geography and Ecosystem Science, Lund University, Lund, Sweden"
+    ],
+    "concepts": [
+      "Machine learning",
+      "Artificial Neural Networks",
+      "Experimental learning",
+      "Data Quality, Metadata and Data Infrastructure",
+      "GIS and T teaching and learning methods"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-4-2023",
+    "authors": ["Ioannis Dardavesis1", "Edward Verbree1", "Azarakhsh Rafiee1"],
+    "organisations": [
+      "1GIS technology, Section Digital Technologies, Department Architectural Engineering + Technology, Faculty of Architecture and the Built Environment, Delft University of Technology"
+    ],
+    "concepts": ["Point clouds", "Image data quality"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-40-2023",
+    "authors": [
+      "Simon Schr\u00f6der1",
+      "Jan Stenkamp1",
+      "Michael Br\u00fcggemann1",
+      "Benjamin Karic1",
+      "Judith A. Verstegen2",
+      "Christian Kray1"
+    ],
+    "organisations": [
+      "1Institute for Geoinformatics, University of Muenster, Muenster, Germany",
+      "2Department of Human Geography and Spatial Planning, Utrecht University, Utrecht, The Netherlands"
+    ],
+    "concepts": []
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-41-2023",
+    "authors": [
+      "Angela Schwering1",
+      "Jakub Krukar1",
+      "Jana Seep1",
+      "Yousef Qamaz1"
+    ],
+    "organisations": [
+      "1 Institute for Geoinformatics, University of Muenster, Muenster, Germany"
+    ],
+    "concepts": []
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-42-2023",
+    "authors": [
+      "Meilin Shi1",
+      "Kitty Currier2",
+      "Zilong Liu1",
+      "Krzysztof Janowicz1,2",
+      "Nina Wiedemann3",
+      "Judith Verstegen4",
+      "Grant McKenzie5",
+      "Anita Graser6",
+      "Rui Zhu7",
+      "Gengchen Mai8"
+    ],
+    "organisations": [
+      "1Department of Geography and Regional Research, University of Vienna, Austria",
+      "2Department of Geography, University of California, Santa Barbara, USA",
+      "3Institute of Cartography and Geoinformation, ETH Zurich, Switzerland",
+      "4Department of Human Geography and Spatial Planning, Utrecht University, the Netherlands",
+      "5Department of Geography, McGill University, Canada",
+      "6AIT Austrian Institute of Technology, Austria",
+      "7School of Geographical Sciences, University of Bristol, UK",
+      "8Department of Geography, University of Georgia, USA"
+    ],
+    "concepts": [
+      "Machine learning",
+      "Elements of geographic information",
+      "Imperfections in geographic information",
+      "Data Quality, Metadata and Data Infrastructure",
+      "Temporal resolution"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-43-2023",
+    "authors": ["Tahmin Sitab1", "Oleksandr Karasov1,2", "Alexander Kmoch1"],
+    "organisations": [
+      "1Department of Geography, Institute of Ecology and Earth Sciences, University of Tartu, Tartu, Estonia",
+      "2Department of Geosciences and Geography, University of Helsinki, Helsinki, Finland"
+    ],
+    "concepts": [
+      "Area",
+      "Users in news & media",
+      "Social Media Geographic Information"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-44-2023",
+    "authors": [
+      "Renato Stopic1",
+      "Eduardo Dias1",
+      "Maurice de Kleijn2",
+      "Eric Koomen1"
+    ],
+    "organisations": [
+      "1Spinlab, Department of Spatial Economics, Vrije Universiteit Amsterdam, the Netherlands",
+      "2Netherlands eScience Centre, Amsterdam, the Netherlands"
+    ],
+    "concepts": ["Time series analysis"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-45-2023",
+    "title": "Mapping Logistics Development in the Netherlands",
+    "authors": [
+      "Apeksha Tare1",
+      "Merten Nefs2",
+      "Eric Koomen1",
+      "Erik Verhoef1"
+    ],
+    "organisations": [
+      "1Department of Spatial Economics, Vrije Universiteit, Amsterdam, The Netherlands",
+      "2Erasmus Centre for Urban, Port and Transport Economics, Erasmus University, Rotterdam, The Netherlands"
+    ],
+    "correspondence": "Apeksha Tare (a.tare@vu.nl)",
+    "concepts": ["Monitor urban areas", "Users in infrastructure & transport"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-46-2023",
+    "authors": ["Nils B. Tjaden\\uf8d21", "Justine I. Blanford\\uf8d21"],
+    "organisations": [
+      "1 Department of Earth Observation Science, Faculty of Geo Information Science and Earth Observation\u2013ITC, University of Twente, Enschede, Netherlands"
+    ],
+    "concepts": [
+      "Federal and national government organizations",
+      "Data sources for mapping",
+      "Image data quality",
+      "Data storage",
+      "Data processing",
+      "Web application Frameworks and Geoportal frameworks",
+      "Web Application development elements",
+      "Data quality",
+      "Data Quality, Metadata and Data Infrastructure",
+      "Users in health care",
+      "Data quality standards",
+      "Spatial Data Infrastructures"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-47-2023",
+    "authors": [
+      "Sibe van den Beukel 1",
+      "Edward Verbree 1",
+      "Peter van Oosterom 1"
+    ],
+    "organisations": [
+      "1 Delft University of Technology, P.O. Box 5043, 2600 GA Delft, The Netherlands"
+    ],
+    "concepts": [
+      "Data processing",
+      "Data and information access service (DIAS)",
+      "Information-as-data-interpretation",
+      "Data Quality, Metadata and Data Infrastructure",
+      "Network models"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-48-2023",
+    "authors": [
+      "Arne Vogt1",
+      "Johannes Flacke2",
+      "Karin Pfeffer2",
+      "Fenna Imara Hoefsloot2",
+      "Jane Strugar Kolesnik3",
+      "Johannes Schnell1"
+    ],
+    "organisations": [
+      "1 52\u00b0North Spatial Information Research GmbH, M\u00fcnster, Germany",
+      "2 Faculty of Geo Information Science and Earth Observation (ITC), University of Twente, Enschede, the Netherlands",
+      "3 Disability Studies in Nederland, Utrecht, the Netherlands"
+    ],
+    "concepts": [
+      "Standards for Spatial Data Modeling",
+      "Proprietary and open source software",
+      "Web services",
+      "Web map making",
+      "Web Application development elements",
+      "Integrating data from OGC web services"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-49-2023",
+    "authors": ["Robert L. Vo\u00fbte1,2", "Hessel Prins2", "Bart Peter Smit2"],
+    "organisations": [
+      "1 Delft University of Technology, Department Architectural Engineering & Technology, Delft, The Netherlands",
+      "2 CGI Netherlands BV, Department of Geo ICT, Rotterdam, The Netherlands"
+    ],
+    "concepts": [
+      "Data storage",
+      "Data processing",
+      "Proprietary and open source software",
+      "Data quality",
+      "Data Quality, Metadata and Data Infrastructure",
+      "Digital Frame Camera"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-5-2023",
+    "authors": [
+      "Simon Gro\u00df1",
+      "Benjamin Herfort \ufffd1,2",
+      "Sabrina Marx1",
+      "Alexander Zipf1,2"
+    ],
+    "organisations": [
+      "1Heidelberg Institute for Geoinformation Technology, 69120 Heidelberg, Germany",
+      "2GIScience Chair, Institute of Geography, Heidelberg University, 69120 Heidelberg, Germany"
+    ],
+    "concepts": [
+      "Publishing open data",
+      "Image data quality",
+      "Open data",
+      "Spatial distribution",
+      "Visual interpretation",
+      "Citizens and volunteered geographic information",
+      "Information-as-data-interpretation",
+      "Data quality",
+      "Data quality standards"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-50-2023",
+    "authors": ["Yiyu Wang1", "Jiaqi Ge1", "Alexis Comber1"],
+    "organisations": [
+      "1School of Geography, University of Leeds, Leeds, United Kingdom"
+    ],
+    "concepts": [
+      "Agent-based modelling",
+      "Information-as-meaning",
+      "Information-as-thing"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-51-2023",
+    "authors": ["Laura Wenclik1", "Guillaume Touya \ufffd1"],
+    "organisations": [
+      "1LASTIG, Univ Gustave Eiffel, IGN ENSG, F 77420 Champs sur Marne, France"
+    ],
+    "concepts": [
+      "REST web services",
+      "Web services",
+      "Web map making",
+      "Data Collection"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-52-2023",
+    "authors": ["Ren\u00e9 Westerholt1"],
+    "organisations": [
+      "1Department of Spatial Planning, TU Dortmund University, Dortmund, Germany"
+    ],
+    "concepts": [
+      "Data Quality, Metadata and Data Infrastructure",
+      "Spatial statistics",
+      "Point pattern analysis"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-53-2023",
+    "authors": [
+      "Hendrik M. W\u00fcrz1,2",
+      "Kevin Kocon1,2",
+      "Barbara Pedretscher3",
+      "Eva Klien1",
+      "Eva Eggeling4"
+    ],
+    "organisations": [
+      "1Fraunhofer Institute for Computer Graphics Research IGD, Fraunhoferstra\u00dfe 5, Darmstadt, Germany",
+      "2Technical University of Darmstadt, Karolinenplatz 5, Darmstadt, Germany",
+      "3Fraunhofer Austria Research GmbH, KI4LIFE, Lakeside B13a, 9020 Klagenfurt, Austria",
+      "4Fraunhofer Austria Research GmbH, Visual Computing, Inffeldgasse 16c, 8010 Graz, Austria"
+    ],
+    "concepts": [
+      "Remote sensing",
+      "Data processing",
+      "History of remote sensing sensors",
+      "Processing levels of optical data"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-6-2023",
+    "authors": ["Kr\u00fcgel , Falko 1", "M\u00e4s , Stephan 1"],
+    "organisations": [
+      "1 Chair of Geoinformatics , Technische Universit\u00e4t Dresden , Germany"
+    ],
+    "concepts": [
+      "Application development via Web services composition",
+      "Application development via Data Integration",
+      "Information-as-data-interpretation",
+      "Users in health care",
+      "Scale space analysis",
+      "User interface and Usability"
+    ]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-7-2023",
+    "authors": ["Paul Mattes1", "Rico Richter2", "J\u00fcrgen D\u00f6llner1"],
+    "organisations": [
+      "1University of Potsdam, Digital Engineering Faculty, Hasso Plattner Institute, Potsdam",
+      "2University of Potsdam, Digital Engineering Faculty, Potsdam"
+    ],
+    "concepts": ["Point clouds", "Data sources for mapping"]
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-8-2023",
+    "authors": [
+      "Vasileios Milias1",
+      "Shahin Sharifi Noorian2",
+      "Alessandro Bozzon1",
+      "Achilleas Psyllidis1"
+    ],
+    "organisations": [
+      "1Faculty of Industrial Design Engineering, Delft University of Technology, Delft, The Netherlands",
+      "2Faculty of Electrical Engineering, Mathematics, and Computer Science, Delft University of Technology, Delft, The Netherlands"
+    ],
+    "concepts": []
+  },
+  {
+    "doi": "https://doi.org/10.5194/agile-giss-4-9-2023",
+    "authors": ["Eva Nuhn1", "Kai Hamburger2", "Sabine Timpf1"],
+    "organisations": [
+      "1Geoinformatics Group, University of Augsburg, Augsburg, Germany",
+      "2Department of Psychology, Experimental Psychology and Cognitive Science, Justus Liebig University, Giessen, Germany"
+    ],
+    "concepts": [
+      "Monitor urban areas",
+      "Land surveying and field data collection",
+      "Information-as-data-interpretation",
+      "Area",
+      "Data Collection"
     ]
   }
 ]

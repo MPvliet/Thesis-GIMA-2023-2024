@@ -63,10 +63,10 @@ def parseIndividualExpertiseIntoRDF():
 
   #Create uniqueAuthorDict with all necessarily information to make RDF triples
   for expertise in indivudalExpertise:
+    print(expertise['doi'])
     for author in expertise['authors']:
       if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
         authorName = re.match(r'^(.*?)\d', author).group(1)
-        print(authorName)
         authorOrgNumberList = re.findall(r'\d+', author)
         authorOrgNumberListStr = [str(number) for number in authorOrgNumberList]
         if authorName not in uniqueAuthorDict:
@@ -86,7 +86,6 @@ def parseIndividualExpertiseIntoRDF():
                 'organisationURI': str(uuid.uuid4())
               }
       else:
-        print(expertise)
         authorName = author
         authorOrgNumberListStr = ['1']
         if authorName not in uniqueAuthorDict:
@@ -109,20 +108,22 @@ def parseIndividualExpertiseIntoRDF():
         if orgDict['organisationName'] in uniqueOrganisationDict:
           orgDict['organisationURI'] = uniqueOrganisationDict[orgDict['organisationName']]['organisationURI']
     
-  print(uniqueAuthorDict)
-  doi = expertise['doi']
-  concepts = expertise['concepts']
+    print(uniqueAuthorDict)
+    doi = expertise['doi']
+    concepts = expertise['concepts']
 
-  doiURI = URIRef('{}'.format(doi))
-  for concept in concepts:
-    conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
-
-    #link document to EO4GEO concept
-    g.add((conceptURI, boka.describedIn, doiURI))
-
+    doiURI = URIRef('{}'.format(doi))
     #create document class
     g.add((doiURI, rdf.type, bibo.Report))
     g.add((doiURI, bibo.doi, Literal(doi)))
+    
+    for concept in concepts:
+      conceptURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/', conceptDict[concept]['id']))
+
+      #link document to EO4GEO concept
+      g.add((conceptURI, boka.describedIn, doiURI))
+
+
     
 
   #create Expert class and Organisation class
