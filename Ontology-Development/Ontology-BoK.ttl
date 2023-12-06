@@ -8,6 +8,7 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix boka: <http://example.org/BOKA/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obok: <http://example.org/OBOK#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix schema: <https://schema.org/> .
@@ -17,7 +18,7 @@
 <http://example.org/OBOK> rdf:type owl:Ontology ;
                            dce:creator "Mark van Vliet"@en ;
                            dce:date "2023-11-04" ;
-                           dce:description <https://github.com/MPvliet/Ontology-Development/blob/main/OverviewOfClassesAndProperties.drawio.png?raw=true> ,
+                           dcterms:description <https://github.com/MPvliet/Ontology-Development/blob/main/OverviewOfClassesAndProperties.drawio.png?raw=true> ,
                                            "An upper ontology to describe the semantics of bodies of knowledge in general."@en ;
                            dce:title "Ontology for Bodies of Knowledge"@en ;
                            owl:versionInfo 0.1 .
@@ -44,15 +45,7 @@ dce:creator rdf:type owl:AnnotationProperty ;
 dce:date rdf:type owl:AnnotationProperty ;
          rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601."@en-us ;
          rdfs:label "Date"@en-us ;
-         rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> ;
          skos:definition "A point or period of time associated with an event in the lifecycle of the resource."@en-us .
-
-
-###  http://purl.org/dc/elements/1.1/description
-dce:description rdf:type owl:AnnotationProperty ;
-                rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en-us ;
-                rdfs:label "Description"@en-us ;
-                skos:definition "An account of the resource."@en-us .
 
 
 ###  http://purl.org/dc/elements/1.1/rights
@@ -76,7 +69,6 @@ dcterms:description rdf:type owl:AnnotationProperty ;
                     rdfs:label "Description"@en-us ;
                     skos:definition "An account of the resource."@en-us ;
                     skos:scopeNote "Used to describe a bibliographic resource."@en ;
-                    rdfs:subPropertyOf dce:description ;
                     rdfs:range rdfs:Literal ;
                     rdfs:domain owl:Thing .
 
@@ -89,7 +81,6 @@ dcterms:issued rdf:type owl:AnnotationProperty .
 rdfs:isDefinedBy rdfs:comment "The defininition of the subject resource." ;
                  rdfs:isDefinedBy rdfs: ;
                  rdfs:label "isDefinedBy" ;
-                 rdfs:subPropertyOf rdfs:seeAlso ;
                  rdfs:range <http:example.org/OBOK/BodyOfKnowledge> ;
                  rdfs:domain owl:Thing .
 
@@ -101,13 +92,6 @@ rdfs:label rdfs:comment "A human-readable name for the subject." ;
            rdfs:range rdfs:Literal ;
            rdfs:domain rdfs:Resource ,
                        owl:Thing .
-
-
-###  http://www.w3.org/2000/01/rdf-schema#seeAlso
-rdfs:seeAlso rdfs:comment "Further information about the subject resource." ;
-             rdfs:isDefinedBy rdfs: ;
-             rdfs:label "seeAlso" ;
-             rdfs:domain owl:Thing .
 
 
 ###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
@@ -427,27 +411,25 @@ schema:dateModified rdf:type owl:DatatypeProperty ;
 ###  http://example.org/BOKA/Expert
 boka:Expert rdf:type owl:Class ;
             rdfs:subClassOf foaf:Person ;
-            dce:description "A person who has shown to hold expertise of a concept within a Body of Knowledge."@en ;
+            dcterms:description "A person who has shown to hold expertise of a concept within a Body of Knowledge."@en ;
             dcterms:description "A person who has shown to hold expertise of a concept within a body of knowledge"@en .
 
 
 ###  http://example.org/OBOK/BodyOfKnowledge
 :BodyOfKnowledge rdf:type owl:Class ;
-                 dce:description "A comprehensive inventory of the intellectual content that defines a field"@en ;
+       dcterms:description "A comprehensive inventory of the intellectual content that defines a field"@en ;
                  rdfs:label "Body of Knowledge"^^rdfs:Literal .
 
 
 ###  http://example.org/OBOK/Concept
 :Concept rdf:type owl:Class ;
          owl:equivalentClass skos:Concept ;
-         dce:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en ;
          dcterms:description "A concept is a theoretical construct that has been formed by combining particular instances into a general idea. These include theories, methods and technologies. All concepts together define a specific field."@en .
 
 
 ###  http://example.org/OBOK/Contributor
 :Contributor rdf:type owl:Class ;
              rdfs:subClassOf foaf:Person ;
-             dce:description "A person who has contributed knowledge to a concept within a Body of Knowledge"@en ;
              dcterms:description "A person who has contributed knowledge to a concept within a Body of Knowledge."@en .
 
 
