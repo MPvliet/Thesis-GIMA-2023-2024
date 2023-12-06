@@ -132,7 +132,8 @@ def parseIndividualExpertiseIntoRDF():
         expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[authorName]['authorURI']))
         g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
         g.add((conceptURI, boka.personWithKnowledge, expertURI))
-    
+        g.add((expertURI, boka.authorOf, doiURI))
+        
     # Creates the bibo:authorList relation
     collection_node = BNode()
     authorsList = []
@@ -147,22 +148,6 @@ def parseIndividualExpertiseIntoRDF():
 
     collection = Collection(g, collection_node, authorsList)
     g.add((doiURI, bibo.authorList, collection_node))
-    # prev_node = None
-    # for author in reversed(expertise['authors']):
-    #   if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-    #     authorName = re.match(r'^(.*?)\d', author).group(1)
-    #     current_node = BNode()
-    #     g.add((doiURI, bibo.authorList, current_node))
-    #     g.add((current_node, rdf.type, rdf.List))
-    #     g.add((current_node, rdf.first, URIRef('{}{}'.format('https://bok.eo4geo.eu/', uniqueAuthorDict[authorName]['authorURI']))))
-
-    #     if prev_node is None:
-    #       g.add((current_node, rdf.rest, rdf.nil))
-    #     else:
-    #       g.add((current_node, rdf.rest, prev_node))
-
-    #     prev_node = current_node
-
 
   #create Expert class and Organisation class
   for author in uniqueAuthorDict:
@@ -170,7 +155,7 @@ def parseIndividualExpertiseIntoRDF():
     g.add((expertURI, rdf.type, boka.Expert))
     g.add((expertURI, foaf.name, Literal(uniqueAuthorDict[author]['authorName'])))
     g.add((expertURI, rdfs.label, Literal(uniqueAuthorDict[author]['authorName'])))
-    g.add((expertURI, boka.authorOf, doiURI))
+    
 
     for organisation in uniqueAuthorDict[author]['worksAt']:
       organisationURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',organisation['organisationURI']))
