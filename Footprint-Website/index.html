@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EO4GEO Visualiser</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <img
+          src="http://www.eo4geo.eu/wp-content/uploads/2020/10/BoKVisulization-inline-800x124.png"
+          alt="Your Logo"
+          id="logo"
+        />
+      </div>
+      <div class="menu-bar" id="menuBar">
+        <a href="#" class="menu-item active">Knowledge Footprints</a>
+        <a href="#" class="menu-item">Footprint Matching</a>
+        <a href="#" class="menu-item">Knowledge Graph</a>
+        <a href="#" class="menu-item">Ontology</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="left-side">
+        <form class="user-input-form">
+          <label for="dropdown1">Type of Footprint</label>
+          <select id="dropdown1" class="dropdown-menu">
+            <option value="Individual">Individual</option>
+            <option value="Organisational">Organisational</option>
+          </select>
+          <label for="dropdown2">Type of Visualisation</label>
+          <select id="dropdown2" class="dropdown-menu">
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+          <label for="text">Footprint of whom?</label>
+          <input type="text" placeholder="Name of organisation/person" />
+          <label for="text">Input SPARQL query</label>
+          <input id="queryText" type="text" placeholder="Enter SPARQL query" />
+          <input id="submitButton" type="submit" value="Generate Footprint" />
+        </form>
+      </div>
+      <div id="right-side" class="right-side">
+        <!-- locatie voor sparql output en D3 visualisaties. -->
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById('menuBar')
+        .addEventListener('click', function (event) {
+          if (event.target.classList.contains('menu-item')) {
+            let items = document.querySelectorAll('.menu-item');
+            items.forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+          }
+        });
+    </script>
+    <script src="src/js/index.js"></script>
+  </body>
+</html>
