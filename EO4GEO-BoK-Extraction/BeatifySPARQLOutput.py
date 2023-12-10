@@ -1,9 +1,9 @@
 import json
-from rdflib import Graph, URIRef, Literal, Namespace
+from rdflib import Graph, URIRef, Literal, Namespace, BNode
 
 # Load SRJ file
 with open('EO4GEO-BoK-Extraction\input\exportGraphDB.srj', 'r', encoding='utf-8') as file:
-    srj_data = json.load(file)
+  srj_data = json.load(file)
 
 # Create a new RDFLib graph
 g = Graph()
@@ -37,12 +37,14 @@ g.bind('eo4geo', eo4geo)
 
 # Assuming srj_data is structured with 'results' containing 'bindings'
 for binding in srj_data['results']['bindings']:
-    s = URIRef(binding['subject']['value'])  # Adjust these keys based on your SRJ structure
-    p = URIRef(binding['predicate']['value'])
-    if binding['object']['type'] == "uri":
-      o = URIRef(binding['object']['value'])
+    s = URIRef(binding['s']['value'])  # Adjust these keys based on your SRJ structure
+    p = URIRef(binding['p']['value'])
+    if binding['o']['type'] == "uri":
+      o = URIRef(binding['o']['value'])
+    if binding['o']['type'] == 'bnode':
+       o = URIRef(binding['o']['value'])
     else:    
-      o = Literal(binding['object']['value'])
+      o = Literal(binding['o']['value'])
 
     g.add((s, p, o))
 
