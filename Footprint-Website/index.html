@@ -28,7 +28,12 @@
       <div class="left-side">
         <form class="user-input-form">
           <label for="dropdown1">Type of Footprint</label>
-          <select id="dropdown1" class="dropdown-menu">
+          <select
+            id="typeOfFootprintDropDown"
+            class="dropdown-menu"
+            onChange="createEntityDropDownList(this.value);"
+          >
+            <option value="" disabled selected>Select</option>
             <option value="Individual">Individual</option>
             <option value="Organisational">Organisational</option>
           </select>
@@ -37,10 +42,10 @@
             <option value="1">1</option>
             <option value="2">2</option>
           </select>
-          <label for="text">Footprint of whom?</label>
-          <input type="text" placeholder="Name of organisation/person" />
-          <label for="text">Input SPARQL query</label>
-          <input id="queryText" type="text" placeholder="Enter SPARQL query" />
+          <label for="dropdownFootprintEntity">Footprint of whom?</label>
+          <select id="dropdownFootprintEntity" class="dropdown-menu">
+            <option value="" disabled selected>Select</option>
+          </select>
           <input id="submitButton" type="submit" value="Generate Footprint" />
         </form>
       </div>
