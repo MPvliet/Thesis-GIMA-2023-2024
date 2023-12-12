@@ -114,6 +114,7 @@ def serializeIntoRDF():
           #print(relation['source'] + "  " + relation['target'])
           if relation['target'] in knowledgeAreaList: # bepaald topconcept in conceptScheme. == eerste level subconcept van een knowledge area
             g.add((conceptURI_source, skos.topConceptOf, conceptURI_target))
+            g.add((conceptURI_source, obok.isSubconceptOf, conceptURI_target))
           else:
             g.add((conceptURI_source, obok.isSubconceptOf, conceptURI_target))
           if relation['target'] == 'GIST': # bepalen van de main KnowledgeArea classes.
