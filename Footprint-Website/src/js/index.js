@@ -31,8 +31,6 @@ where {
     FILTER(CONTAINS(STR(?organisationName), "${
       document.getElementById('dropdownFootprintEntity').value
     }"))}`;
-  console.log(indivudalSparqlQuery);
-  console.log(organisationalQuery);
   let query;
   if (
     document.getElementById('typeOfFootprintDropDown').value === 'Individual'
@@ -42,17 +40,18 @@ where {
     query = organisationalQuery;
   }
 
-  const apiRequestURL = `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
-    query
-  )}`;
-
-  fetch(apiRequestURL, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/sparql-results+json',
-      Origin: 'localhost:7200',
-    },
-  })
+  fetch(
+    `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
+      query
+    )}`,
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/sparql-results+json',
+        Origin: 'localhost:7200',
+      },
+    }
+  )
     .then(response => {
       return response.json();
     })
@@ -71,9 +70,6 @@ where {
 });
 
 function fillOrganisationAndPersonList(footprintType, list) {
-  console.log(footprintType);
-  console.log(list);
-  console.log(typeof list);
   if (footprintType.length == 0) {
     document.getElementById('dropdownFootprintEntity').innerHTML =
       '<option></option>';
@@ -171,3 +167,247 @@ async function createEntityDropDownList(footprintType) {
     }
   }
 }
+
+async function genericSPARQLQuery(query) {
+  try {
+    const response = await fetch(
+      `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
+        query
+      )}`,
+      {
+        method: 'GET',
+        headers: { Accept: 'application/sparql-results+json' },
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+  }
+}
+
+function transformSPARQLtoD3HierarchieData(json) {
+  const nodes = new Map();
+
+  // function to iteratively create nodes
+  const addChild = (parent, child) => {
+    if (!nodes.has(child)) {
+      nodes.set(child, { name: child });
+    }
+    if (!nodes.has(parent)) {
+      nodes.set(parent, { name: parent, children: [] });
+    }
+    const parentNode = nodes.get(parent);
+    if (!parentNode.children) {
+      parentNode.children = [];
+    }
+    parentNode.children.push(nodes.get(child));
+  };
+
+  // Fill the map with the conceptNames and ChildNames from the sparql json output.
+  json.results.bindings.forEach(item => {
+    const parent = item.conceptName.value;
+    const child = item.childName.value;
+    addChild(parent, child);
+  });
+
+  // Find the root node
+  const rootNode = Array.from(nodes.values()).find(
+    node =>
+      !json.results.bindings.some(
+        binding => binding.childName.value === node.name
+      )
+  );
+  return rootNode;
+}
+
+function createRadialClusterTreeChart(data) {
+  const width = 1780;
+  const height = width;
+  const cx = width * 0.5; // adjust as needed to fit
+  const cy = height * 0.5; // adjust as needed to fit
+  const radius = Math.min(width, height) / 2 - 90;
+
+  // Create a radial tree layout. The layout’s first dimension (x)
+  // is the angle, while the second (y) is the radius.
+  const tree = d3
+    .cluster() //.tree() //.cluster()
+    .size([2 * Math.PI, radius])
+    .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
+
+  // Sort the tree and apply the layout.
+  const root = tree(
+    d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name))
+  );
+
+  // Creates the SVG container.
+  const svg = d3
+    .create('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('viewBox', [-cx, -cy, width, height])
+    .attr('style', 'width: 100%; height: auto; font: 10px sans-serif;');
+
+  // Append links.
+  svg
+    .append('g')
+    .attr('fill', 'none')
+    .attr('stroke', '#005ca2')
+    .attr('stroke-opacity', 0.4)
+    .attr('stroke-width', 1.5)
+    .selectAll()
+    .data(root.links())
+    .join('path')
+    .attr(
+      'd',
+      d3
+        .linkRadial()
+        .angle(d => d.x)
+        .radius(d => d.y)
+    );
+
+  // Append nodes.
+  svg
+    .append('g')
+    .selectAll()
+    .data(root.descendants())
+    .join('circle')
+    .attr(
+      'transform',
+      d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
+    )
+    .attr('fill', d => (d.children ? '#f0cd02' : '#f0cd02'))
+    .attr('r', 3.5);
+
+  // Append labels.
+  svg
+    .append('g')
+    .attr('stroke-linejoin', 'round')
+    .attr('stroke-width', 3)
+    .selectAll()
+    .data(root.descendants())
+    .join('text')
+    .attr(
+      'transform',
+      d =>
+        `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0) rotate(${
+          d.x >= Math.PI ? 180 : 0
+        })`
+    )
+    .attr('font-family', 'Segoe UI')
+    .attr('font-size', 16)
+    .attr('dy', '0.31em')
+    .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
+    .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
+    .attr('paint-order', 'stroke')
+    .attr('stroke', 'white')
+    .attr('fill', 'currentColor')
+    .text(d => d.data.name);
+
+  document.getElementById('right-side').appendChild(svg.node());
+}
+
+function createRadialTidyTreeChart(data) {
+  const width = 1780;
+  const height = width;
+  const cx = width * 0.5; // adjust as needed to fit
+  const cy = height * 0.5; // adjust as needed to fit
+  const radius = Math.min(width, height) / 2 - 90;
+
+  // Create a radial tree layout. The layout’s first dimension (x)
+  // is the angle, while the second (y) is the radius.
+  const tree = d3
+    .tree()
+    .size([2 * Math.PI, radius])
+    .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
+
+  // Sort the tree and apply the layout.
+  const root = tree(
+    d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name))
+  );
+
+  // Creates the SVG container.
+  const svg = d3
+    .create('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('viewBox', [-cx, -cy, width, height])
+    .attr('style', 'width: 100%; height: auto; font: 10px sans-serif;');
+
+  // Append links.
+  svg
+    .append('g')
+    .attr('fill', 'none')
+    .attr('stroke', '#005ca2')
+    .attr('stroke-opacity', 0.4)
+    .attr('stroke-width', 1.5)
+    .selectAll()
+    .data(root.links())
+    .join('path')
+    .attr(
+      'd',
+      d3
+        .linkRadial()
+        .angle(d => d.x)
+        .radius(d => d.y)
+    );
+
+  // Append nodes.
+  svg
+    .append('g')
+    .selectAll()
+    .data(root.descendants())
+    .join('circle')
+    .attr(
+      'transform',
+      d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
+    )
+    .attr('fill', d => (d.children ? '#f0cd02' : '#f0cd02'))
+    .attr('r', 2.5);
+
+  // Append labels.
+  svg
+    .append('g')
+    .attr('stroke-linejoin', 'round')
+    .attr('stroke-width', 3)
+    .selectAll()
+    .data(root.descendants())
+    .join('text')
+    .attr(
+      'transform',
+      d =>
+        `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0) rotate(${
+          d.x >= Math.PI ? 180 : 0
+        })`
+    )
+    //.attr('font-family', 'sans-serif')
+    .attr('dy', '0.31em')
+    .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
+    .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
+    .attr('paint-order', 'stroke')
+    .attr('stroke', 'white')
+    .attr('fill', 'currentColor')
+    .text(d => d.data.name);
+
+  document.getElementById('right-side').appendChild(svg.node());
+}
+
+hierarchicalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obok: <http://example.org/OBOK/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+select ?concept ?conceptName ?childName  where { 
+	?concept rdf:type obok:Concept;
+    skos:notation ?conceptName ;
+    skos:narrower ?child .
+    ?child skos:notation ?childName .
+    #FILTER(CONTAINS(str(?concept), "WB"))
+}
+`;
+
+genericSPARQLQuery(hierarchicalQuery)
+  .then(responseJson => transformSPARQLtoD3HierarchieData(responseJson))
+  .then(data => createRadialClusterTreeChart(data)) //createRadialClusterTreeChart(data))
+  .catch(error => {
+    console.error('Error processing SPARQL query:', error);
+  });
