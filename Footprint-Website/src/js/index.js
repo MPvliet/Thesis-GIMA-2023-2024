@@ -395,13 +395,35 @@ function createRadialTidyTreeChart(data) {
 hierarchicalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX obok: <http://example.org/OBOK/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX eo4geo: <https://bok.eo4geo.eu/>
 
-select ?concept ?conceptName ?childName  where { 
-	?concept rdf:type obok:Concept;
-    skos:notation ?conceptName ;
-    skos:narrower ?child .
-    ?child skos:notation ?childName .
-    #FILTER(CONTAINS(str(?concept), "WB"))
+SELECT ?concept ?conceptName ?childName WHERE {
+    {
+        ?concept rdf:type obok:KnowledgeArea ;
+                 rdfs:label ?conceptName ;
+                 skos:narrower ?child .
+    	?child skos:notation ?childName .
+    }
+    UNION
+    {
+        ?concept rdf:type obok:Concept ;
+                 skos:notation ?conceptName ;
+                 skos:narrower ?child .
+        ?child rdfs:label ?childName .
+        FILTER(?concept = eo4geo:GIST)
+    }
+    UNION
+    {
+        ?concept rdf:type obok:Concept .
+        FILTER NOT EXISTS { ?concept rdf:type obok:KnowledgeArea . }
+        
+        ?concept skos:notation ?conceptName ;
+                 skos:narrower ?child .
+        ?child skos:notation ?childName .
+        FILTER(?concept != eo4geo:GIST)
+    }
+    #FILTER(CONTAINS(str(?concept), "GIST"))
 }
 `;
 
