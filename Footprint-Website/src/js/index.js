@@ -190,12 +190,12 @@ function transformSPARQLtoD3HierarchieData(json) {
   const nodes = new Map();
 
   // function to iteratively create nodes
-  const addChild = (parent, child) => {
+  const addChild = (parent, parentId, child, childId) => {
     if (!nodes.has(child)) {
-      nodes.set(child, { name: child });
+      nodes.set(child, { name: child, id: childId });
     }
     if (!nodes.has(parent)) {
-      nodes.set(parent, { name: parent, children: [] });
+      nodes.set(parent, { name: parent, id: parentId, children: [] });
     }
     const parentNode = nodes.get(parent);
     if (!parentNode.children) {
@@ -207,8 +207,11 @@ function transformSPARQLtoD3HierarchieData(json) {
   // Fill the map with the conceptNames and ChildNames from the sparql json output.
   json.results.bindings.forEach(item => {
     const parent = item.conceptName.value;
+    const parentId = item.conceptID.value;
     const child = item.childName.value;
-    addChild(parent, child);
+    const childId = item.childID.value;
+
+    addChild(parent, parentId, child, childId);
   });
 
   // Find the root node
@@ -218,6 +221,7 @@ function transformSPARQLtoD3HierarchieData(json) {
         binding => binding.childName.value === node.name
       )
   );
+  console.log(rootNode);
   return rootNode;
 }
 
@@ -226,7 +230,7 @@ function createRadialClusterTreeChart(data) {
   const height = width;
   const cx = width * 0.5; // adjust as needed to fit
   const cy = height * 0.5; // adjust as needed to fit
-  const radius = Math.min(width, height) / 2 - 90;
+  const radius = Math.min(width, height) / 2 - 190;
 
   // Create a radial tree layout. The layout’s first dimension (x)
   // is the angle, while the second (y) is the radius.
@@ -239,7 +243,7 @@ function createRadialClusterTreeChart(data) {
   const root = tree(
     d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name))
   );
-
+  console.log(root);
   // Creates the SVG container.
   const svg = d3
     .create('svg')
@@ -277,6 +281,7 @@ function createRadialClusterTreeChart(data) {
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
     .attr('fill', d => (d.children ? '#f0cd02' : '#f0cd02'))
+    .attr('id', d => `${d.data.id}`)
     .attr('r', 3.5);
 
   // Append labels.
@@ -295,14 +300,30 @@ function createRadialClusterTreeChart(data) {
         })`
     )
     .attr('font-family', 'Segoe UI')
-    .attr('font-size', 16)
+    .attr('font-size', 0)
     .attr('dy', '0.31em')
     .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
     .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
     .attr('paint-order', 'stroke')
     .attr('stroke', 'white')
     .attr('fill', 'currentColor')
+    .style('opacity', 0) // Hide labels initially.
+    .attr('id', d => `label-${d.data.id}`)
     .text(d => d.data.name);
+
+  // Fucntion to show labeltext
+  function showLabel(d) {
+    console.log(`#label-${this.id}`);
+    d3.selectAll(`#label-${this.id}`).style('opacity', 1).attr('font-size', 20);
+  }
+
+  // Function to hide labeltext
+  function hideLabel(d) {
+    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
+  }
+
+  // Add hover event listeners to nodes
+  svg.selectAll('circle').on('mouseover', showLabel).on('mouseout', hideLabel);
 
   document.getElementById('right-side').appendChild(svg.node());
 }
@@ -393,6 +414,21 @@ function createRadialTidyTreeChart(data) {
 }
 
 hierarchicalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obok: <http://example.org/OBOK/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?conceptName ?childName ?conceptID ?childID  where { 
+	?concept rdf:type obok:Concept;
+    	rdfs:label ?conceptName ;
+     	skos:notation ?conceptID ;
+    	skos:narrower ?child .
+    ?child rdfs:label ?childName ;
+           skos:notation ?childID ;
+    #FILTER(CONTAINS(str(?concept), "WB"))
+}`;
+
+hierarchicalQueryWithFullLabels = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX obok: <http://example.org/OBOK/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
