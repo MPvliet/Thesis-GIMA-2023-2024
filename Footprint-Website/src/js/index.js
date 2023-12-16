@@ -190,35 +190,60 @@ function transformSPARQLtoD3HierarchieData(json) {
   const nodes = new Map();
 
   // function to iteratively create nodes
-  const addChild = (parent, parentId, child, childId) => {
-    if (!nodes.has(child)) {
-      nodes.set(child, { name: child, id: childId });
+  const addChild = (
+    parent,
+    parentId,
+    child,
+    childId,
+    nodeColour,
+    showLabel
+  ) => {
+    if (child !== null) {
+      if (!nodes.has(child)) {
+        nodes.set(child, {
+          name: child,
+          id: childId,
+          nodeColour: nodeColour,
+          showLabel: showLabel,
+        });
+      }
     }
+
     if (!nodes.has(parent)) {
-      nodes.set(parent, { name: parent, id: parentId, children: [] });
+      nodes.set(parent, {
+        name: parent,
+        id: parentId,
+        nodeColour: nodeColour,
+        showLabel: showLabel,
+        children: [],
+      });
     }
-    const parentNode = nodes.get(parent);
-    if (!parentNode.children) {
-      parentNode.children = [];
+
+    if (child !== null) {
+      const parentNode = nodes.get(parent);
+      if (!parentNode.children) {
+        parentNode.children = [];
+      }
+      parentNode.children.push(nodes.get(child));
     }
-    parentNode.children.push(nodes.get(child));
   };
 
   // Fill the map with the conceptNames and ChildNames from the sparql json output.
   json.results.bindings.forEach(item => {
     const parent = item.conceptName.value;
     const parentId = item.conceptID.value;
-    const child = item.childName.value;
-    const childId = item.childID.value;
+    const nodeColour = item.nodeColour.value;
+    const showLabel = item.showLabel.value;
+    const child = item.childName ? item.childName.value : null; // not all concepts have childs.
+    const childId = item.childID ? item.childID.value : null;
 
-    addChild(parent, parentId, child, childId);
+    addChild(parent, parentId, child, childId, nodeColour, showLabel);
   });
-
-  // Find the root node
+  // Creates an array from all nodes.values and then find the root node, through looping through this list. The rootnode is the node that has no parent. and thus is no child for any node in this list. // For the EO4GEO BoK this is always 'GIST'.
   const rootNode = Array.from(nodes.values()).find(
     node =>
       !json.results.bindings.some(
-        binding => binding.childName.value === node.name
+        binding => binding.childName && binding.childName.value === node.name
       )
   );
   console.log(rootNode);
@@ -228,32 +253,38 @@ function transformSPARQLtoD3HierarchieData(json) {
 function createRadialClusterTreeChart(data) {
   const width = 1780;
   const height = width;
-  const cx = width * 0.5; // adjust as needed to fit
-  const cy = height * 0.5; // adjust as needed to fit
+  const cx = width * 0.5;
+  const cy = height * 0.5;
   const radius = Math.min(width, height) / 2 - 190;
 
-  // Create a radial tree layout. The layout’s first dimension (x)
-  // is the angle, while the second (y) is the radius.
   const tree = d3
-    .cluster() //.tree() //.cluster()
+    .cluster()
     .size([2 * Math.PI, radius])
     .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
 
-  // Sort the tree and apply the layout.
-  const root = tree(
-    d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name))
-  );
-  console.log(root);
-  // Creates the SVG container.
+  const root = tree(d3.hierarchy(data));
+
   const svg = d3
     .create('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [-cx, -cy, width, height])
-    .attr('style', 'width: 100%; height: auto; font: 10px sans-serif;');
+    .attr('style', 'width: 100%; height: auto; font: 10px sans-serif;')
+    .call(
+      // enables zoom and pann
+      d3
+        .zoom()
+        .scaleExtent([0.5, 5])
+        .on('zoom', e => {
+          chartGroup.attr('transform', e.transform);
+        })
+    );
 
-  // Append links.
-  svg
+  // Group to hold all chart elements, paths, nodes and labels.
+  const chartGroup = svg.append('g');
+
+  // Append links
+  chartGroup
     .append('g')
     .attr('fill', 'none')
     .attr('stroke', '#005ca2')
@@ -270,8 +301,8 @@ function createRadialClusterTreeChart(data) {
         .radius(d => d.y)
     );
 
-  // Append nodes.
-  svg
+  // Append nodes
+  chartGroup
     .append('g')
     .selectAll()
     .data(root.descendants())
@@ -280,12 +311,12 @@ function createRadialClusterTreeChart(data) {
       'transform',
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
-    .attr('fill', d => (d.children ? '#f0cd02' : '#f0cd02'))
+    .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
     .attr('id', d => `${d.data.id}`)
     .attr('r', 3.5);
 
-  // Append labels.
-  svg
+  // Append labels
+  chartGroup
     .append('g')
     .attr('stroke-linejoin', 'round')
     .attr('stroke-width', 3)
@@ -300,30 +331,30 @@ function createRadialClusterTreeChart(data) {
         })`
     )
     .attr('font-family', 'Segoe UI')
-    .attr('font-size', 0)
+    .attr('font-size', 10)
     .attr('dy', '0.31em')
     .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
     .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
     .attr('paint-order', 'stroke')
     .attr('stroke', 'white')
     .attr('fill', 'currentColor')
-    .style('opacity', 0) // Hide labels initially.
+    .style('opacity', d => `${d.data.showLabel}`)
     .attr('id', d => `label-${d.data.id}`)
-    .text(d => d.data.name);
+    .text(d => d.data.id);
 
-  // Fucntion to show labeltext
+  // Functions to show and hide label text
   function showLabel(d) {
-    console.log(`#label-${this.id}`);
     d3.selectAll(`#label-${this.id}`).style('opacity', 1).attr('font-size', 20);
   }
 
-  // Function to hide labeltext
   function hideLabel(d) {
-    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
+    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 10);
   }
 
-  // Add hover event listeners to nodes
-  svg.selectAll('circle').on('mouseover', showLabel).on('mouseout', hideLabel);
+  chartGroup
+    .selectAll('circle')
+    .on('mouseover', showLabel)
+    .on('mouseout', hideLabel);
 
   document.getElementById('right-side').appendChild(svg.node());
 }
@@ -383,7 +414,7 @@ function createRadialTidyTreeChart(data) {
       'transform',
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
-    .attr('fill', d => (d.children ? '#f0cd02' : '#f0cd02'))
+    .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
     .attr('r', 2.5);
 
   // Append labels.
@@ -408,25 +439,63 @@ function createRadialTidyTreeChart(data) {
     .attr('paint-order', 'stroke')
     .attr('stroke', 'white')
     .attr('fill', 'currentColor')
-    .text(d => d.data.name);
+    .text(d => d.data.id);
 
   document.getElementById('right-side').appendChild(svg.node());
 }
 
 hierarchicalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX boka: <http://example.org/BOKA/>
 PREFIX obok: <http://example.org/OBOK/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?conceptName ?childName ?conceptID ?childID  where { 
-	?concept rdf:type obok:Concept;
-    	rdfs:label ?conceptName ;
-     	skos:notation ?conceptID ;
-    	skos:narrower ?child .
-    ?child rdfs:label ?childName ;
-           skos:notation ?childID ;
-    #FILTER(CONTAINS(str(?concept), "WB"))
-}`;
+SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel
+WHERE {
+  {
+    ?concept rdf:type obok:Concept;
+             rdfs:label ?conceptName;
+             skos:notation ?conceptID.
+
+    OPTIONAL { ?concept skos:narrower ?child.
+               ?child rdfs:label ?childName;
+                      skos:notation ?childID. }
+
+    FILTER NOT EXISTS {
+      ?organisationURI rdf:type org:Organization;
+                       rdfs:label ?organisationName;
+                       org:hasMember ?membersOfOrganisationURI;
+                       FILTER(CONTAINS(STR(?organisationName), "University of Twente")).
+      ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
+      FILTER(?concept = ?OrgConcept)
+    }
+    BIND ("#f0cd02" AS ?nodeColour)
+        BIND (0 as ?showLabel)
+  }
+  UNION
+  {
+    ?concept rdf:type obok:Concept;
+             rdfs:label ?conceptName;
+             skos:notation ?conceptID.
+
+    OPTIONAL { ?concept skos:narrower ?child.
+               ?child rdfs:label ?childName;
+                      skos:notation ?childID. }
+
+    FILTER EXISTS {
+      ?organisationURI rdf:type org:Organization;
+                       rdfs:label ?organisationName;
+                       org:hasMember ?membersOfOrganisationURI;
+                       FILTER(CONTAINS(STR(?organisationName), "University of Twente")).
+      ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
+      FILTER(?concept = ?OrgConcept)
+    }
+    BIND ("#f03502" AS ?nodeColour)
+        BIND (1 as ?showLabel)
+  }
+} ORDER BY (?nodeColour)
+`;
 
 hierarchicalQueryWithFullLabels = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX obok: <http://example.org/OBOK/>
@@ -467,5 +536,7 @@ genericSPARQLQuery(hierarchicalQuery)
   .then(responseJson => transformSPARQLtoD3HierarchieData(responseJson))
   .then(data => createRadialClusterTreeChart(data)) //createRadialClusterTreeChart(data))
   .catch(error => {
-    console.error('Error processing SPARQL query:', error);
+    console.error('Error creating D3 visualisation: ', error);
+    document.getElementById('right-side').innerText =
+      'Error creating D3 visualisation: ' + error.message;
   });
