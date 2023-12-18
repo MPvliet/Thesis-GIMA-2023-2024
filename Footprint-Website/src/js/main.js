@@ -10,76 +10,63 @@ document
   });
 
 // Processes what happens once you click submit
-document.getElementById('submitButton').addEventListener('click', event => {
-  event.preventDefault();
-  let indivudalSparqlQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX boka: <http://example.org/BOKA/>
-
-select ?expertName ?conceptName 
-where { 
-	?expertURI rdf:type boka:Expert ;
-            foaf:name ?expertName ;
-            boka:hasKnowledgeOf ?conceptURI.
-    ?conceptURI rdfs:label ?conceptName .
-    filter(CONTAINS(str(?expertName), "${
-      document.getElementById('dropdownFootprintEntity').value
-    }"))
-}`;
-  let organisationalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX obok: <http://example.org/OBOK/>
-  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-  PREFIX org: <http://www.w3.org/ns/org#>
-  PREFIX boka: <http://example.org/BOKA/>
-  
-  select DISTINCT ?conceptName where {
-    ?organisationURI rdf:type org:Organization;
-                     rdfs:label ?organisationName ;
-                     org:hasMember ?membersOfOrganisationURI .
-    ?membersOfOrganisationURI boka:hasKnowledgeOf ?ExpertiseConceptURI.
-    ?ExpertiseConceptURI rdfs:label ?conceptName .
-    FILTER(CONTAINS(STR(?organisationName), "${
-      document.getElementById('dropdownFootprintEntity').value
-    }"))}`;
-  let query;
-  if (
-    document.getElementById('typeOfFootprintDropDown').value === 'Individual'
-  ) {
-    query = indivudalSparqlQuery;
-  } else {
-    query = organisationalQuery;
-  }
-
-  fetch(
-    `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
-      query
-    )}`,
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/sparql-results+json',
-        Origin: 'localhost:7200',
-      },
+document
+  .getElementById('submitButton')
+  .addEventListener('click', async event => {
+    event.preventDefault();
+    let query;
+    if (
+      document.getElementById('typeOfFootprintDropDown').value === 'Individual'
+    ) {
+      query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX boka: <http://example.org/BOKA/>
+    
+    select ?expertName ?conceptName 
+    where { 
+      ?expertURI rdf:type boka:Expert ;
+                foaf:name ?expertName ;
+                boka:hasKnowledgeOf ?conceptURI.
+        ?conceptURI rdfs:label ?conceptName .
+        filter(CONTAINS(str(?expertName), "${
+          document.getElementById('dropdownFootprintEntity').value
+        }"))
+    }`;
+    } else {
+      query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX obok: <http://example.org/OBOK/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX org: <http://www.w3.org/ns/org#>
+    PREFIX boka: <http://example.org/BOKA/>
+    
+    select DISTINCT ?conceptName where {
+      ?organisationURI rdf:type org:Organization;
+                       rdfs:label ?organisationName ;
+                       org:hasMember ?membersOfOrganisationURI .
+      ?membersOfOrganisationURI boka:hasKnowledgeOf ?ExpertiseConceptURI.
+      ?ExpertiseConceptURI rdfs:label ?conceptName .
+      FILTER(CONTAINS(STR(?organisationName), "${
+        document.getElementById('dropdownFootprintEntity').value
+      }"))}`;
     }
-  )
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
+
+    try {
+      const data = await genericSPARQLQuery(query);
+
+      // show output of query on the html site for now
       document.getElementById('right-side').innerText = JSON.stringify(
         data,
         null,
         '\t'
       );
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Fetch error:', error);
       document.getElementById('right-side').innerText =
-        'Error: ' + error.message;
-    });
-});
+        'Fetch error: ' + error.message;
+    }
+  });
 
 function fillOrganisationAndPersonList(footprintType, list) {
   if (footprintType.length == 0) {
