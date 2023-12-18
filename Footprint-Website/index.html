@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EO4GEO Visualiser</title>
+    <title>EO4GEO Knowledge Graph and Applications</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
@@ -27,7 +27,9 @@
     <div class="container">
       <div class="left-side">
         <form class="user-input-form">
-          <label for="dropdown1">Type of Footprint</label>
+          <label for="typeOfFootprintDropDown"
+            >Type of Knowledge Footprint</label
+          >
           <select id="typeOfFootprintDropDown" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
             <option value="Individual">Individual</option>
@@ -35,8 +37,8 @@
           </select>
           <label for="dropdown2">Type of Visualisation</label>
           <select id="dropdown2" class="dropdown-menu">
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="Radial-Cluster-Tree">Radial Cluster Tree</option>
+            <option value="Radial-Tidy-Tree">Radial Tidy Tree</option>
           </select>
           <label for="dropdownFootprintEntity">Footprint of whom?</label>
           <select id="dropdownFootprintEntity" class="dropdown-menu">

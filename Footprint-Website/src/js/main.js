@@ -36,36 +36,74 @@ document
     }`;
     } else {
       query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX obok: <http://example.org/OBOK/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX org: <http://www.w3.org/ns/org#>
-    PREFIX boka: <http://example.org/BOKA/>
-    
-    select DISTINCT ?conceptName where {
-      ?organisationURI rdf:type org:Organization;
-                       rdfs:label ?organisationName ;
-                       org:hasMember ?membersOfOrganisationURI .
-      ?membersOfOrganisationURI boka:hasKnowledgeOf ?ExpertiseConceptURI.
-      ?ExpertiseConceptURI rdfs:label ?conceptName .
-      FILTER(CONTAINS(STR(?organisationName), "${
-        document.getElementById('dropdownFootprintEntity').value
-      }"))}`;
+      PREFIX org: <http://www.w3.org/ns/org#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX boka: <http://example.org/BOKA/>
+      PREFIX obok: <http://example.org/OBOK/>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel
+      WHERE {
+        {
+          ?concept rdf:type obok:Concept;
+                   rdfs:label ?conceptName;
+                   skos:notation ?conceptID.
+      
+          OPTIONAL { ?concept skos:narrower ?child.
+                     ?child rdfs:label ?childName;
+                            skos:notation ?childID. }
+      
+          FILTER NOT EXISTS {
+            ?organisationURI rdf:type org:Organization;
+                             rdfs:label ?organisationName;
+                             org:hasMember ?membersOfOrganisationURI;
+                             FILTER(CONTAINS(STR(?organisationName), "${
+                               document.getElementById(
+                                 'dropdownFootprintEntity'
+                               ).value
+                             }")).
+            ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
+            FILTER(?concept = ?OrgConcept)
+          }
+          BIND ("#f0cd02" AS ?nodeColour)
+              BIND (0 as ?showLabel)
+        }
+        UNION
+        {
+          ?concept rdf:type obok:Concept;
+                   rdfs:label ?conceptName;
+                   skos:notation ?conceptID.
+      
+          OPTIONAL { ?concept skos:narrower ?child.
+                     ?child rdfs:label ?childName;
+                            skos:notation ?childID. }
+      
+          FILTER EXISTS {
+            ?organisationURI rdf:type org:Organization;
+                             rdfs:label ?organisationName;
+                             org:hasMember ?membersOfOrganisationURI;
+                             FILTER(CONTAINS(STR(?organisationName), "${
+                               document.getElementById(
+                                 'dropdownFootprintEntity'
+                               ).value
+                             }")).
+            ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
+            FILTER(?concept = ?OrgConcept)
+          }
+          BIND ("#f03502" AS ?nodeColour)
+              BIND (1 as ?showLabel)
+        }
+      } ORDER BY (?nodeColour)
+      `;
     }
-
     try {
-      const data = await genericSPARQLQuery(query);
-
-      // show output of query on the html site for now
-      document.getElementById('right-side').innerText = JSON.stringify(
-        data,
-        null,
-        '\t'
-      );
+      genericSPARQLQuery(query)
+        .then(responseJson => transformSPARQLtoD3Hierarchie(responseJson))
+        .then(data => createRadialClusterTreeChart(data));
     } catch (error) {
-      console.error('Fetch error:', error);
+      console.error('Error creating D3 visualisation: ', error);
       document.getElementById('right-side').innerText =
-        'Fetch error: ' + error.message;
+        'Error creating D3 visualisation: ' + error.message;
     }
   });
 
@@ -145,108 +183,3 @@ function fillOrganisationAndPersonList(footprintType, list) {
     document.getElementById('dropdownFootprintEntity').innerHTML = options;
   }
 }
-
-const hierarchicalQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX org: <http://www.w3.org/ns/org#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX boka: <http://example.org/BOKA/>
-PREFIX obok: <http://example.org/OBOK/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-
-SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel
-WHERE {
-  {
-    ?concept rdf:type obok:Concept;
-             rdfs:label ?conceptName;
-             skos:notation ?conceptID.
-
-    OPTIONAL { ?concept skos:narrower ?child.
-               ?child rdfs:label ?childName;
-                      skos:notation ?childID. }
-
-    FILTER NOT EXISTS {
-      ?organisationURI rdf:type org:Organization;
-                       rdfs:label ?organisationName;
-                       org:hasMember ?membersOfOrganisationURI;
-                       FILTER(CONTAINS(STR(?organisationName), "University of Twente")).
-      ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
-      FILTER(?concept = ?OrgConcept)
-    }
-    BIND ("#f0cd02" AS ?nodeColour)
-        BIND (0 as ?showLabel)
-  }
-  UNION
-  {
-    ?concept rdf:type obok:Concept;
-             rdfs:label ?conceptName;
-             skos:notation ?conceptID.
-
-    OPTIONAL { ?concept skos:narrower ?child.
-               ?child rdfs:label ?childName;
-                      skos:notation ?childID. }
-
-    FILTER EXISTS {
-      ?organisationURI rdf:type org:Organization;
-                       rdfs:label ?organisationName;
-                       org:hasMember ?membersOfOrganisationURI;
-                       FILTER(CONTAINS(STR(?organisationName), "University of Twente")).
-      ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
-      FILTER(?concept = ?OrgConcept)
-    }
-    BIND ("#f03502" AS ?nodeColour)
-        BIND (1 as ?showLabel)
-  }
-} ORDER BY (?nodeColour)
-`;
-
-const hierarchicalQueryWithFullLabels = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX obok: <http://example.org/OBOK/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX eo4geo: <https://bok.eo4geo.eu/>
-
-SELECT ?concept ?conceptName ?conceptID ?childName ?nodeColour ?showLabel  WHERE {
-    {
-        ?concept rdf:type obok:KnowledgeArea ;
-                 rdfs:label ?conceptName ;
-                 skos:notation ?conceptID;
-                 skos:narrower ?child .
-    	?child skos:notation ?childName ;
-        skos:notation ?childID.
-    }
-    UNION
-    {
-        ?concept rdf:type obok:Concept ;
-                 skos:notation ?conceptName ;
-                 skos:notation ?conceptID;
-                 skos:narrower ?child .
-        ?child rdfs:label ?childName ;
-        skos:notation ?childID.
-        FILTER(?concept = eo4geo:GIST)
-    }
-    UNION
-    {
-        ?concept rdf:type obok:Concept .
-        FILTER NOT EXISTS { ?concept rdf:type obok:KnowledgeArea . }
-        
-        ?concept skos:notation ?conceptName ;
-                 skos:notation ?conceptID;
-                 skos:narrower ?child .
-        ?child skos:notation ?childName ;
-        skos:notation ?childID.
-        FILTER(?concept != eo4geo:GIST)
-    }
-    BIND ("#f0cd02" AS ?nodeColour) 
-    BIND (1 as ?showLabel)
-    #FILTER(CONTAINS(str(?concept), "GIST"))
-}
-`;
-
-genericSPARQLQuery(hierarchicalQuery)
-  .then(responseJson => transformSPARQLtoD3Hierarchie(responseJson))
-  .then(data => createRadialClusterTreeChart(data))
-  .catch(error => {
-    console.error('Error creating D3 visualisation: ', error);
-    document.getElementById('right-side').innerText =
-      'Error creating D3 visualisation: ' + error.message;
-  });
