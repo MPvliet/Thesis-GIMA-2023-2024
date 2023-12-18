@@ -96,10 +96,23 @@ document
       } ORDER BY (?nodeColour)
       `;
     }
+
+    // Defines the function belonging to each visualisationType
+    const visualisationFunction = {
+      'Radial-Cluster-Tree': createRadialClusterTreeChart,
+      'Radial-Tidy-Tree': createRadialTidyTreeChart,
+    };
+
+    let visualisationType = document.getElementById(
+      'typeOfVisualisationDropDown'
+    ).value;
+
     try {
       genericSPARQLQuery(query)
         .then(responseJson => transformSPARQLtoD3Hierarchie(responseJson))
-        .then(data => createRadialClusterTreeChart(data));
+        .then(data => {
+          visualisationFunction[visualisationType](data);
+        });
     } catch (error) {
       console.error('Error creating D3 visualisation: ', error);
       document.getElementById('right-side').innerText =
