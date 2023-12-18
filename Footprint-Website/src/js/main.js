@@ -19,81 +19,123 @@ document
     if (
       document.getElementById('typeOfFootprintDropDown').value === 'Individual'
     ) {
-      query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX boka: <http://example.org/BOKA/>
-    
-    select ?expertName ?conceptName 
-    where { 
-      ?expertURI rdf:type boka:Expert ;
-                foaf:name ?expertName ;
-                boka:hasKnowledgeOf ?conceptURI.
-        ?conceptURI rdfs:label ?conceptName .
-        filter(CONTAINS(str(?expertName), "${
-          document.getElementById('dropdownFootprintEntity').value
-        }"))
-    }`;
-    } else {
-      query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      query = `
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX org: <http://www.w3.org/ns/org#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX boka: <http://example.org/BOKA/>
       PREFIX obok: <http://example.org/OBOK/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel
-      WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel WHERE {
         {
           ?concept rdf:type obok:Concept;
-                   rdfs:label ?conceptName;
-                   skos:notation ?conceptID.
-      
-          OPTIONAL { ?concept skos:narrower ?child.
-                     ?child rdfs:label ?childName;
-                            skos:notation ?childID. }
-      
-          FILTER NOT EXISTS {
-            ?organisationURI rdf:type org:Organization;
-                             rdfs:label ?organisationName;
-                             org:hasMember ?membersOfOrganisationURI;
-                             FILTER(CONTAINS(STR(?organisationName), "${
-                               document.getElementById(
-                                 'dropdownFootprintEntity'
-                               ).value
-                             }")).
-            ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
-            FILTER(?concept = ?OrgConcept)
+            rdfs:label ?conceptName;
+            skos:notation ?conceptID.
+          OPTIONAL {
+            ?concept skos:narrower ?child.
+            ?child rdfs:label ?childName;
+              skos:notation ?childID.
           }
-          BIND ("#f0cd02" AS ?nodeColour)
-              BIND (0 as ?showLabel)
+          FILTER(NOT EXISTS {
+            ?expertURI rdf:type boka:Expert;
+              foaf:name ?expertName;
+              boka:hasKnowledgeOf ?IndConcept.
+            ?IndConcept rdfs:label ?conceptName.
+            FILTER(CONTAINS(STR(?expertName), "${
+              document.getElementById('dropdownFootprintEntity').value
+            }"))
+            FILTER(?concept = ?IndConcept)
+          })
+          BIND("#f0cd02" AS ?nodeColour)
+          BIND(0  AS ?showLabel)
         }
         UNION
         {
           ?concept rdf:type obok:Concept;
-                   rdfs:label ?conceptName;
-                   skos:notation ?conceptID.
-      
-          OPTIONAL { ?concept skos:narrower ?child.
-                     ?child rdfs:label ?childName;
-                            skos:notation ?childID. }
-      
-          FILTER EXISTS {
+            rdfs:label ?conceptName;
+            skos:notation ?conceptID.
+          OPTIONAL {
+            ?concept skos:narrower ?child.
+            ?child rdfs:label ?childName;
+              skos:notation ?childID.
+          }
+          FILTER(EXISTS {
+            ?expertURI rdf:type boka:Expert;
+              foaf:name ?expertName;
+              boka:hasKnowledgeOf ?IndConcept.
+            ?IndConcept rdfs:label ?conceptName.
+            FILTER(CONTAINS(STR(?expertName), "${
+              document.getElementById('dropdownFootprintEntity').value
+            }"))
+            FILTER(?concept = ?IndConcept)
+          })
+          BIND("#f03502" AS ?nodeColour)
+          BIND(1  AS ?showLabel)
+        }
+      }
+      `;
+    } else if (
+      document.getElementById('typeOfFootprintDropDown').value ===
+      'Organisational'
+    ) {
+      query = `
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX org: <http://www.w3.org/ns/org#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX boka: <http://example.org/BOKA/>
+      PREFIX obok: <http://example.org/OBOK/>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel WHERE {
+        {
+          ?concept rdf:type obok:Concept;
+            rdfs:label ?conceptName;
+            skos:notation ?conceptID.
+          OPTIONAL { 
+            ?concept skos:narrower ?child.
+            ?child rdfs:label ?childName;
+              skos:notation ?childID.
+          }
+          FILTER(NOT EXISTS {
             ?organisationURI rdf:type org:Organization;
-                             rdfs:label ?organisationName;
-                             org:hasMember ?membersOfOrganisationURI;
-                             FILTER(CONTAINS(STR(?organisationName), "${
-                               document.getElementById(
-                                 'dropdownFootprintEntity'
-                               ).value
-                             }")).
+              rdfs:label ?organisationName;
+              org:hasMember ?membersOfOrganisationURI.
+            FILTER(CONTAINS(STR(?organisationName), "${
+              document.getElementById('dropdownFootprintEntity').value
+            }"))
             ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
             FILTER(?concept = ?OrgConcept)
-          }
-          BIND ("#f03502" AS ?nodeColour)
-              BIND (1 as ?showLabel)
+          })
+          BIND("#f0cd02" AS ?nodeColour)
+          BIND(0  AS ?showLabel)
         }
-      } ORDER BY (?nodeColour)
+        UNION
+        {
+          ?concept rdf:type obok:Concept;
+            rdfs:label ?conceptName;
+            skos:notation ?conceptID.
+          OPTIONAL {
+            ?concept skos:narrower ?child.
+            ?child rdfs:label ?childName;
+              skos:notation ?childID.
+          }
+          FILTER(EXISTS {
+            ?organisationURI rdf:type org:Organization;
+              rdfs:label ?organisationName;
+              org:hasMember ?membersOfOrganisationURI.
+            FILTER(CONTAINS(STR(?organisationName), "${
+              document.getElementById('dropdownFootprintEntity').value
+            }"))
+            ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
+            FILTER(?concept = ?OrgConcept)
+          })
+          BIND("#f03502" AS ?nodeColour)
+          BIND(1  AS ?showLabel)
+        }
+      }
       `;
     }
 
