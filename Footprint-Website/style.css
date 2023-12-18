@@ -68,7 +68,7 @@ header {
 .right-side {
   width: 80%;
   padding: 20px;
-  background-color: #ffffff; /* Light gray background for visualization area */
+  background-color: #0c1a1a; /* #ffffff; /* Light gray background for visualization area */
 }
 
 .user-input-form {

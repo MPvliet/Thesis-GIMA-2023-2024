@@ -3,7 +3,7 @@ import { createRadialTidyTreeChart } from './d3/radialTidyTree.js';
 import { transformSPARQLtoD3Hierarchie } from './d3/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
 
-// Fills the form based on type of footprint input.
+// Fills the HTML form based on type of footprint input.
 document
   .getElementById('typeOfFootprintDropDown')
   .addEventListener('change', function () {
@@ -14,7 +14,7 @@ document
 document
   .getElementById('submitButton')
   .addEventListener('click', async event => {
-    event.preventDefault(); // Without this the page refreshes once I click the submit button, but I want JS to process form input.
+    event.preventDefault(); // Without this the page refreshes once I click the submit button, but I want JS to process form input, not refresh.
 
     const visualisationType = document.getElementById(
       'typeOfVisualisationDropDown'
@@ -141,7 +141,7 @@ document
       `;
     }
 
-    // Defines the function belonging to each visualisationType
+    // Defines which function to call to generate the chosen visualisationType
     const visualisationFunction = {
       'Radial-Cluster-Tree': createRadialClusterTreeChart,
       'Radial-Tidy-Tree': createRadialTidyTreeChart,

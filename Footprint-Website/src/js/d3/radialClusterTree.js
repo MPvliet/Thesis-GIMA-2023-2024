@@ -37,7 +37,7 @@ function createRadialClusterTreeChart(data) {
     .attr('fill', 'none')
     .attr('stroke', '#005ca2')
     .attr('stroke-opacity', 0.4)
-    .attr('stroke-width', 1.5)
+    .attr('stroke-width', 2.5)
     .selectAll()
     .data(root.links())
     .join('path')
@@ -66,8 +66,8 @@ function createRadialClusterTreeChart(data) {
   // Append labels
   chartGroup
     .append('g')
-    .attr('stroke-linejoin', 'round')
-    .attr('stroke-width', 3)
+    //.attr('stroke-linejoin', 'round')
+    //.attr('stroke-width', 3)
     .selectAll()
     .data(root.descendants())
     .join('text')
@@ -83,9 +83,9 @@ function createRadialClusterTreeChart(data) {
     .attr('dy', '0.31em')
     .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
     .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
-    .attr('paint-order', 'stroke')
-    .attr('stroke', 'white')
-    .attr('fill', 'currentColor')
+    //.attr('paint-order', 'stroke')
+    //.attr('stroke', 'white')
+    .attr('fill', 'white')
     .style('opacity', d => `${d.data.showLabel}`)
     .attr('id', d => `label-${d.data.id}`)
     .text(d => d.data.name);

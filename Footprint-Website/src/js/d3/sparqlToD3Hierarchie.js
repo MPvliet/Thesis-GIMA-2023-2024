@@ -60,7 +60,7 @@ function transformSPARQLtoD3Hierarchie(json) {
         binding => binding.childName && binding.childName.value === node.name
       )
   );
-  console.log(d3DataStructure);
+  //console.log(d3DataStructure);
   return d3DataStructure;
 }
 
