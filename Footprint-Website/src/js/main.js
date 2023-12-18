@@ -14,7 +14,7 @@ document
 document
   .getElementById('submitButton')
   .addEventListener('click', async event => {
-    event.preventDefault();
+    event.preventDefault(); // Without this the page refreshes once I click the submit button, but I want JS to process form input.
     let query;
     if (
       document.getElementById('typeOfFootprintDropDown').value === 'Individual'
@@ -69,19 +69,6 @@ document
     }
   });
 
-function fillOrganisationAndPersonList(footprintType, list) {
-  if (footprintType.length == 0) {
-    document.getElementById('dropdownFootprintEntity').innerHTML =
-      '<option></option>';
-  } else {
-    var options = '';
-    for (var entity of list) {
-      options += '<option>' + entity + '</option>';
-    }
-    document.getElementById('dropdownFootprintEntity').innerHTML = options;
-  }
-}
-
 async function getAllExperts() {
   const query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -92,20 +79,9 @@ async function getAllExperts() {
     ?expertURI rdf:type boka:Expert ;
               foaf:name ?expertName ;
   }`;
-  const apiRequestURL = `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
-    query
-  )}`;
 
   try {
-    const response = await fetch(apiRequestURL, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/sparql-results+json',
-        Origin: 'localhost:7200',
-      },
-    });
-    const data = await response.json();
-
+    const data = await genericSPARQLQuery(query);
     const expertList = data['results']['bindings'].map(
       expert => expert.expertName.value
     );
@@ -126,20 +102,9 @@ async function getAllOrganisations() {
     ?orgURI rdf:type org:Organization ;
               foaf:name ?organisationName ;
   }`;
-  const apiRequestURL = `http://localhost:7200/repositories/EO4GEOKG?query=${encodeURIComponent(
-    query
-  )}`;
 
   try {
-    const response = await fetch(apiRequestURL, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/sparql-results+json',
-        Origin: 'localhost:7200',
-      },
-    });
-    const data = await response.json();
-
+    const data = await genericSPARQLQuery(query);
     const organisationList = data['results']['bindings'].map(
       organisation => organisation.organisationName.value
     );
@@ -165,6 +130,19 @@ async function createEntityDropDownList(footprintType) {
     } catch (error) {
       console.error('Error:', error);
     }
+  }
+}
+
+function fillOrganisationAndPersonList(footprintType, list) {
+  if (footprintType.length == 0) {
+    document.getElementById('dropdownFootprintEntity').innerHTML =
+      '<option></option>';
+  } else {
+    var options = '';
+    for (var entity of list) {
+      options += '<option>' + entity + '</option>';
+    }
+    document.getElementById('dropdownFootprintEntity').innerHTML = options;
   }
 }
 
@@ -266,7 +244,7 @@ SELECT ?concept ?conceptName ?conceptID ?childName ?nodeColour ?showLabel  WHERE
 
 genericSPARQLQuery(hierarchicalQuery)
   .then(responseJson => transformSPARQLtoD3Hierarchie(responseJson))
-  .then(data => createRadialTidyTreeChart(data))
+  .then(data => createRadialClusterTreeChart(data))
   .catch(error => {
     console.error('Error creating D3 visualisation: ', error);
     document.getElementById('right-side').innerText =
