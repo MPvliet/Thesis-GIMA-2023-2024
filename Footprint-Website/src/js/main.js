@@ -15,10 +15,19 @@ document
   .getElementById('submitButton')
   .addEventListener('click', async event => {
     event.preventDefault(); // Without this the page refreshes once I click the submit button, but I want JS to process form input.
+
+    const visualisationType = document.getElementById(
+      'typeOfVisualisationDropDown'
+    ).value;
+    const footprintType = document.getElementById(
+      'typeOfFootprintDropDown'
+    ).value;
+    const footprintEntity = document.getElementById(
+      'dropdownFootprintEntity'
+    ).value;
+
     let query;
-    if (
-      document.getElementById('typeOfFootprintDropDown').value === 'Individual'
-    ) {
+    if (footprintType === 'Individual') {
       query = `
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX org: <http://www.w3.org/ns/org#>
@@ -43,9 +52,7 @@ document
               foaf:name ?expertName;
               boka:hasKnowledgeOf ?IndConcept.
             ?IndConcept rdfs:label ?conceptName.
-            FILTER(CONTAINS(STR(?expertName), "${
-              document.getElementById('dropdownFootprintEntity').value
-            }"))
+            FILTER(CONTAINS(STR(?expertName), "${footprintEntity}"))
             FILTER(?concept = ?IndConcept)
           })
           BIND("#f0cd02" AS ?nodeColour)
@@ -67,9 +74,7 @@ document
               foaf:name ?expertName;
               boka:hasKnowledgeOf ?IndConcept.
             ?IndConcept rdfs:label ?conceptName.
-            FILTER(CONTAINS(STR(?expertName), "${
-              document.getElementById('dropdownFootprintEntity').value
-            }"))
+            FILTER(CONTAINS(STR(?expertName), "${footprintEntity}"))
             FILTER(?concept = ?IndConcept)
           })
           BIND("#f03502" AS ?nodeColour)
@@ -78,10 +83,7 @@ document
         }
       }
       `;
-    } else if (
-      document.getElementById('typeOfFootprintDropDown').value ===
-      'Organisational'
-    ) {
+    } else if (footprintType === 'Organisational') {
       query = `
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX org: <http://www.w3.org/ns/org#>
@@ -105,9 +107,7 @@ document
             ?organisationURI rdf:type org:Organization;
               rdfs:label ?organisationName;
               org:hasMember ?membersOfOrganisationURI.
-            FILTER(CONTAINS(STR(?organisationName), "${
-              document.getElementById('dropdownFootprintEntity').value
-            }"))
+            FILTER(CONTAINS(STR(?organisationName), "${footprintEntity}"))
             ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
             FILTER(?concept = ?OrgConcept)
           })
@@ -129,9 +129,7 @@ document
             ?organisationURI rdf:type org:Organization;
               rdfs:label ?organisationName;
               org:hasMember ?membersOfOrganisationURI.
-            FILTER(CONTAINS(STR(?organisationName), "${
-              document.getElementById('dropdownFootprintEntity').value
-            }"))
+            FILTER(CONTAINS(STR(?organisationName), "${footprintEntity}"))
             ?membersOfOrganisationURI boka:hasKnowledgeOf ?OrgConcept.
             FILTER(?concept = ?OrgConcept)
           })
@@ -149,16 +147,10 @@ document
       'Radial-Tidy-Tree': createRadialTidyTreeChart,
     };
 
-    let visualisationType = document.getElementById(
-      'typeOfVisualisationDropDown'
-    ).value;
-
     try {
-      genericSPARQLQuery(query)
-        .then(responseJson => transformSPARQLtoD3Hierarchie(responseJson))
-        .then(data => {
-          visualisationFunction[visualisationType](data);
-        });
+      const sparqlResponse = await genericSPARQLQuery(query);
+      const data = transformSPARQLtoD3Hierarchie(sparqlResponse);
+      visualisationFunction[visualisationType](data);
     } catch (error) {
       console.error('Error creating D3 visualisation: ', error);
       document.getElementById('right-side').innerText =
