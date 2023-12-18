@@ -79,7 +79,7 @@ function createRadialClusterTreeChart(data) {
         })`
     )
     .attr('font-family', 'Segoe UI')
-    .attr('font-size', 16)
+    .attr('font-size', d => `${d.data.labelSize}`)
     .attr('dy', '0.31em')
     .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
     .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
@@ -96,7 +96,7 @@ function createRadialClusterTreeChart(data) {
   }
 
   function hideLabel(d) {
-    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 10);
+    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
   }
 
   chartGroup

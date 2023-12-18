@@ -28,7 +28,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -49,7 +49,8 @@ document
             FILTER(?concept = ?IndConcept)
           })
           BIND("#f0cd02" AS ?nodeColour)
-          BIND(0  AS ?showLabel)
+          BIND(0 AS ?showLabel)
+          BIND(0 AS ?labelSize)
         }
         UNION
         {
@@ -72,7 +73,8 @@ document
             FILTER(?concept = ?IndConcept)
           })
           BIND("#f03502" AS ?nodeColour)
-          BIND(1  AS ?showLabel)
+          BIND(1 AS ?showLabel)
+          BIND(20 AS ?labelSize)
         }
       }
       `;
@@ -89,7 +91,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -110,7 +112,8 @@ document
             FILTER(?concept = ?OrgConcept)
           })
           BIND("#f0cd02" AS ?nodeColour)
-          BIND(0  AS ?showLabel)
+          BIND(0 AS ?showLabel)
+          BIND(0 AS ?labelSize)
         }
         UNION
         {
@@ -133,7 +136,8 @@ document
             FILTER(?concept = ?OrgConcept)
           })
           BIND("#f03502" AS ?nodeColour)
-          BIND(1  AS ?showLabel)
+          BIND(1 AS ?showLabel)
+          BIND(20 AS ?labelSize)
         }
       }
       `;

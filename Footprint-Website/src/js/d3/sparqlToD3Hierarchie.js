@@ -7,6 +7,7 @@ function transformSPARQLtoD3Hierarchie(json) {
     const parentId = item.conceptID.value;
     const nodeColour = item.nodeColour.value;
     const showLabel = item.showLabel.value;
+    const labelSize = item.labelSize.value;
 
     //console.log(parent, parentId, nodeColour, showLabel);
 
@@ -16,6 +17,7 @@ function transformSPARQLtoD3Hierarchie(json) {
         id: parentId,
         nodeColour: nodeColour,
         showLabel: showLabel,
+        labelSize: labelSize,
         children: [],
       });
     }
@@ -26,6 +28,7 @@ function transformSPARQLtoD3Hierarchie(json) {
     const parent = item.conceptName.value;
     const nodeColour = item.nodeColour.value;
     const showLabel = item.showLabel.value;
+    const labelSize = item.labelSize.value;
     const child = item.childName ? item.childName.value : null; // not all concepts have childs. so without child equals null
     const childId = item.childID ? item.childID.value : null;
 
@@ -37,6 +40,7 @@ function transformSPARQLtoD3Hierarchie(json) {
         id: childId,
         nodeColour: nodeColour,
         showLabel: showLabel,
+        labelSize: labelSize,
       });
     }
 
