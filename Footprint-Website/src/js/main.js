@@ -2,6 +2,14 @@ import { createRadialClusterTreeChart } from './d3/radialClusterTree.js';
 import { createRadialTidyTreeChart } from './d3/radialTidyTree.js';
 import { transformSPARQLtoD3Hierarchie } from './d3/sparqlToD3Hierarchie.js';
 
+// Fills the form based on type of footprint input.
+document
+  .getElementById('typeOfFootprintDropDown')
+  .addEventListener('change', function () {
+    createEntityDropDownList(this.value);
+  });
+
+// Processes what happens once you click submit
 document.getElementById('submitButton').addEventListener('click', event => {
   event.preventDefault();
   let indivudalSparqlQuery = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
