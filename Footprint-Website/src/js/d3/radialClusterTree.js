@@ -1,4 +1,4 @@
-import { genericSPARQLQuery } from '/Footprint-Website/src/js/sparql/genericSPARQLQuery.js';
+import { genericSPARQLQuery } from '../../../src/js/sparql/genericSPARQLQuery.js';
 
 function createRadialClusterTreeChart(data) {
   const width = 1780;
@@ -149,9 +149,9 @@ function createRadialClusterTreeChart(data) {
     organisationHtmlList += '</ul>';
 
     let detailsHtml = `<h2>${fullConceptName}</h2>
-    <h4>People with Knowledge of this concept:</h4>
+    <h4>People with knowledge of this concept:</h4>
     ${expertHtmlList}
-    <h4>Organisations with Knowledge of this concept:</h4>
+    <h4>Organisations with knowledge of this concept:</h4>
     ${organisationHtmlList}
     <h4>Description:</h4>
     <p>${description}</p>
