@@ -48,10 +48,10 @@
   {
     "doi": "https://doi.org/10.5194/agile-giss-4-13-2023",
     "authors": [
-      "Eleni Tomai\u8d21",
-      "Margarita Kokla\u8d21",
+      "Eleni Tomai\u8d211",
+      "Margarita Kokla\u8d211",
       "Christos Charcharos1",
-      "Marinos Kavouras\u8d21"
+      "Marinos Kavouras\u8d211"
     ],
     "organisations": [
       "1School of Rural, Surveying and Geoinformatics Engineering, National Technical University of Athens, Athens, Greece"
@@ -655,7 +655,7 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-4-46-2023",
-    "authors": ["Nils B. Tjaden\\uf8d21", "Justine I. Blanford\\uf8d21"],
+    "authors": ["Nils B. Tjaden1", "Justine I. Blanford1"],
     "organisations": [
       "1 Department of Earth Observation Science, Faculty of Geo Information Science and Earth Observation\u2013ITC, University of Twente, Enschede, Netherlands"
     ],

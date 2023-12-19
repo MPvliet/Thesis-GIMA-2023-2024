@@ -64,11 +64,11 @@ def parseIndividualExpertiseIntoRDF():
 
   #Create uniqueAuthorDict with all necessarily information to make RDF triples
   for expertise in indivudalExpertise:
-    print(expertise['doi'])
+    #print(expertise['doi'])
     
     for author in expertise['authors']:
       if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-        authorName = re.match(r'^(.*?)\d', author).group(1)
+        authorName = re.match(r'^(.*?)\d', author).group(1).strip().rstrip()
         authorOrgNumberList = re.findall(r'\d+', author)
         authorOrgNumberListStr = [str(number) for number in authorOrgNumberList]
 
@@ -81,15 +81,15 @@ def parseIndividualExpertiseIntoRDF():
 
         for organisation in expertise['organisations']:
           if any(organisation.startswith(num) for num in authorOrgNumberListStr):
-            uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation[1:]})
+            uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation[1:].strip().rstrip()})
           if re.match(r'^-?\d+(\.\d+)?$', organisation[0]):
             if organisation[0] not in uniqueOrganisationDict:
-              uniqueOrganisationDict[organisation[1:]] = {
-                'organisationName': organisation[1:],
+              uniqueOrganisationDict[organisation[1:].strip().rstrip()] = { # strip() removes whitespace at the begin of the line rstrip()at the end
+                'organisationName': organisation[1:].strip().rstrip(),
                 'organisationURI': str(uuid.uuid4())
               }
       else:
-        authorName = author
+        authorName = author.strip().rstrip()
         authorOrgNumberListStr = ['1']
         if authorName not in uniqueAuthorDict:
           uniqueAuthorDict[authorName] = {
@@ -99,10 +99,10 @@ def parseIndividualExpertiseIntoRDF():
           }
         
         for organisation in expertise['organisations']:
-          uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation})
+          uniqueAuthorDict[authorName]['worksAt'].append({'organisationName': organisation.strip().rstrip()})
           if organisation not in uniqueOrganisationDict:
-            uniqueOrganisationDict[organisation] = {
-              'organisationName': organisation,
+            uniqueOrganisationDict[organisation.strip().rstrip()] = {
+              'organisationName': organisation.strip().rstrip(),
               'organisationURI': str(uuid.uuid4())
             }
         
@@ -126,9 +126,9 @@ def parseIndividualExpertiseIntoRDF():
       # create hasknowledeOf and personWithKNowledge constructs
       for author in expertise['authors']:
         if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-          authorName = re.match(r'^(.*?)\d', author).group(1)
+          authorName = re.match(r'^(.*?)\d', author).group(1).strip().rstrip()
         else:
-          authorName = author
+          authorName = author.strip().rstrip()
         expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[authorName]['authorURI']))
         g.add((expertURI, boka.hasKnowledgeOf, conceptURI))
         g.add((conceptURI, boka.personWithKnowledge, expertURI))
@@ -139,9 +139,9 @@ def parseIndividualExpertiseIntoRDF():
     authorsList = []
     for author in expertise['authors']:
       if re.match(r'^-?\d+(\.\d+)?$', author[-1]):
-          authorName = re.match(r'^(.*?)\d', author).group(1)
+          authorName = re.match(r'^(.*?)\d', author).group(1).strip().rstrip()
       else:
-        authorName = author
+        authorName = author.strip().rstrip()
       expertURI = URIRef('{}{}'.format('https://bok.eo4geo.eu/',uniqueAuthorDict[authorName]['authorURI']))
       authorsList.append(expertURI)
 
