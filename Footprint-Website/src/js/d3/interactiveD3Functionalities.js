@@ -46,7 +46,7 @@ async function showDetails() {
     sparqlResponse.results.bindings[0].expertList.value.split(' || ');
 
   // Creates an HTML bullet point style list for each expert in the expertList.
-  let expertHtmlList = '<ul>';
+  let expertHtmlList = '<ul style="margin-top: 0;">';
   expertList.forEach(expert => {
     expertHtmlList += `<li>${expert}</li>`;
   });
@@ -56,19 +56,20 @@ async function showDetails() {
     sparqlResponse.results.bindings[0].organisationList.value.split(' || ');
 
   // Creates an HTML bullet point style list for each organisation in the organisationList.
-  let organisationHtmlList = '<ul>';
+  let organisationHtmlList = '<ul style="margin-top: 0;">';
   organisationList.forEach(organisation => {
     organisationHtmlList += `<li>${organisation}</li>`;
   });
   organisationHtmlList += '</ul>';
 
-  let detailsHtml = `<h2>${fullConceptName}</h2>
-  <h4>People with knowledge of this concept:</h4>
+  let detailsHtml = `
+  <h2 style="margin-bottom: 0;">${fullConceptName}</h2>
+  <h4 style="margin-bottom: 1;">People with knowledge of this concept:</h4>
   ${expertHtmlList}
-  <h4>Organisations with knowledge of this concept:</h4>
+  <h4 style="margin-bottom: 1;">Organisations with knowledge of this concept:</h4>
   ${organisationHtmlList}
-  <h4>Description:</h4>
-  <p>${description}</p>
+  <h4 style="margin-bottom: 0;">Description:</h4>
+  <p style="margin-top: 0;">${description}</p>
   `;
   document.getElementById('detailsSection').innerHTML = detailsHtml;
 }
