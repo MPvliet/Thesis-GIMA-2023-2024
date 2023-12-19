@@ -1,3 +1,5 @@
+// Copied and adjusted from https://observablehq.com/@d3/radial-cluster/2?intent=fork
+
 import {
   showDetails,
   showLabel,

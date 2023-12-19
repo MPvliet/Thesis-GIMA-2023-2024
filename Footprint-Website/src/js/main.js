@@ -4,6 +4,7 @@ import { createTreeMap } from './d3/treeMap.js';
 import { createZoomableTreeMap } from './d3/zoomableTreeMap.js';
 import { createNestedTreeMap } from './d3/nestedTreeMap.js';
 import { createForceDirectedTree } from './d3/forceDirectedTree.js';
+import { createCirclePacking } from './d3/circlePacking.js';
 import { transformSPARQLtoD3Hierarchie } from './d3/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
 
@@ -157,6 +158,7 @@ document
       'Zoomable-Tree-Map': createZoomableTreeMap,
       'Nested-Tree-Map': createNestedTreeMap,
       'Force-Directed-Tree': createForceDirectedTree,
+      'Circle-Packing': createCirclePacking,
     };
 
     try {
