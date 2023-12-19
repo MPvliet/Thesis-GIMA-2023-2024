@@ -1,5 +1,7 @@
 import { createRadialClusterTreeChart } from './d3/radialClusterTree.js';
 import { createRadialTidyTreeChart } from './d3/radialTidyTree.js';
+import { createTreeMap } from './d3/treeMap.js';
+import { createZoomableTreeMap } from './d3/zoomableTreeMap.js';
 import { transformSPARQLtoD3Hierarchie } from './d3/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
 
@@ -37,7 +39,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -58,6 +60,7 @@ document
           BIND("#f0cd02" AS ?nodeColour)
           BIND(0 AS ?showLabel)
           BIND(0 AS ?labelSize)
+          BIND(1 AS ?nodeValue)
         }
         UNION
         {
@@ -80,6 +83,7 @@ document
           BIND("#f03502" AS ?nodeColour)
           BIND(1 AS ?showLabel)
           BIND(16 AS ?labelSize)
+          BIND(1 AS ?nodeValue)
         }
       }
       `;
@@ -93,7 +97,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -114,6 +118,7 @@ document
           BIND("#f0cd02" AS ?nodeColour)
           BIND(0 AS ?showLabel)
           BIND(0 AS ?labelSize)
+          BIND(1 AS ?nodeValue)
         }
         UNION
         {
@@ -136,6 +141,7 @@ document
           BIND("#f03502" AS ?nodeColour)
           BIND(1 AS ?showLabel)
           BIND(16 AS ?labelSize)
+          BIND(1 AS ?nodeValue)
         }
       }
       `;
@@ -145,6 +151,8 @@ document
     const visualisationFunction = {
       'Radial-Cluster-Tree': createRadialClusterTreeChart,
       'Radial-Tidy-Tree': createRadialTidyTreeChart,
+      'Tree-Map': createTreeMap,
+      'Zoomable-Tree-Map': createZoomableTreeMap,
     };
 
     try {
