@@ -5,11 +5,11 @@ import {
 } from './interactiveD3Functionalities.js';
 
 function createRadialClusterTreeChart(data) {
-  const width = 1780;
-  const height = width;
+  const height = 930; //screen.availHeight - 280;
+  const width = 1590; //screen.availWidth * 0.8;
   const cx = width * 0.5;
   const cy = height * 0.5;
-  const radius = Math.min(width, height) / 2 - 190;
+  const radius = Math.min(width, height) / 2 - 20;
 
   const tree = d3
     .cluster()
@@ -23,7 +23,7 @@ function createRadialClusterTreeChart(data) {
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [-cx, -cy, width, height])
-    .attr('style', 'width: 100%; height: auto; font: 10px sans-serif;')
+    .attr('style', 'width: auto; height: auto;')
     .call(
       // enables zoom and pann
       d3
@@ -67,7 +67,7 @@ function createRadialClusterTreeChart(data) {
     )
     .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
     .attr('id', d => `${d.data.id}`)
-    .attr('r', 3.5);
+    .attr('r', 2.5);
 
   // Append labels
   chartGroup
@@ -96,6 +96,7 @@ function createRadialClusterTreeChart(data) {
     .attr('id', d => `label-${d.data.id}`)
     .text(d => d.data.name);
 
+  // Enables the interacive functions when hovering over a circle/ node in the graph.
   chartGroup
     .selectAll('circle')
     .on('mouseover.details', showDetails)

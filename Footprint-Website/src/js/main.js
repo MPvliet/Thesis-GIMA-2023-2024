@@ -79,7 +79,7 @@ document
           })
           BIND("#f03502" AS ?nodeColour)
           BIND(1 AS ?showLabel)
-          BIND(20 AS ?labelSize)
+          BIND(16 AS ?labelSize)
         }
       }
       `;
@@ -135,7 +135,7 @@ document
           })
           BIND("#f03502" AS ?nodeColour)
           BIND(1 AS ?showLabel)
-          BIND(20 AS ?labelSize)
+          BIND(16 AS ?labelSize)
         }
       }
       `;
