@@ -6,7 +6,7 @@ function showLabel() {
 }
 
 function hideLabel() {
-  d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
+  d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0); //if font-size stays 20 the label is just hidden, but lays over other nodes, that then become unhoverable..
 }
 
 async function showDetails() {
@@ -32,15 +32,20 @@ async function showDetails() {
   }
   GROUP BY ?fullConceptName ?description
   `;
+
+  // Performs a rest call to graphDB with the above query.
   const sparqlResponse = await genericSPARQLQuery(detailQuery);
 
+  // Concept description
   const description = sparqlResponse.results.bindings[0].description.value;
+  // Titel from each concept.
   const fullConceptName =
     sparqlResponse.results.bindings[0].fullConceptName.value;
 
   const expertList =
     sparqlResponse.results.bindings[0].expertList.value.split(' || ');
 
+  // Creates an HTML bullet point style list for each expert in the expertList.
   let expertHtmlList = '<ul>';
   expertList.forEach(expert => {
     expertHtmlList += `<li>${expert}</li>`;
@@ -50,6 +55,7 @@ async function showDetails() {
   const organisationList =
     sparqlResponse.results.bindings[0].organisationList.value.split(' || ');
 
+  // Creates an HTML bullet point style list for each organisation in the organisationList.
   let organisationHtmlList = '<ul>';
   organisationList.forEach(organisation => {
     organisationHtmlList += `<li>${organisation}</li>`;
