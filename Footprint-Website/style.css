@@ -18,6 +18,7 @@ html {
   display: flex;
   align-items: center; /* This will vertically center the logo in the header */
   margin-left: 10px;
+  padding-right: 15px;
 }
 
 #logo {
@@ -68,14 +69,13 @@ html {
 
 .right-side {
   width: 80%;
-
   background-color: #0c1a1a; /* #ffffff; /* Light gray background for visualization area */
 }
 
 .user-input-form {
   display: flex;
   padding-left: 15px;
-  padding-right: 2px;
+  padding-right: 15px;
   flex-direction: column;
   gap: 10px;
 }

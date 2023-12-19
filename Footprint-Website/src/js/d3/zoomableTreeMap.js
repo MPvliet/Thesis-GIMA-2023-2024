@@ -38,7 +38,7 @@ function createZoomableTreeMap(data) {
   const hierarchy = d3
     .hierarchy(data)
     .sum(d => d.hasOwnProperty('nodeValue'))
-    .sort((a, b) => b.value - a.value);
+    .sort((a, b) => b.height - a.height || b.value - a.value);
   const root = d3.treemap().tile(tile)(hierarchy);
 
   // Create the scales.
@@ -103,8 +103,8 @@ function createZoomableTreeMap(data) {
       .selectAll('tspan')
       .data(d =>
         (d === root ? name(d) : d.data.name)
-          .split(/(?=[A-Z][^A-Z])/g)
-          .concat(format(d.value))
+          .split()
+          .concat('Subclasses: ' + format(d.value))
       )
       .join('tspan')
       .attr('x', 3)

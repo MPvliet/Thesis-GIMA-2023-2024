@@ -3,7 +3,7 @@
 function createTreeMap(data) {
   console.log(data);
 
-  const height = 930; //screen.availHeight - 280;
+  const height = 1930; //screen.availHeight - 280;
   const width = 1590; //screen.availWidth * 0.8;
 
   // Specify the color scale.
