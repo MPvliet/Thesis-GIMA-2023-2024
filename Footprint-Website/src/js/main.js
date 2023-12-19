@@ -5,7 +5,7 @@ import { createZoomableTreeMap } from './d3/zoomableTreeMap.js';
 import { createNestedTreeMap } from './d3/nestedTreeMap.js';
 import { createForceDirectedTree } from './d3/forceDirectedTree.js';
 import { createCirclePacking } from './d3/circlePacking.js';
-import { transformSPARQLtoD3Hierarchie } from './d3/sparqlToD3Hierarchie.js';
+import { transformSPARQLtoD3Hierarchie } from './sparql/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
 
 // Fills the HTML form based on type of footprint input.
