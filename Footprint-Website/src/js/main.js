@@ -7,6 +7,7 @@ import { createForceDirectedTree } from './d3/forceDirectedTree.js';
 import { createCirclePacking } from './d3/circlePacking.js';
 import { transformSPARQLtoD3Hierarchie } from './sparql/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
+import { searchConceptInD3Vis } from './d3/interactiveD3Functionalities.js';
 
 // Fills the HTML form based on type of footprint input.
 document
@@ -248,3 +249,9 @@ function fillOrganisationAndPersonList(footprintType, list) {
     document.getElementById('dropdownFootprintEntity').innerHTML = options;
   }
 }
+
+document
+  .getElementById('searchBar')
+  .addEventListener('input', function (event) {
+    searchConceptInD3Vis(event.target.value);
+  });

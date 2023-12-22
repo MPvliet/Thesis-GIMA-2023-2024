@@ -74,4 +74,23 @@ async function showDetails() {
   document.getElementById('detailsSection').innerHTML = detailsHtml;
 }
 
-export { showDetails, showLabel, hideLabel };
+function searchConceptInD3Vis(searchQuery) {
+  if (searchQuery.length >= 2) {
+    let d3NodeID = searchQuery;
+    let d3Nodes = document.querySelectorAll('.concept-' + d3NodeID);
+
+    d3Nodes.forEach(function (d3Node) {
+      d3Node.style.stroke = 'darkorange';
+      d3Node.style.strokeWidth = '7px';
+      d3Node.style.strokeOpacity = 0.7;
+
+      setTimeout(function () {
+        if (d3Node) {
+          d3Node.style.strokeOpacity = 0;
+        }
+      }, 5000);
+    });
+  }
+}
+
+export { showDetails, showLabel, hideLabel, searchConceptInD3Vis };

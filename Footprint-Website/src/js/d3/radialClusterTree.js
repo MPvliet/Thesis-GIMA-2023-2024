@@ -69,6 +69,7 @@ function createRadialClusterTreeChart(data) {
     )
     .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
     .attr('id', d => `${d.data.id}`)
+    .attr('class', d => `concept-${d.data.id}`)
     .attr('r', 2.5);
 
   // Append labels
