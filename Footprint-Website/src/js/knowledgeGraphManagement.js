@@ -46,6 +46,7 @@ document
     const expert = document.getElementById('dropdownExperts-Add').value;
     const concept = document.getElementById('dropdownConcepts-Add').value;
     addExpertiseAnnotation(expert, concept);
+    event.target.form.reset(); // Resets the form after clicking submit.
   });
 
 // Processes what happens once you click Delete
@@ -56,6 +57,7 @@ document
     const expert = document.getElementById('dropdownExperts-Delete').value;
     const concept = document.getElementById('dropdownConcepts-Delete').value;
     deleteExpertiseAnnotation(expert, concept);
+    event.target.form.reset(); // Resets the form after clicking submit.
   });
 
 // Fills the Dropdown menu based on the information returned by the SPARQL query
