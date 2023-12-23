@@ -25,15 +25,19 @@
     <div class="bok-mangement-container">
       <div class="mid-left-side">
         <form class="user-input-form">
-          <label for="dropdownOrganisations-Delete">Choose Organisation</label>
+          <label for="dropdownOrganisations-Delete"
+            >1. Choose organisation</label
+          >
           <select id="dropdownOrganisations-Delete" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
-          <label for="dropdownExperts-Delete">Update expertise of:</label>
+          <label for="dropdownExperts-Delete">2. Update expertise of</label>
           <select id="dropdownExperts-Delete" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
-          <label for="dropdownConcepts-Delete">Choose Concept to Delete</label>
+          <label for="dropdownConcepts-Delete"
+            >3. Choose concept to delete</label
+          >
           <select id="dropdownConcepts-Delete" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
@@ -42,15 +46,15 @@
       </div>
       <div class="mid-right-side">
         <form class="user-input-form">
-          <label for="dropdownOrganisations-Add">Choose Organisation</label>
+          <label for="dropdownOrganisations-Add">1. Choose organisation</label>
           <select id="dropdownOrganisations-Add" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
-          <label for="dropdownExperts-Add">Update expertise of:</label>
+          <label for="dropdownExperts-Add">2. Update expertise of</label>
           <select id="dropdownExperts-Add" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
-          <label for="dropdownConcepts-Add">Choose Concept to Add</label>
+          <label for="dropdownConcepts-Add">3. Choose concept to add</label>
           <select id="dropdownConcepts-Add" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
@@ -58,18 +62,6 @@
         </form>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById('menuBar')
-        .addEventListener('click', function (event) {
-          if (event.target.classList.contains('menu-item')) {
-            let items = document.querySelectorAll('.menu-item');
-            items.forEach(item => item.classList.remove('active'));
-            event.target.classList.add('active');
-          }
-        });
-    </script>
-    <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="src/js/knowledgeGraphManagement.js"></script>
   </body>
 </html>

@@ -143,7 +143,7 @@ input[type='text'] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
-  align-items: flex-start;
+  align-items: start;
   height: 100vh;
 }
 

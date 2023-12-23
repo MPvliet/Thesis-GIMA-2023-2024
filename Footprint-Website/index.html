@@ -48,7 +48,11 @@
           <select id="dropdownFootprintEntity" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
-          <input id="submitButton" type="submit" value="Generate Footprint" />
+          <input
+            id="submitButton-Generate-Footprint"
+            type="submit"
+            value="Generate Footprint"
+          />
         </form>
         <div id="detailsSection" class="left-side">
           <!-- Details will be displayed here -->
@@ -66,18 +70,6 @@
         <!-- locatie voor sparql output en D3 visualisaties. -->
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById('menuBar')
-        .addEventListener('click', function (event) {
-          if (event.target.classList.contains('menu-item')) {
-            let items = document.querySelectorAll('.menu-item');
-            items.forEach(item => item.classList.remove('active'));
-            event.target.classList.add('active');
-          }
-        });
-    </script>
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

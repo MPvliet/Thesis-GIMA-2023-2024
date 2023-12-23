@@ -7,7 +7,16 @@ import { createForceDirectedTree } from './d3/forceDirectedTree.js';
 import { createCirclePacking } from './d3/circlePacking.js';
 import { transformSPARQLtoD3Hierarchie } from './sparql/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
+import { getAllOrganisations } from './sparql/getAllOrganisations.js';
+import { getAllExpertsFromAOrganisation } from './sparql/getAllExpertsFromOrganisation.js';
 import { searchConceptInD3Vis } from './d3/interactiveD3Functionalities.js';
+
+// Search bar functionality - Highlight node.
+document
+  .getElementById('searchBar')
+  .addEventListener('input', function (event) {
+    searchConceptInD3Vis(event.target.value);
+  });
 
 // Fills the HTML form based on type of footprint input.
 document
@@ -16,9 +25,9 @@ document
     createEntityDropDownList(this.value);
   });
 
-// Processes what happens once you click submit
+// Processes what happens once you click Generate Footprint
 document
-  .getElementById('submitButton')
+  .getElementById('submitButton-Generate-Footprint')
   .addEventListener('click', async event => {
     event.preventDefault(); // Without this the page refreshes once I click the submit button, but I want JS to process form input, not refresh.
 
@@ -173,56 +182,11 @@ document
     }
   });
 
-async function getAllExperts() {
-  const query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-  PREFIX boka: <http://example.org/BOKA/>
-  
-  select ?expertName 
-  where { 
-    ?expertURI rdf:type boka:Expert ;
-              foaf:name ?expertName ;
-  }`;
-
-  try {
-    const data = await genericSPARQLQuery(query);
-    const expertList = data['results']['bindings'].map(
-      expert => expert.expertName.value
-    );
-    return expertList.sort();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    return [];
-  }
-}
-
-async function getAllOrganisations() {
-  const query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-  PREFIX org: <http://www.w3.org/ns/org#>
-  
-  select ?organisationName 
-  where { 
-    ?orgURI rdf:type org:Organization ;
-              foaf:name ?organisationName ;
-  }`;
-
-  try {
-    const data = await genericSPARQLQuery(query);
-    const organisationList = data['results']['bindings'].map(
-      organisation => organisation.organisationName.value
-    );
-    return organisationList.sort();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    return [];
-  }
-}
-
 async function createEntityDropDownList(footprintType) {
   if (footprintType === 'Individual') {
     try {
-      const expertList = await getAllExperts();
+      const organisation = ''; // For this one I want to return all Experts from every org.
+      const expertList = await getAllExpertsFromAOrganisation(organisation);
       fillOrganisationAndPersonList(footprintType, expertList);
     } catch (error) {
       console.error('Error:', error);
@@ -242,16 +206,10 @@ function fillOrganisationAndPersonList(footprintType, list) {
     document.getElementById('dropdownFootprintEntity').innerHTML =
       '<option></option>';
   } else {
-    var options = '';
-    for (var entity of list) {
+    let options = '';
+    for (const entity of list) {
       options += '<option>' + entity + '</option>';
     }
     document.getElementById('dropdownFootprintEntity').innerHTML = options;
   }
 }
-
-document
-  .getElementById('searchBar')
-  .addEventListener('input', function (event) {
-    searchConceptInD3Vis(event.target.value);
-  });
