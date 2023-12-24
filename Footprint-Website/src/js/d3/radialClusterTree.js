@@ -44,7 +44,7 @@ function createRadialClusterTreeChart(data) {
     .append('g')
     .attr('fill', 'none')
     .attr('stroke', '#005ca2')
-    .attr('stroke-opacity', 0.4)
+    .attr('stroke-opacity', 0.1)
     .attr('stroke-width', 2.5)
     .selectAll()
     .data(root.links())
@@ -55,7 +55,30 @@ function createRadialClusterTreeChart(data) {
         .linkRadial()
         .angle(d => d.x)
         .radius(d => d.y)
-    );
+    )
+    .attr('source', d => `${d.source.data.name}`)
+    .attr('target', d => `${d.target.data.name}`);
+
+  function colorPathToRoot(node, color) {
+    let currentNode = node;
+    while (currentNode.parent) {
+      // While currentNode has a parent, select the currentNode and change the path stroke colour.
+      chartGroup
+        .selectAll('path')
+        .filter(d => d.target === currentNode)
+        .attr('stroke', color)
+        .attr('stroke-opacity', 1);
+
+      currentNode = currentNode.parent; // Move to the parent node
+    }
+  }
+
+  root.descendants().forEach(node => {
+    // loops through each childnode from the rootnode.
+    if (parseInt(node.data.showLabel) === 1) {
+      colorPathToRoot(node, 'green');
+    }
+  });
 
   // Append nodes
   chartGroup
@@ -68,6 +91,7 @@ function createRadialClusterTreeChart(data) {
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
     .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
+    .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.1)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
     .attr('id', d => `${d.data.id}`)
     .attr('class', d => `concept-${d.data.id}`)
     .attr('r', 2.5);
