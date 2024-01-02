@@ -8,7 +8,7 @@ import { createCirclePacking } from './d3/circlePacking.js';
 import { transformSPARQLtoD3Hierarchie } from './sparql/sparqlToD3Hierarchie.js';
 import { genericSPARQLQuery } from './sparql/genericSPARQLQuery.js';
 import { getAllOrganisations } from './sparql/getAllOrganisations.js';
-import { getAllExpertsFromAOrganisation } from './sparql/getAllExpertsFromOrganisation.js';
+import { getAllExpertsFromOrganisation } from './sparql/getAllExpertsFromOrganisation.js';
 import { searchConceptInD3Vis } from './d3/interactiveD3Functionalities.js';
 
 // Search bar functionality - Highlight node.
@@ -52,7 +52,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -110,7 +110,7 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity WHERE {
         {
           ?concept rdf:type obok:Concept;
             rdfs:label ?conceptName;
@@ -186,7 +186,7 @@ async function createEntityDropDownList(footprintType) {
   if (footprintType === 'Individual') {
     try {
       const organisation = ''; // For this one I want to return all Experts from every org.
-      const expertList = await getAllExpertsFromAOrganisation(organisation);
+      const expertList = await getAllExpertsFromOrganisation(organisation);
       fillOrganisationAndPersonList(footprintType, expertList);
     } catch (error) {
       console.error('Error:', error);

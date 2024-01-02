@@ -38,16 +38,20 @@
           <label for="typeOfVisualisationDropDown">Type of Visualisation</label>
           <select id="typeOfVisualisationDropDown" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
-            <option value="Radial-Cluster-Tree">Radial Cluster Tree</option>
-            <option value="Radial-Tidy-Tree">Radial Tidy Tree</option>
-            <option value="Tree-Map">Tree Map</option>
-            <option value="Zoomable-Tree-Map">Zoomable Tree Map</option>
-            <option value="Nested-Tree-Map">Nested Tree Map</option>
-            <option value="Force-Directed-Tree">Force Directed Tree</option>
-            <option value="Circle-Packing">Circle Packing</option>
+            <option value="Radial-Cluster-Tree" selected>
+              Radial Cluster Tree
+            </option>
           </select>
-          <label for="dropdownFootprintEntity">Footprint of whom?</label>
-          <select id="dropdownFootprintEntity" class="dropdown-menu">
+          <label for="dropdownFootprintEntityFirst"
+            >Footprint of first entity</label
+          >
+          <select id="dropdownFootprintEntityFirst" class="dropdown-menu">
+            <option value="" disabled selected>Select</option>
+          </select>
+          <label for="dropdownFootprintEntitySecond"
+            >Footprint of second entity</label
+          >
+          <select id="dropdownFootprintEntitySecond" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
           </select>
           <input
@@ -72,6 +76,6 @@
         <!-- locatie voor sparql output en D3 visualisaties. -->
       </div>
     </div>
-    <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="src/js/footprintMatching.js"></script>
   </body>
 </html>
