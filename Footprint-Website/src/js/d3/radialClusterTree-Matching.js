@@ -145,19 +145,16 @@ function createRadialClusterTreeChartForMatching(data) {
     { color: 'green', label: 'First entity', type: 'line' },
     { color: 'orange', label: 'Second entity', type: 'line' },
     { color: 'purple', label: 'Match', type: 'line' },
-    { color: 'red', label: 'EO4GEO Concept', type: 'circle' },
+    { color: 'red', label: 'Knowledge of EO4GEO Concept', type: 'circle' },
   ];
 
-  // Select the div or create a new one
-  let legendDiv = d3.select(`#d3Legend`);
-
   // Create a new SVG for the legend
-  const legendSvg = legendDiv
+  const legendSvg = d3
+    .select(`#d3Legend`)
     .append('svg')
     .attr('width', 150)
-    .attr('height', legendData.length * 25);
+    .attr('height', legendData.length * 50);
 
-  // Add the legend items
   const legend = legendSvg
     .selectAll('.legend')
     .data(legendData)
@@ -185,15 +182,25 @@ function createRadialClusterTreeChartForMatching(data) {
         .style('stroke', d.color)
         .style('stroke-width', 2);
     }
-
     legendItem
-      .append('text')
+      .append('foreignObject')
       .attr('x', 20)
-      .attr('y', 12)
-      .text(d.label)
+      .attr('y', 0)
+      .attr('width', 100)
+      .attr('height', 50)
+      .append('xhtml:div')
       .style('font-size', '14px')
-      .style('fill', d.color)
-      .attr('alignment-baseline', 'middle');
+      .style('color', d.color)
+      .html(d.label);
+
+    // legendItem
+    //   .append('text')
+    //   .attr('x', 20)
+    //   .attr('y', 12)
+    //   .text(d.label)
+    //   .style('font-size', '14px')
+    //   .style('fill', d.color)
+    //   .attr('alignment-baseline', 'middle');
   });
 
   document.getElementById('right-side').appendChild(svg.node());
