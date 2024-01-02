@@ -141,6 +141,61 @@ function createRadialClusterTreeChartForMatching(data) {
     .on('mouseover.label', showLabel)
     .on('mouseout.label', hideLabel);
 
+  const legendData = [
+    { color: 'green', label: 'First entity', type: 'line' },
+    { color: 'orange', label: 'Second entity', type: 'line' },
+    { color: 'purple', label: 'Match', type: 'line' },
+    { color: 'red', label: 'EO4GEO Concept', type: 'circle' },
+  ];
+
+  // Select the div or create a new one
+  let legendDiv = d3.select(`#d3Legend`);
+
+  // Create a new SVG for the legend
+  const legendSvg = legendDiv
+    .append('svg')
+    .attr('width', 150)
+    .attr('height', legendData.length * 25);
+
+  // Add the legend items
+  const legend = legendSvg
+    .selectAll('.legend')
+    .data(legendData)
+    .enter()
+    .append('g')
+    .attr('class', 'legend')
+    .attr('transform', (d, i) => `translate(10, ${i * 20})`);
+
+  legend.each(function (d) {
+    const legendItem = d3.select(this);
+    if (d.type === 'circle') {
+      legendItem
+        .append('circle')
+        .attr('cx', 7.5)
+        .attr('cy', 10)
+        .attr('r', 5)
+        .style('fill', d.color);
+    } else if (d.type === 'line') {
+      legendItem
+        .append('line')
+        .attr('x1', 0)
+        .attr('y1', 10)
+        .attr('x2', 15)
+        .attr('y2', 10)
+        .style('stroke', d.color)
+        .style('stroke-width', 2);
+    }
+
+    legendItem
+      .append('text')
+      .attr('x', 20)
+      .attr('y', 12)
+      .text(d.label)
+      .style('font-size', '14px')
+      .style('fill', d.color)
+      .attr('alignment-baseline', 'middle');
+  });
+
   document.getElementById('right-side').appendChild(svg.node());
 }
 
