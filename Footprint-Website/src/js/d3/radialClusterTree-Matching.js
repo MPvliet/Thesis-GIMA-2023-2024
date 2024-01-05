@@ -136,7 +136,6 @@ function createRadialClusterTreeChartForMatching(data) {
 
   // Creates the outer piechart/doughnut chart outside of the radialClusterTree chart.
   const counted = root.copy().count(); // counts all leafnodes under each child from the root.
-  console.log(counted);
 
   const pieDataAutoGenerate = counted.children.map(child => ({
     // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis.
@@ -204,8 +203,6 @@ function createRadialClusterTreeChartForMatching(data) {
     },
   ];
 
-  console.log(pieDataAutoGenerate);
-
   // copied and adjusted from: https://observablehq.com/@d3/donut-chart/2?intent=fork
   const arc = d3
     .arc()
@@ -254,21 +251,12 @@ function createRadialClusterTreeChartForMatching(data) {
     .call(text =>
       text
         .append('tspan')
-        .attr('y', '-0.4em')
+        .attr('y', '0em')
         .attr('font-weight', 'bold')
         .text(d => d.data.name)
-    )
-    .call(text =>
-      text
-        .filter(d => d.endAngle - d.startAngle > 0.25)
-        .append('tspan')
-        .attr('x', 0)
-        .attr('y', '0.7em')
-        .attr('fill-opacity', 0.7)
-        .text(d => d.data.value.toLocaleString('en-US'))
     );
 
-  // Enables the interacive functions when hovering over a circle/ node in the graph.
+  // Enables the interacive functions when hovering over a circle/ node in the graph. Only works for the radial cluster tree nodes, since selectAll 'circle'
   chartGroup
     .selectAll('circle')
     .on('mouseover.details', showDetails)
@@ -276,10 +264,111 @@ function createRadialClusterTreeChartForMatching(data) {
     .on('mouseout.label', hideLabel);
 
   const legendData = [
-    { color: 'green', label: 'First entity', type: 'line' },
-    { color: 'orange', label: 'Second entity', type: 'line' },
-    { color: 'purple', label: 'Match', type: 'line' },
-    { color: 'red', label: 'Knowledge of EO4GEO Concept', type: 'circle' },
+    { color: 'green', label: 'First entity', type: 'line', rowHeight: 0 },
+    { color: 'orange', label: 'Second entity', type: 'line', rowHeight: 20 },
+    { color: 'purple', label: 'Match', type: 'line', rowHeight: 40 },
+    {
+      color: '#ffd966',
+      label: 'EO4GEO Concepts',
+      type: 'circle',
+      rowHeight: 60,
+    },
+    {
+      color: 'red',
+      label: 'Knowledge of EO4GEO Concept',
+      type: 'circle',
+      rowHeight: 80,
+    },
+    {
+      color: 'purple',
+      label: 'Both entities contain knowledge of EO4GEO Concept',
+      type: 'circle',
+      rowHeight: 115,
+    },
+    {
+      color: '#4288B5',
+      label: '[AM] Analytical Methods ',
+      type: 'rect',
+      rowHeight: 150,
+    },
+    {
+      color: '#54AAAF',
+      label: '[CF] Conceptual Foundations',
+      type: 'rect',
+      rowHeight: 170,
+    },
+    {
+      color: '#77C6A6',
+      label: '[CV] Cartography and Visualization',
+      type: 'rect',
+      rowHeight: 195,
+    },
+    {
+      color: '#9FD9A3',
+      label: '[DA] Design and Setup of Geographic Information Systems',
+      type: 'rect',
+      rowHeight: 235,
+    },
+    {
+      color: '#C5E89F',
+      label: '[DM] Data Modeling, Storage and Exploitation ',
+      type: 'rect',
+      rowHeight: 285,
+    },
+    {
+      color: '#E3F4A2',
+      label: '[GC] Geocomputation ',
+      type: 'rect',
+      rowHeight: 315,
+    },
+    {
+      color: '#F6FAAE',
+      label: '[GD] Geospatial Data ',
+      type: 'rect',
+      rowHeight: 335,
+    },
+    {
+      color: '#FDF3AA',
+      label: '[GS] GI and Society ',
+      type: 'rect',
+      rowHeight: 355,
+    },
+    {
+      color: '#FEE090',
+      label: '[IP] Image Processing and Analysis ',
+      type: 'rect',
+      rowHeight: 375,
+    },
+    {
+      color: '#FDC475',
+      label: '[OI] Organizational and Institutional Aspects ',
+      type: 'rect',
+      rowHeight: 405,
+    },
+    {
+      color: '#FBA25E',
+      label: '[PP] Physical Principles ',
+      type: 'rect',
+      rowHeight: 435,
+    },
+    {
+      color: '#F47D4D',
+      label: '[PS] Platforms, Sensors and Digital Imagery',
+      type: 'rect',
+      rowHeight: 455,
+    },
+    {
+      color: '#E75B49',
+      label: '[TA] Thematic and Application Domains ',
+      type: 'rect',
+      rowHeight: 485,
+    },
+    {
+      color: '#D13C4B',
+      label: '[WB] Web-based GI ',
+      type: 'rect',
+      rowHeight: 515,
+    },
   ];
 
   // calls the createLegend function and creates a legend.

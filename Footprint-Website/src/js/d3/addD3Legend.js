@@ -3,8 +3,8 @@ function createLegend(legendData, divID) {
   const legendSvg = d3
     .select(divID)
     .append('svg')
-    .attr('width', 150)
-    .attr('height', legendData.length * 50);
+    .attr('width', 230)
+    .attr('height', 1500); //legendData.length * 50);
 
   const legend = legendSvg
     .selectAll('.legend')
@@ -12,7 +12,7 @@ function createLegend(legendData, divID) {
     .enter()
     .append('g')
     .attr('class', 'legend')
-    .attr('transform', (d, i) => `translate(10, ${i * 20})`);
+    .attr('transform', (d, i) => `translate(10, ${d.rowHeight})`);
 
   legend.each(function (d) {
     const legendItem = d3.select(this);
@@ -32,12 +32,20 @@ function createLegend(legendData, divID) {
         .attr('y2', 10)
         .style('stroke', d.color)
         .style('stroke-width', 2);
+    } else if (d.type === 'rect') {
+      legendItem
+        .append('rect')
+        .attr('x', 0)
+        .attr('y', 5)
+        .attr('width', 10)
+        .attr('height', 10)
+        .style('fill', d.color);
     }
     legendItem
       .append('foreignObject')
       .attr('x', 20)
       .attr('y', 0)
-      .attr('width', 100)
+      .attr('width', 200)
       .attr('height', 50)
       .append('xhtml:div')
       .style('font-size', '14px')
