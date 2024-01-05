@@ -134,6 +134,140 @@ function createRadialClusterTreeChartForMatching(data) {
     .attr('id', d => `label-${d.data.id}`)
     .text(d => d.data.name);
 
+  // Creates the outer piechart/doughnut chart outside of the radialClusterTree chart.
+  const counted = root.copy().count(); // counts all leafnodes under each child from the root.
+  console.log(counted);
+
+  const pieDataAutoGenerate = counted.children.map(child => ({
+    // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis.
+    name: child.data.id,
+    value: child.value,
+  }));
+
+  const pieData = [
+    // Manually adjusted
+    {
+      name: 'AM',
+      value: 88,
+    },
+    {
+      name: 'CF',
+      value: 47,
+    },
+    {
+      name: 'CV',
+      value: 42,
+    },
+    {
+      name: 'DA',
+      value: 26,
+    },
+    {
+      name: 'DM',
+      value: 45,
+    },
+    {
+      name: 'GC',
+      value: 92,
+    },
+    {
+      name: 'GD',
+      value: 50,
+    },
+    {
+      name: 'GS',
+      value: 34,
+    },
+    {
+      name: 'IP',
+      value: 150,
+    },
+    {
+      name: 'OI',
+      value: 30,
+    },
+    {
+      name: 'PP',
+      value: 165,
+    },
+    {
+      name: 'PS',
+      value: 70,
+    },
+    {
+      name: 'TA',
+      value: 103,
+    },
+    {
+      name: 'WB',
+      value: 30,
+    },
+  ];
+
+  console.log(pieDataAutoGenerate);
+
+  // copied and adjusted from: https://observablehq.com/@d3/donut-chart/2?intent=fork
+  const arc = d3
+    .arc()
+    .innerRadius(radius + 25)
+    .outerRadius(radius + 75);
+
+  const pie = d3
+    .pie()
+    .padAngle(null)
+    .sort(null)
+    .value(d => d.value);
+
+  console.log(pie(pieDataAutoGenerate));
+
+  const color = d3
+    .scaleOrdinal()
+    .domain(pieDataAutoGenerate.map(d => d.name))
+    .range(
+      d3
+        .quantize(
+          t => d3.interpolateSpectral(t * 0.8 + 0.1),
+          pieDataAutoGenerate.length
+        )
+        .reverse()
+    );
+
+  chartGroup
+    .append('g')
+    .selectAll()
+    .data(pie(pieDataAutoGenerate))
+    .join('path')
+    .attr('fill', d => color(d.data.name))
+    .attr('d', arc)
+    .append('title')
+    .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}`);
+
+  chartGroup
+    .append('g')
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', 12)
+    .attr('text-anchor', 'middle')
+    .selectAll()
+    .data(pie(pieDataAutoGenerate))
+    .join('text')
+    .attr('transform', d => `translate(${arc.centroid(d)})`)
+    .call(text =>
+      text
+        .append('tspan')
+        .attr('y', '-0.4em')
+        .attr('font-weight', 'bold')
+        .text(d => d.data.name)
+    )
+    .call(text =>
+      text
+        .filter(d => d.endAngle - d.startAngle > 0.25)
+        .append('tspan')
+        .attr('x', 0)
+        .attr('y', '0.7em')
+        .attr('fill-opacity', 0.7)
+        .text(d => d.data.value.toLocaleString('en-US'))
+    );
+
   // Enables the interacive functions when hovering over a circle/ node in the graph.
   chartGroup
     .selectAll('circle')

@@ -29,6 +29,7 @@ function transformSPARQLtoD3Hierarchie(json) {
         nodeValueFirstEntity: nodeValueFirstEntity,
         nodeValueSecondEntity: nodeValueSecondEntity,
         matched: matched,
+        value: 1,
         children: [],
       });
     }
@@ -64,6 +65,7 @@ function transformSPARQLtoD3Hierarchie(json) {
         nodeValueFirstEntity: nodeValueFirstEntity,
         nodeValueSecondEntity: nodeValueSecondEntity,
         matched: matched,
+        value: 1,
       });
     }
 
