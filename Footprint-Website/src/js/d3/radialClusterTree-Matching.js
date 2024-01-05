@@ -7,7 +7,7 @@ import {
 } from './interactiveD3Functionalities.js';
 
 function createRadialClusterTreeChartForMatching(data) {
-  const height = 930; //screen.availHeight - 280;
+  const height = 1420; //930; //screen.availHeight - 280;
   const width = 1590; //screen.availWidth * 0.8;
   const cx = width * 0.5;
   const cy = height * 0.5;
@@ -44,8 +44,8 @@ function createRadialClusterTreeChartForMatching(data) {
     .append('g')
     .attr('fill', 'none')
     .attr('stroke', '#005ca2')
-    .attr('stroke-opacity', 0.1)
-    .attr('stroke-width', 2.5)
+    .attr('stroke-opacity', 0.2)
+    .attr('stroke-width', 2)
     .selectAll()
     .data(root.links())
     .join('path')
@@ -67,6 +67,7 @@ function createRadialClusterTreeChartForMatching(data) {
         .selectAll('path')
         .filter(d => d.target === currentNode)
         .attr('stroke', color)
+        .attr('stroke-width', 3.5)
         .attr('stroke-opacity', 1);
 
       currentNode = currentNode.parent; // Move to the parent node
@@ -102,10 +103,10 @@ function createRadialClusterTreeChartForMatching(data) {
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
     .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
-    .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.1)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
+    .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.2)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
     .attr('id', d => `${d.data.id}`)
     .attr('class', d => `concept-${d.data.id}`)
-    .attr('r', 2.5);
+    .attr('r', d => (parseInt(d.data.showLabel) === 1 ? 4 : 2.5));
 
   // Append labels
   chartGroup
@@ -123,7 +124,7 @@ function createRadialClusterTreeChartForMatching(data) {
         })`
     )
     .attr('font-family', 'Segoe UI')
-    .attr('font-size', d => `${d.data.labelSize}`)
+    .attr('font-size', d => 0) //`${d.data.labelSize}`
     .attr('dy', '0.31em')
     .attr('x', d => (d.x < Math.PI === !d.children ? 6 : -6))
     .attr('text-anchor', d => (d.x < Math.PI === !d.children ? 'start' : 'end'))
@@ -138,7 +139,7 @@ function createRadialClusterTreeChartForMatching(data) {
   const counted = root.copy().count(); // counts all leafnodes under each child from the root.
 
   const pieDataAutoGenerate = counted.children.map(child => ({
-    // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis.
+    // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis. // -- But this does not give the expected output.
     name: child.data.id,
     value: child.value,
   }));
@@ -147,59 +148,59 @@ function createRadialClusterTreeChartForMatching(data) {
     // Manually adjusted
     {
       name: 'AM',
-      value: 88,
+      value: 32,
     },
     {
       name: 'CF',
-      value: 47,
+      value: 17,
     },
     {
       name: 'CV',
-      value: 42,
+      value: 17,
     },
     {
       name: 'DA',
-      value: 26,
+      value: 8,
     },
     {
       name: 'DM',
-      value: 45,
+      value: 16,
     },
     {
       name: 'GC',
-      value: 92,
-    },
-    {
-      name: 'GD',
-      value: 50,
-    },
-    {
-      name: 'GS',
       value: 34,
     },
     {
+      name: 'GD',
+      value: 19,
+    },
+    {
+      name: 'GS',
+      value: 9,
+    },
+    {
       name: 'IP',
-      value: 150,
+      value: 56,
     },
     {
       name: 'OI',
-      value: 30,
+      value: 15,
     },
     {
       name: 'PP',
-      value: 165,
+      value: 60,
     },
     {
       name: 'PS',
-      value: 70,
+      value: 31,
     },
     {
       name: 'TA',
-      value: 103,
+      value: 34,
     },
     {
       name: 'WB',
-      value: 30,
+      value: 12,
     },
   ];
 
@@ -215,24 +216,21 @@ function createRadialClusterTreeChartForMatching(data) {
     .sort(null)
     .value(d => d.value);
 
-  console.log(pie(pieDataAutoGenerate));
+  console.log(pie(pieData));
 
   const color = d3
     .scaleOrdinal()
-    .domain(pieDataAutoGenerate.map(d => d.name))
+    .domain(pieData.map(d => d.name))
     .range(
       d3
-        .quantize(
-          t => d3.interpolateSpectral(t * 0.8 + 0.1),
-          pieDataAutoGenerate.length
-        )
+        .quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), pieData.length)
         .reverse()
     );
 
   chartGroup
     .append('g')
     .selectAll()
-    .data(pie(pieDataAutoGenerate))
+    .data(pie(pieData))
     .join('path')
     .attr('fill', d => color(d.data.name))
     .attr('d', arc)
@@ -241,11 +239,11 @@ function createRadialClusterTreeChartForMatching(data) {
 
   chartGroup
     .append('g')
-    .attr('font-family', 'sans-serif')
+    .attr('font-family', 'segoe UI')
     .attr('font-size', 12)
     .attr('text-anchor', 'middle')
     .selectAll()
-    .data(pie(pieDataAutoGenerate))
+    .data(pie(pieData))
     .join('text')
     .attr('transform', d => `translate(${arc.centroid(d)})`)
     .call(text =>
@@ -253,6 +251,7 @@ function createRadialClusterTreeChartForMatching(data) {
         .append('tspan')
         .attr('y', '0em')
         .attr('font-weight', 'bold')
+        .attr('font-size', 16)
         .text(d => d.data.name)
     );
 
