@@ -206,7 +206,8 @@ function fillOrganisationAndPersonList(footprintType, list) {
     document.getElementById('dropdownFootprintEntity').innerHTML =
       '<option></option>';
   } else {
-    let options = '';
+    let options =
+      '<option value="">' + 'Agile / All organisations' + '</option>';
     for (const entity of list) {
       options += '<option>' + entity + '</option>';
     }
