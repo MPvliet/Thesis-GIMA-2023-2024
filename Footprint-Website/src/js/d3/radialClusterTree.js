@@ -1,5 +1,6 @@
 // Copied and adjusted from https://observablehq.com/@d3/radial-cluster/2?intent=fork
-
+import { createLegend } from './addD3Legend.js';
+import { radialClusterOuterDoughnut } from './radialClusterTree-outerDoughnut.js';
 import {
   showDetails,
   showLabel,
@@ -129,6 +130,112 @@ function createRadialClusterTreeChart(data) {
     .on('mouseover.details', showDetails)
     .on('mouseover.label', showLabel)
     .on('mouseout.label', hideLabel);
+
+  const legendData = [
+    { color: 'green', label: 'Knowledge path', type: 'line', rowHeight: 0 },
+    {
+      color: '#ffd966',
+      label: 'EO4GEO Concepts',
+      type: 'circle',
+      rowHeight: 20,
+    },
+    {
+      color: 'red',
+      label: 'Knowledge of EO4GEO Concept',
+      type: 'circle',
+      rowHeight: 40,
+    },
+    {
+      color: '#4288B5',
+      label: '[AM] Analytical Methods',
+      type: 'rect',
+      rowHeight: 80,
+    },
+    {
+      color: '#54AAAF',
+      label: '[CF] Conceptual Foundations',
+      type: 'rect',
+      rowHeight: 100,
+    },
+    {
+      color: '#77C6A6',
+      label: '[CV] Cartography and Visualization',
+      type: 'rect',
+      rowHeight: 125,
+    },
+    {
+      color: '#9FD9A3',
+      label: '[DA] Design and Setup of Geographic Information Systems',
+      type: 'rect',
+      rowHeight: 165,
+    },
+    {
+      color: '#C5E89F',
+      label: '[DM] Data Modeling, Storage and Exploitation',
+      type: 'rect',
+      rowHeight: 215,
+    },
+    {
+      color: '#E3F4A2',
+      label: '[GC] Geocomputation',
+      type: 'rect',
+      rowHeight: 245,
+    },
+    {
+      color: '#F6FAAE',
+      label: '[GD] Geospatial Data',
+      type: 'rect',
+      rowHeight: 265,
+    },
+    {
+      color: '#FDF3AA',
+      label: '[GS] GI and Society',
+      type: 'rect',
+      rowHeight: 285,
+    },
+    {
+      color: '#FEE090',
+      label: '[IP] Image Processing and Analysis',
+      type: 'rect',
+      rowHeight: 305,
+    },
+    {
+      color: '#FDC475',
+      label: '[OI] Organizational and Institutional Aspects',
+      type: 'rect',
+      rowHeight: 335,
+    },
+    {
+      color: '#FBA25E',
+      label: '[PP] Physical Principles',
+      type: 'rect',
+      rowHeight: 365,
+    },
+    {
+      color: '#F47D4D',
+      label: '[PS] Platforms, Sensors and Digital Imagery',
+      type: 'rect',
+      rowHeight: 385,
+    },
+    {
+      color: '#E75B49',
+      label: '[TA] Thematic and Application Domains',
+      type: 'rect',
+      rowHeight: 415,
+    },
+    {
+      color: '#D13C4B',
+      label: '[WB] Web-based GI',
+      type: 'rect',
+      rowHeight: 445,
+    },
+  ];
+
+  // calls the createLegend function and creates a legend.
+  createLegend(legendData, `#d3Legend`);
+
+  // Creates the outerDoughnut d3 chart
+  radialClusterOuterDoughnut(root, radius, chartGroup);
 
   document.getElementById('right-side').appendChild(svg.node());
 }
