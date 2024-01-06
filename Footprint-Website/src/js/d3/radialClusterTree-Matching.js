@@ -1,5 +1,6 @@
 // Copied and adjusted from https://observablehq.com/@d3/radial-cluster/2?intent=fork
 import { createLegend } from './addD3Legend.js';
+import { radialClusterOuterDoughnut } from './radialClusterTree-outerDoughnut.js';
 import {
   showDetails,
   showLabel,
@@ -135,126 +136,6 @@ function createRadialClusterTreeChartForMatching(data) {
     .attr('id', d => `label-${d.data.id}`)
     .text(d => d.data.name);
 
-  // Creates the outer piechart/doughnut chart outside of the radialClusterTree chart.
-  const counted = root.copy().count(); // counts all leafnodes under each child from the root.
-
-  const pieDataAutoGenerate = counted.children.map(child => ({
-    // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis. // -- But this does not give the expected output.
-    name: child.data.id,
-    value: child.value,
-  }));
-
-  const pieData = [
-    // Manually adjusted
-    {
-      name: 'AM',
-      value: 32,
-    },
-    {
-      name: 'CF',
-      value: 17,
-    },
-    {
-      name: 'CV',
-      value: 17,
-    },
-    {
-      name: 'DA',
-      value: 8,
-    },
-    {
-      name: 'DM',
-      value: 16,
-    },
-    {
-      name: 'GC',
-      value: 34,
-    },
-    {
-      name: 'GD',
-      value: 19,
-    },
-    {
-      name: 'GS',
-      value: 9,
-    },
-    {
-      name: 'IP',
-      value: 56,
-    },
-    {
-      name: 'OI',
-      value: 15,
-    },
-    {
-      name: 'PP',
-      value: 60,
-    },
-    {
-      name: 'PS',
-      value: 31,
-    },
-    {
-      name: 'TA',
-      value: 34,
-    },
-    {
-      name: 'WB',
-      value: 12,
-    },
-  ];
-
-  // copied and adjusted from: https://observablehq.com/@d3/donut-chart/2?intent=fork
-  const arc = d3
-    .arc()
-    .innerRadius(radius + 25)
-    .outerRadius(radius + 75);
-
-  const pie = d3
-    .pie()
-    .padAngle(null)
-    .sort(null)
-    .value(d => d.value);
-
-  console.log(pie(pieData));
-
-  const color = d3
-    .scaleOrdinal()
-    .domain(pieData.map(d => d.name))
-    .range(
-      d3
-        .quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), pieData.length)
-        .reverse()
-    );
-
-  chartGroup
-    .append('g')
-    .selectAll()
-    .data(pie(pieData))
-    .join('path')
-    .attr('fill', d => color(d.data.name))
-    .attr('d', arc)
-    .append('title')
-    .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}`);
-
-  chartGroup
-    .append('g')
-    .attr('font-family', 'segoe UI')
-    .attr('font-size', 12)
-    .attr('text-anchor', 'middle')
-    .selectAll()
-    .data(pie(pieData))
-    .join('text')
-    .attr('transform', d => `translate(${arc.centroid(d)})`)
-    .call(text =>
-      text
-        .append('tspan')
-        .attr('y', '0em')
-        .attr('font-weight', 'bold')
-        .attr('font-size', 16)
-        .text(d => d.data.name)
-    );
-
   // Enables the interacive functions when hovering over a circle/ node in the graph. Only works for the radial cluster tree nodes, since selectAll 'circle'
   chartGroup
     .selectAll('circle')
@@ -263,9 +144,24 @@ function createRadialClusterTreeChartForMatching(data) {
     .on('mouseout.label', hideLabel);
 
   const legendData = [
-    { color: 'green', label: 'First entity', type: 'line', rowHeight: 0 },
-    { color: 'orange', label: 'Second entity', type: 'line', rowHeight: 20 },
-    { color: 'purple', label: 'Match', type: 'line', rowHeight: 40 },
+    {
+      color: 'green',
+      label: 'Knowledge Path First Entity',
+      type: 'line',
+      rowHeight: 0,
+    },
+    {
+      color: 'orange',
+      label: 'Knowledge Path Second Entity',
+      type: 'line',
+      rowHeight: 20,
+    },
+    {
+      color: 'purple',
+      label: 'Matched Knowledge Path',
+      type: 'line',
+      rowHeight: 40,
+    },
     {
       color: '#ffd966',
       label: 'EO4GEO Concepts',
@@ -280,13 +176,13 @@ function createRadialClusterTreeChartForMatching(data) {
     },
     {
       color: 'purple',
-      label: 'Both entities contain knowledge of EO4GEO Concept',
+      label: 'Matched Knowledge of EO4GEO Concept',
       type: 'circle',
       rowHeight: 115,
     },
     {
       color: '#4288B5',
-      label: '[AM] Analytical Methods ',
+      label: '[AM] Analytical Methods',
       type: 'rect',
       rowHeight: 150,
     },
@@ -310,43 +206,43 @@ function createRadialClusterTreeChartForMatching(data) {
     },
     {
       color: '#C5E89F',
-      label: '[DM] Data Modeling, Storage and Exploitation ',
+      label: '[DM] Data Modeling, Storage and Exploitation',
       type: 'rect',
       rowHeight: 285,
     },
     {
       color: '#E3F4A2',
-      label: '[GC] Geocomputation ',
+      label: '[GC] Geocomputation',
       type: 'rect',
       rowHeight: 315,
     },
     {
       color: '#F6FAAE',
-      label: '[GD] Geospatial Data ',
+      label: '[GD] Geospatial Data',
       type: 'rect',
       rowHeight: 335,
     },
     {
       color: '#FDF3AA',
-      label: '[GS] GI and Society ',
+      label: '[GS] GI and Society',
       type: 'rect',
       rowHeight: 355,
     },
     {
       color: '#FEE090',
-      label: '[IP] Image Processing and Analysis ',
+      label: '[IP] Image Processing and Analysis',
       type: 'rect',
       rowHeight: 375,
     },
     {
       color: '#FDC475',
-      label: '[OI] Organizational and Institutional Aspects ',
+      label: '[OI] Organizational and Institutional Aspects',
       type: 'rect',
       rowHeight: 405,
     },
     {
       color: '#FBA25E',
-      label: '[PP] Physical Principles ',
+      label: '[PP] Physical Principles',
       type: 'rect',
       rowHeight: 435,
     },
@@ -358,13 +254,13 @@ function createRadialClusterTreeChartForMatching(data) {
     },
     {
       color: '#E75B49',
-      label: '[TA] Thematic and Application Domains ',
+      label: '[TA] Thematic and Application Domains',
       type: 'rect',
       rowHeight: 485,
     },
     {
       color: '#D13C4B',
-      label: '[WB] Web-based GI ',
+      label: '[WB] Web-based GI',
       type: 'rect',
       rowHeight: 515,
     },
@@ -372,6 +268,8 @@ function createRadialClusterTreeChartForMatching(data) {
 
   // calls the createLegend function and creates a legend.
   createLegend(legendData, `#d3Legend`);
+  // Creates the outerDoughnut d3 chart
+  radialClusterOuterDoughnut(root, radius, chartGroup);
 
   document.getElementById('right-side').appendChild(svg.node());
 }
