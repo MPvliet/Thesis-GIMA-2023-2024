@@ -75,14 +75,17 @@ function createRadialClusterTreeChartForMatching(data) {
     }
   }
 
-  root.descendants().forEach(node => {
-    // loops through each childnode from the rootnode.
-    if (parseInt(node.data.nodeValueFirstEntity) === 1) {
-      colorPathToRoot(node, 'green');
-    } else if (parseInt(node.data.nodeValueSecondEntity) === 1) {
-      colorPathToRoot(node, 'orange');
-    }
-  });
+  root
+    .descendants()
+    .sort((a, b) => d3.descending(a.depth, b.depth)) // Fixes drawing order, ensures it starts drawing paths from the outside to the root node. Ensuring paths that both organisations 'color' don't overdraw.
+    .forEach(node => {
+      // loops through each childnode from the rootnode.
+      if (parseInt(node.data.nodeValueFirstEntity) === 1) {
+        colorPathToRoot(node, 'green');
+      } else if (parseInt(node.data.nodeValueSecondEntity) === 1) {
+        colorPathToRoot(node, 'orange');
+      }
+    });
 
   // check for match after the first above checks, is done since then the purple path is the last path to be drawed, ensuring it's always on top and visible.
   root.descendants().forEach(node => {
@@ -91,7 +94,6 @@ function createRadialClusterTreeChartForMatching(data) {
       colorPathToRoot(node, 'purple');
     }
   });
-  // todo sommige paths overlayern elkaar, dus geel kan groen overlayen of andersom, bij zo'n overlay moet eigenlijk het path paars worden.
 
   // Append nodes
   chartGroup
