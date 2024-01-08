@@ -5,6 +5,17 @@ import { getAllOrganisations } from './sparql/getAllOrganisations.js';
 import { getAllExpertsFromOrganisation } from './sparql/getAllExpertsFromOrganisation.js';
 import { searchConceptInD3Vis } from './d3/interactiveD3Functionalities.js';
 
+// Show or Hide labels switch in the form.
+document
+  .getElementById('switchShowLabel')
+  .addEventListener('change', function () {
+    if (this.checked) {
+      d3.selectAll(`.hasLabel`).style('opacity', 1).attr('font-size', 16);
+    } else {
+      d3.selectAll(`.hasLabel`).style('opacity', 0).attr('font-size', 0);
+    }
+  });
+
 // Search bar functionality - Highlight node.
 document
   .getElementById('searchBar')
