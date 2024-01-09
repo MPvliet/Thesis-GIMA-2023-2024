@@ -8,7 +8,7 @@ import {
 } from './interactiveD3Functionalities.js';
 
 function createRadialClusterTreeChart(data) {
-  const height = 930; //screen.availHeight - 280;
+  const height = 1420; //screen.availHeight - 280;
   const width = 1590; //screen.availWidth * 0.8;
   const cx = width * 0.5;
   const cy = height * 0.5;
@@ -122,6 +122,7 @@ function createRadialClusterTreeChart(data) {
     .attr('fill', 'white') // 'currentColor'
     .style('opacity', d => `${d.data.showLabel}`)
     .attr('id', d => `label-${d.data.id}`)
+    .attr('class', d => (parseInt(d.data.showLabel) === 1 ? 'hasLabel' : ''))
     .text(d => d.data.name);
 
   // Enables the interacive functions when hovering over a circle/ node in the graph.

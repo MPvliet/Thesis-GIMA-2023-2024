@@ -62,14 +62,72 @@ function createRadialClusterTreeChartForMatching(data) {
 
   function colorPathToRoot(node, color) {
     let currentNode = node;
+
     while (currentNode.parent) {
       // While currentNode has a parent, select the currentNode and change the path stroke colour.
-      chartGroup
-        .selectAll('path')
-        .filter(d => d.target === currentNode)
-        .attr('stroke', color)
-        .attr('stroke-width', 3.5)
-        .attr('stroke-opacity', 1);
+      const linksToNode = root.links().filter(d => d.target === currentNode); // Find all links that lead to the current node
+      if (color === 'green') {
+        linksToNode.forEach(link => {
+          chartGroup
+            .append('path')
+            .data([link])
+            .join('path')
+            .attr(
+              'd',
+              d3
+                .linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y)
+            )
+            .attr('stroke', color)
+            .attr('fill', 'none')
+            .attr('stroke-width', 2.5)
+            .style('stroke-dasharray', '0, 2, 2, 2')
+            .attr('stroke-opacity', 1);
+          //.attr('transform', 'translate(-1.5,-1.5)');
+        });
+      } else if (color === 'orange') {
+        linksToNode.forEach(link => {
+          chartGroup
+            .append('path')
+            .data([link])
+            .join('path')
+            .attr(
+              'd',
+              d3
+                .linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y)
+            )
+            .attr('stroke', color)
+            .attr('fill', 'none')
+            .attr('stroke-width', 2.5)
+            .style('stroke-dasharray', '0, 2, 2, 2')
+            .style('stroke-dashoffset', 2)
+            .attr('stroke-opacity', 1);
+          //.attr('transform', 'translate(1.5,1.5)');
+        });
+      } else if (color === 'red') {
+        linksToNode.forEach(link => {
+          chartGroup
+            .append('path')
+            .data([link])
+            .join('path')
+            .attr(
+              'd',
+              d3
+                .linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y)
+            )
+            .attr('stroke', color)
+            .attr('fill', 'none')
+            .attr('stroke-width', 2.5)
+            .style('stroke-dasharray', '0, 2, 2, 2')
+            .style('stroke-dashoffset', 4)
+            .attr('stroke-opacity', 1);
+        });
+      }
 
       currentNode = currentNode.parent; // Move to the parent node
     }
@@ -79,21 +137,21 @@ function createRadialClusterTreeChartForMatching(data) {
     .descendants()
     .sort((a, b) => d3.descending(a.depth, b.depth)) // Fixes drawing order, ensures it starts drawing paths from the outside to the root node. Ensuring paths that both organisations 'color' don't overdraw.
     .forEach(node => {
-      // loops through each childnode from the rootnode.
-      if (parseInt(node.data.nodeValueFirstEntity) === 1) {
+      // loops through each childnode from the rootnode. And checks whether the path needs to be coloured.
+      if (
+        parseInt(node.data.nodeValueFirstEntity) === 1 // && node.data.matched === 'noMatch'
+      ) {
         colorPathToRoot(node, 'green');
-      } else if (parseInt(node.data.nodeValueSecondEntity) === 1) {
+      }
+      if (
+        parseInt(node.data.nodeValueSecondEntity) === 1 // && node.data.matched === 'noMatch'
+      ) {
         colorPathToRoot(node, 'orange');
       }
+      // if (node.data.matched === 'Match') {
+      //   colorPathToRoot(node, 'red');
+      // }
     });
-
-  // check for match after the first above checks, is done since then the purple path is the last path to be drawed, ensuring it's always on top and visible.
-  root.descendants().forEach(node => {
-    // loops through each childnode from the rootnode.
-    if (node.data.matched === 'Match') {
-      colorPathToRoot(node, 'purple');
-    }
-  });
 
   // Append nodes
   chartGroup
@@ -136,6 +194,7 @@ function createRadialClusterTreeChartForMatching(data) {
     .attr('fill', 'white') // 'currentColor'
     .style('opacity', '0') //.style('opacity', d => `${d.data.showLabel}`)
     .attr('id', d => `label-${d.data.id}`)
+    .attr('class', d => (parseInt(d.data.showLabel) === 1 ? 'hasLabel' : ''))
     .text(d => d.data.name);
 
   // Enables the interacive functions when hovering over a circle/ node in the graph. Only works for the radial cluster tree nodes, since selectAll 'circle'
@@ -159,7 +218,7 @@ function createRadialClusterTreeChartForMatching(data) {
       rowHeight: 20,
     },
     {
-      color: '#7E10E1',
+      color: 'red',
       label: 'Matched Knowledge Path',
       type: 'line',
       rowHeight: 40,
