@@ -17,7 +17,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-2-10-2021",
     "authors": ["Florian Politz1", "Monika Sester1", "Claus Brenner1"],
     "organisations": [
-      "1Institute of Cartography and Geoinformatics, Leibniz University Hannover, Germany"
+      "1Institute of Cartography and Geoinformatics, Leibniz Universit\u00e4t Hannover, Germany"
     ],
     "concepts": [
       "Information-as-data-interpretation",
@@ -81,7 +81,7 @@
     ],
     "organisations": [
       "1STKO Lab, Department of Geography, University of California, Santa Barbara, USA",
-      "2Center for Spatial Studies, University of California, Santa Barbara, USA"
+      "2Center for Spatial Studies, University of California, Santa Barbara, CA, USA"
     ],
     "concepts": [
       "Information-as-data-interpretation",
@@ -260,7 +260,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-2-25-2021",
     "authors": ["Heiko Figgemeier1", "Christin Henzen1", "Arne R\u00fcmmler1"],
     "organisations": [
-      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Germany"
+      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Data quality standards",
@@ -285,11 +285,7 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-2-27-2021",
-    "authors": [
-      "Carla Garcia Lozano1",
-      "Anna P\u00e9liov\u00e11",
-      "Josep Sitjar1"
-    ],
+    "authors": ["Carla Garcia Lozano1", "Anna Peliova1", "Josep Sitjar1"],
     "organisations": [
       "1Service of Geographic Information Systems and Remote Sensing (SIGTE) of the University of Girona, Girona, Spain"
     ],
@@ -362,7 +358,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-2-31-2021",
     "authors": ["Christin Henzen1", "Stefano Della Chiesa1", "Lars Bernard1"],
     "organisations": [
-      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Germany"
+      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Transaction management of geospatial data",
@@ -407,10 +403,10 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-2-35-2021",
-    "authors": ["Eva Mertovaa", "Martin Buresb"],
+    "authors": ["Eva Mertova1", "Martin Bures2"],
     "organisations": [
-      "aDepartment of Military Geography and Meteorology, University of Defence in Brno, Brno, Czech Republic",
-      "bDepartment of Geospatial Support, Military Geography and Meteorology Institute, Dobruska, Czech Republic"
+      "1Department of Military Geography and Meteorology, University of Defence in Brno, Brno, Czech Republic",
+      "2Department of Geospatial Support, Military Geography and Meteorology Institute, Dobruska, Czech Republic"
     ],
     "concepts": []
   },
@@ -508,7 +504,7 @@
     ],
     "organisations": [
       "1Centre for Information Services and High Performance Computing (ZIH), Technische Universit\u00e4t Dresden, Germany",
-      "2Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Germany"
+      "2Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Consistency",
@@ -757,10 +753,10 @@
   {
     "doi": "https://doi.org/10.5194/agile-giss-3-16-2022",
     "authors": [
-      "Mehtab Alam SYED1,3",
-      "Elena ARSEVSKA2,3",
-      "Mathieu ROCHE1,3",
-      "Maguelonne TEISSEIRE1,4"
+      "Mehtab Alam Syed1,3",
+      "Elena Arsevska2,3",
+      "Mathieu Roche1,3",
+      "Maguelonne Teisseire1,4"
     ],
     "organisations": [
       "1TETIS, Univ Montpellier, AgroParisTech, CIRAD, CNRS, INRAE, Montpellier, France",
@@ -777,7 +773,7 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-3-17-2022",
-    "authors": ["Marie Dominique Van Damme1", "Ana Maria Olteanu Raimond1"],
+    "authors": ["Marie-Dominique Van Damme1", "Ana Maria Olteanu Raimond1"],
     "organisations": [
       "1LASTIG, Univ Gustave Eiffel, IGN ENSG, 94165 F Saint Mand\u00e9, France"
     ],
@@ -849,7 +845,7 @@
     ],
     "organisations": [
       "1STKO Lab, Department of Geography, University of California, Santa Barbara, USA",
-      "2Center for Spatial Studies, University of California, Santa Barbara, USA",
+      "2Center for Spatial Studies, University of California, Santa Barbara, CA, USA",
       "3Department of Geography and Regional Research, University of Vienna, AT",
       "4Department of Computer Science, Stanford University, USA"
     ],
@@ -861,9 +857,9 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-3-22-2022",
-    "authors": ["Stefania Zourlidou1", "Jens Golze", "Monika Sester"],
+    "authors": ["Stefania Zourlidou1", "Jens Golze1", "Monika Sester1"],
     "organisations": [
-      "1Institute of Cartography and Geoinformatics, Leibniz University, Hannover, Germany"
+      "1Institute of Cartography and Geoinformatics, Leibniz Universit\u00e4t Hannover, Germany"
     ],
     "concepts": [
       "Information-as-data-interpretation",
@@ -957,10 +953,9 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-3-28-2022",
-    "authors": ["Lucas Casuccio1", "Andr\u00e9 Kotze2"],
+    "authors": ["Lucas Casuccio1", "Andr\u00e9 Kotze1"],
     "organisations": [
-      "1NOVA Information Management School (NOVA IMS), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal",
-      "2NOVA Information Management School (NOVA IMS), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal"
+      "1NOVA Information Management School (NOVA IMS), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal"
     ],
     "concepts": ["Machine learning"]
   },
@@ -1065,7 +1060,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-3-34-2022",
     "authors": ["Heiko Figgemeier1", "Arne R\u00fcmmler1", "Christin Henzen1"],
     "organisations": [
-      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Germany"
+      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Data Quality, Metadata and Data Infrastructure",
@@ -1252,8 +1247,8 @@
       "Laura Winkens2"
     ],
     "organisations": [
-      "1Laboratory of Geo Information and Remote Sensing, Wageningen University and Research, the Netherlands",
-      "2Consumption and Healthy Lifestyles Chair group, Wageningen University and Research, the Netherlands"
+      "1Laboratory of Geo information Science and Remote Sensing, Wageningen University & Research, Wageningen, The Netherlands",
+      "2Consumption and Healthy Lifestyles Chair group, Wageningen University & Research, the Netherlands"
     ],
     "concepts": ["Crowdsourced data collection", "Data Collection", "Time"]
   },
@@ -1267,7 +1262,7 @@
       "Andrea Lingua1"
     ],
     "organisations": [
-      "1Department of Environmental Engineering (DIATI) Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 Turin, Italy.",
+      "1Department of Environmental Engineering (DIATI), Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 Turin, Italy.",
       "2Freelance geologist, Italy.",
       "3Department of Structural, Geotechnical and Building Engineering (DISEG) Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 Turin, Italy."
     ],
@@ -1488,10 +1483,9 @@
   },
   {
     "doi": "https://doi.org/10.5194/agile-giss-3-57-2022",
-    "authors": ["Jaskaran Singh Puri1", "Andre Kotze2"],
+    "authors": ["Jaskaran Singh Puri1", "Andre Kotze1"],
     "organisations": [
-      "1NOVA Information Management School ( NOVA IMS ), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal",
-      "2NOVA Information Management School ( NOVA IMS ), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal"
+      "1NOVA Information Management School (NOVA IMS), Universidade Nova de Lisboa, Campus de Campolide, 1070 312 Lisbon, Portugal"
     ],
     "concepts": [
       "Data quality standards",
@@ -1513,7 +1507,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-3-59-2022",
     "authors": ["Arne R\u00fcmmler1", "Christin Henzen1", "Heiko Figgemeier1"],
     "organisations": [
-      "1Chair of Geoinformatics, Technical University Dresden, Dresden, Germany"
+      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Data quality standards",
@@ -1701,7 +1695,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-3-69-2022",
     "authors": ["Haiqi Xu1", "Enkhbold Nyamsuren1", "Simon Scheider1"],
     "organisations": [
-      "1Human Geography and Spatial Planning, Utrecht University, Utrecht, The Netherlands"
+      "1Department of Human Geography and Planning, Faculty of Geoscience, Utrecht University, Utrecht, Netherlands"
     ],
     "concepts": [
       "Geographic Information Science and Technology",
@@ -1725,8 +1719,8 @@
     ],
     "organisations": [
       "1Department of Geography and Regional Research, University of Vienna, Austria",
-      "2Center for Spatial Studies, UC Santa Barbara, Santa Barbara, CA, USA",
-      "3Laboratory of Geo information Science and Remote Sensing, Wageningen University, Gelderland, Netherlands",
+      "2Center for Spatial Studies, University of California, Santa Barbara, CA, USA",
+      "3Laboratory of Geo information Science and Remote Sensing, Wageningen University & Research, Wageningen, The Netherlands",
       "4Department of Geography, McGill University, Montreal, Quebec, Canada",
       "5Instituto Superior T\u00e9cnico and INESC ID, Universidade de Lisboa, Lisboa, Portugal"
     ],
@@ -1796,7 +1790,7 @@
     "authors": [
       "Francisco Garrido Valenzuela1,2",
       "Sander van Cranenburgh1",
-      "and Oded Cats2"
+      "Oded Cats2"
     ],
     "organisations": [
       "1Transport and Logistics Group, Department of Engineering Systems and Services, Faculty of Technology, Policy, and Management, Delft University of Technology, Delft, the Netherlands",
@@ -1838,7 +1832,7 @@
     ],
     "organisations": [
       "1STKO Lab, Department of Geography, University of California, Santa Barbara, USA",
-      "2Center for Spatial Studies, University of California, Santa Barbara, USA",
+      "2Center for Spatial Studies, University of California, Santa Barbara, CA, USA",
       "3Department of Geography and Regional Research, University of Vienna, AT",
       "4Department of Computer Science, Stanford University, USA"
     ],
@@ -1859,7 +1853,7 @@
       "Niels Steenbergen1"
     ],
     "organisations": [
-      "1Department of Human Geography and Spatial Planning, Utrecht University, Vening Meineszgebouw A, Princetonlaan 8a, 3584 CB Utrecht, The Netherlands"
+      "1Department of Human Geography and Planning, Faculty of Geoscience, Utrecht University, Utrecht, Netherlands"
     ],
     "concepts": ["Network analysis", "Basic analytical operations"]
   },
@@ -1868,7 +1862,7 @@
     "authors": [
       "Carolina Pereira Marghidan1",
       "Maarten van Aalst2,3",
-      "Justine Blanford1",
+      "Justine I. Blanford1",
       "Genito Maure4",
       "Tatiana Marrufo5"
     ],
@@ -1898,10 +1892,10 @@
   {
     "doi": "https://doi.org/10.5194/agile-giss-4-13-2023",
     "authors": [
-      "Eleni Tomai\uf8d21",
-      "Margarita Kokla\uf8d21",
+      "Eleni Tomai1",
+      "Margarita Kokla1",
       "Christos Charcharos1",
-      "Marinos Kavouras\uf8d21"
+      "Marinos Kavouras1"
     ],
     "organisations": [
       "1School of Rural, Surveying and Geoinformatics Engineering, National Technical University of Athens, Athens, Greece"
@@ -2128,13 +2122,13 @@
       "Suzan Evers1",
       "Gamze Z. Dane1",
       "Pauline E. W. van den Berg1",
-      "Alexander K. A. J. Klippel2",
+      "Alexander Klippel2",
       "Timon Verduijn2",
       "Theo A. Arentze1"
     ],
     "organisations": [
       "1Department of the Built Environment, Eindhoven University of Technology, Eindhoven, The Netherlands",
-      "2Laboratory for Geoinformation Science and Remote Sensing, Wageningen University and Research, Wageningen, The Netherlands"
+      "2Laboratory of Geo information Science and Remote Sensing, Wageningen University & Research, Wageningen, The Netherlands"
     ],
     "concepts": [
       "User interface and Usability",
@@ -2184,7 +2178,7 @@
     ],
     "organisations": [
       "1Institute for Geoinformatics, University of M\u00fcnster, Germany",
-      "2Chair of Geoinformatics, TU Dresden, Germany"
+      "2Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "User interface and Usability",
@@ -2405,12 +2399,12 @@
       "Jan Stenkamp1",
       "Michael Br\u00fcggemann1",
       "Benjamin Karic1",
-      "Judith A. Verstegen2",
+      "Judith Verstegen2",
       "Christian Kray1"
     ],
     "organisations": [
       "1Institute for Geoinformatics, University of Muenster, Muenster, Germany",
-      "2Department of Human Geography and Spatial Planning, Utrecht University, Utrecht, The Netherlands"
+      "2Department of Human Geography and Planning, Faculty of Geoscience, Utrecht University, Utrecht, Netherlands"
     ],
     "concepts": []
   },
@@ -2445,7 +2439,7 @@
       "1Department of Geography and Regional Research, University of Vienna, Austria",
       "2Department of Geography, University of California, Santa Barbara, USA",
       "3Institute of Cartography and Geoinformation, ETH Zurich, Switzerland",
-      "4Department of Human Geography and Spatial Planning, Utrecht University, the Netherlands",
+      "4Department of Human Geography and Planning, Faculty of Geoscience, Utrecht University, Utrecht, Netherlands",
       "5Department of Geography, McGill University, Canada",
       "6AIT Austrian Institute of Technology, Austria",
       "7School of Geographical Sciences, University of Bristol, UK",
@@ -2666,7 +2660,7 @@
     "doi": "https://doi.org/10.5194/agile-giss-4-6-2023",
     "authors": ["Kr\u00fcgel, Falko1", "M\u00e4s, Stephan1"],
     "organisations": [
-      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Germany"
+      "1Chair of Geoinformatics, Technische Universit\u00e4t Dresden, Dresden, Germany"
     ],
     "concepts": [
       "Users in health care",
@@ -2767,9 +2761,9 @@
     ],
     "organisations": [
       "1Faculty of Geo Information Science and Earth Observation (ITC), University of Twente, Enschede, The Netherlands",
-      "2Department of computer science , University of Duhok , Duhok , Iraq",
-      "3Institute of New Imaging Technologies ( INIT ), Universitat Jaume I ( UJI ), Spain",
-      "4Spatial Applications Division Leuven, KU Leuven, Belgium",
+      "2Department of computer science, University of Duhok, Duhok, Iraq",
+      "3Institute of New Imaging Technologies (INIT), Universitat Jaume I (UJI), Spain",
+      "4Spatial Applications Division Leuven, KU Leuven, Leuven, Belgium",
       "5Department of Earth Observation, Friedrich Schiller University, Jena, Germany"
     ],
     "concepts": [
@@ -2782,9 +2776,9 @@
     "doi": "https://doi.org/10.5194/agile-giss-2-43-2021",
     "authors": [
       "Mehdi Zrhal1",
-      "B\u00c3\u00a9n\u00c3\u00a9dicte Bucher1",
+      "Bénédicte Bucher1",
       "Marie-Dominique Van Damme1",
-      "Fay\u00c3\u00a7al Hamdi2"
+      "Fayçal Hamdi2"
     ],
     "organisations": [
       "1University Gustave Eiffel, LaSTIG, IGN, ENSG, F-94 160 Saint Mande, France",
