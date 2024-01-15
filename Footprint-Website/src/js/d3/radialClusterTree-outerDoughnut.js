@@ -1,5 +1,7 @@
 function radialClusterOuterDoughnut(root, radius, chartGroup) {
   // Creates the outer piechart/doughnut chart outside of the radialClusterTree chart.
+
+  /* 
   const counted = root.copy().count(); // counts all leafnodes under each child from the root.
   const pieDataAutoGenerate = counted.children.map(child => ({
     // creates an array with objects for each KnowledgeArea or child from the root of the data used in this vis. // -- But this does not give the expected output.
@@ -7,6 +9,7 @@ function radialClusterOuterDoughnut(root, radius, chartGroup) {
     fullName: child.data.name,
     value: child.value,
   }));
+  */
 
   const pieData = [
     // Manually adjusted

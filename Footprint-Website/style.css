@@ -3,7 +3,6 @@ html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #333; /* setting a default text color */
   background-color: #0c1a1a;
 }
 
@@ -215,11 +214,11 @@ input:checked + .slider:before {
 .switch-container {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* This ensures vertical alignment if needed */
+  align-items: center;
 }
 
 .switch-container label,
 .switch-container .switch {
-  display: inline-block; /* This makes them line up inline */
-  margin-right: 10px; /* Add some spacing between the label and the switch */
+  display: inline-block;
+  margin-right: 10px;
 }
