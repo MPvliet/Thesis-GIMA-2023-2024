@@ -92,6 +92,7 @@ def serializeIntoRDF():
       
       # Concept class - OBOK
       g.add((conceptURI, rdf.type, obok.Concept))
+      g.add((conceptURI, rdf.type, skos.Concept))
       conceptLabel = "[" + data[concept]['id'] +"] " + data[concept]['name']
       g.add((conceptURI, rdfs.label, Literal(conceptLabel)))
       g.add((conceptURI, skos.notation, Literal(data[concept]['id'])))
@@ -115,8 +116,12 @@ def serializeIntoRDF():
           if relation['target'] in knowledgeAreaList: # bepaald topconcept in conceptScheme. == eerste level subconcept van een knowledge area
             g.add((conceptURI_source, skos.topConceptOf, conceptURI_target))
             g.add((conceptURI_source, obok.isSubconceptOf, conceptURI_target))
+            g.add((conceptURI_source, skos.broader, conceptURI_target))
+            g.add((conceptURI_target, skos.narrower, conceptURI_source ))
           else:
             g.add((conceptURI_source, obok.isSubconceptOf, conceptURI_target))
+            g.add((conceptURI_source, skos.broader, conceptURI_target))
+            g.add((conceptURI_target, skos.narrower, conceptURI_source ))
           if relation['target'] == 'GIST': # bepalen van de main KnowledgeArea classes.
             g.add((conceptURI_source, rdf.type, obok.KnowledgeArea))
             g.add((bodyOfKnowledgeURI, obok.hasKnowledgeArea, conceptURI_source))
