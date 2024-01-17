@@ -9,9 +9,11 @@ import { deleteSPARQLStatement } from './sparql/deleteSPARQLStatement.js';
 // Fills the dropdownList with all available Organisations once the webpage is fully loaded
 document.addEventListener(
   'DOMContentLoaded',
-  populateOrganisationDropdown(await getAllOrganisations())
+  // populateOrganisationDropdown(await getAllOrganisations())
+  populateExpertDropdown(await getAllExpertsFromOrganisation(''))
 );
 
+/*
 // Fills the HTML form with experts based on the chosen Organisation, and do that for both the delete list and the add form.
 document
   .getElementById('dropdownOrganisations-Delete')
@@ -24,6 +26,8 @@ document
   .addEventListener('change', function () {
     populateExpertsAddDropDown(this.value);
   });
+
+*/
 
 // Fill the HTML form with concepts to chose from, based on the input from the chosen expert.
 document
@@ -60,6 +64,8 @@ document
     event.target.form.reset(); // Resets the form after clicking submit.
   });
 
+/* Old method when the person first had to choose the organisation.
+
 // Fills the Dropdown menu based on the information returned by the SPARQL query
 function populateOrganisationDropdown(organisationList) {
   let options = '<option value="" disabled selected>Select</option>';
@@ -89,6 +95,18 @@ async function populateExpertsAddDropDown(organisation) {
   document.getElementById('dropdownExperts-Add').innerHTML = options;
 }
 
+*/
+
+// Fills the Dropdown menu based on the information returned by the SPARQL query
+function populateExpertDropdown(expertList) {
+  let options = '<option value="" disabled selected>Select</option>';
+  for (const expert of expertList) {
+    options += '<option>' + expert + '</option>';
+  }
+  document.getElementById('dropdownExperts-Delete').innerHTML = options;
+  document.getElementById('dropdownExperts-Add').innerHTML = options;
+}
+
 async function populateConceptsDeleteDropDown(expert) {
   const conceptList = await getAllExpertiseFromExpert(expert);
   let options = '<option value="" disabled selected>Select</option>';
@@ -114,8 +132,9 @@ async function addExpertiseAnnotation(expertName, conceptName) {
   PREFIX eo4geo: <https://bok.eo4geo.eu/>
   PREFIX boka: <http://example.org/BOKA/>
   INSERT DATA {
-    GRAPH <https://bok.eo4geo.eu/applications> {
-        eo4geo:${conceptID} boka:personWithKnowledge eo4geo:${expertID}
+    GRAPH <https://bok.eo4geo.eu/applications-revised> {
+        eo4geo:${conceptID} boka:personWithKnowledge eo4geo:${expertID} .
+        eo4geo:${expertID} boka:hasKnowledgeOf eo4geo:${conceptID} . 
     }
   }
   `;
@@ -135,8 +154,9 @@ async function deleteExpertiseAnnotation(expertName, conceptName) {
   PREFIX eo4geo: <https://bok.eo4geo.eu/>
   PREFIX boka: <http://example.org/BOKA/>
   DELETE DATA {
-    GRAPH <https://bok.eo4geo.eu/applications> {
-        eo4geo:${conceptID} boka:personWithKnowledge eo4geo:${expertID}
+    GRAPH <https://bok.eo4geo.eu/applications-revised> {
+        eo4geo:${conceptID} boka:personWithKnowledge eo4geo:${expertID} .
+        eo4geo:${expertID} boka:hasKnowledgeOf eo4geo:${conceptID} .
     }
   }
   `;
