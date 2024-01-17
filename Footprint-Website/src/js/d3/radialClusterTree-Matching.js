@@ -82,9 +82,9 @@ function createRadialClusterTreeChartForMatching(data) {
             .attr('stroke', color)
             .attr('fill', 'none')
             .attr('stroke-width', 2.5)
-            .style('stroke-dasharray', '0, 2, 2, 2')
-            .attr('stroke-opacity', 1);
-          //.attr('transform', 'translate(-1.5,-1.5)');
+            // .style('stroke-dasharray', '0, 2, 2, 2')
+            .attr('stroke-opacity', 1)
+            .attr('transform', 'translate(-1.5,-1.5)');
         });
       } else if (color === 'orange') {
         linksToNode.forEach(link => {
@@ -102,32 +102,33 @@ function createRadialClusterTreeChartForMatching(data) {
             .attr('stroke', color)
             .attr('fill', 'none')
             .attr('stroke-width', 2.5)
-            .style('stroke-dasharray', '0, 2, 2, 2')
-            .style('stroke-dashoffset', 2)
-            .attr('stroke-opacity', 1);
-          //.attr('transform', 'translate(1.5,1.5)');
-        });
-      } else if (color === 'red') {
-        linksToNode.forEach(link => {
-          chartGroup
-            .append('path')
-            .data([link])
-            .join('path')
-            .attr(
-              'd',
-              d3
-                .linkRadial()
-                .angle(d => d.x)
-                .radius(d => d.y)
-            )
-            .attr('stroke', color)
-            .attr('fill', 'none')
-            .attr('stroke-width', 2.5)
-            .style('stroke-dasharray', '0, 2, 2, 2')
-            .style('stroke-dashoffset', 4)
-            .attr('stroke-opacity', 1);
+            // .style('stroke-dasharray', '0, 2, 2, 2')
+            // .style('stroke-dashoffset', 2)
+            .attr('stroke-opacity', 1)
+            .attr('transform', 'translate(1.5,1.5)');
         });
       }
+      // else if (color === 'red') {
+      //   linksToNode.forEach(link => {
+      //     chartGroup
+      //       .append('path')
+      //       .data([link])
+      //       .join('path')
+      //       .attr(
+      //         'd',
+      //         d3
+      //           .linkRadial()
+      //           .angle(d => d.x)
+      //           .radius(d => d.y)
+      //       )
+      //       .attr('stroke', color)
+      //       .attr('fill', 'none')
+      //       .attr('stroke-width', 2.5)
+      //       // .style('stroke-dasharray', '0, 2, 2, 2')
+      //       // .style('stroke-dashoffset', 4)
+      //       .attr('stroke-opacity', 1);
+      //   });
+      // }
 
       currentNode = currentNode.parent; // Move to the parent node
     }
