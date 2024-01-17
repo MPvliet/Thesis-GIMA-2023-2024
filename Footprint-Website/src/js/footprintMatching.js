@@ -51,6 +51,18 @@ document
       'dropdownFootprintEntitySecond'
     ).value;
 
+    const namedGraphDecision =
+      document.getElementById('chooseDataVersion').value;
+
+    let namedGraph;
+    if (namedGraphDecision === 'Original') {
+      namedGraph = 'FROM eo4geo:applications FROM eo4geo:concepts';
+    } else if (namedGraphDecision === 'Revised') {
+      namedGraph = 'FROM eo4geo:applications-revised FROM eo4geo:concepts';
+    }
+
+    console.log(namedGraph);
+
     let query;
     if (footprintType === 'Individual') {
       query = `
@@ -60,11 +72,12 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX boka: <http://example.org/BOKA/>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX eo4geo: <https://bok.eo4geo.eu/>
 
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?matched ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?matched ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity ${namedGraph} WHERE {
         {
           SELECT ?concept ?conceptName ?childName ?conceptID ?childID (IF(?knownByFirstEntity, 1 , 0 ) AS ?nodeValueFirstEntity) (IF(?knownBySecondEntity, 1 , 0 ) AS ?nodeValueSecondEntity) WHERE {
-            ?concept rdf:type obok:Concept;
+            ?concept rdf:type skos:Concept;
               rdfs:label ?conceptName;
               skos:notation ?conceptID.
             OPTIONAL {
@@ -102,11 +115,12 @@ document
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX org: <http://www.w3.org/ns/org#>
       PREFIX boka: <http://example.org/BOKA/>
+      PREFIX eo4geo: <https://bok.eo4geo.eu/>
 
-      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?matched ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity WHERE {
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?matched ?nodeValue ?nodeValueFirstEntity ?nodeValueSecondEntity ${namedGraph} WHERE {
         { # returns all concepts with a possible direct childConcept
           SELECT ?concept ?conceptName ?childName ?conceptID ?childID (IF(?knownByFirstEntity, 1 , 0 ) AS ?nodeValueFirstEntity) (IF(?knownBySecondEntity, 1 , 0 ) AS ?nodeValueSecondEntity) WHERE {
-            ?concept rdf:type obok:Concept;
+            ?concept rdf:type skos:Concept;
               rdfs:label ?conceptName;
               skos:notation ?conceptID.
             OPTIONAL {
