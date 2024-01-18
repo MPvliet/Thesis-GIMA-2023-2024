@@ -13,22 +13,6 @@ document.addEventListener(
   populateExpertDropdown(await getAllExpertsFromOrganisation(''))
 );
 
-/*
-// Fills the HTML form with experts based on the chosen Organisation, and do that for both the delete list and the add form.
-document
-  .getElementById('dropdownOrganisations-Delete')
-  .addEventListener('change', function () {
-    populateExpertsDeleteDropDown(this.value);
-  });
-
-document
-  .getElementById('dropdownOrganisations-Add')
-  .addEventListener('change', function () {
-    populateExpertsAddDropDown(this.value);
-  });
-
-*/
-
 // Fill the HTML form with concepts to chose from, based on the input from the chosen expert.
 document
   .getElementById('dropdownExperts-Delete')
@@ -64,6 +48,28 @@ document
     event.target.form.reset(); // Resets the form after clicking submit.
   });
 
+// Processes what happens once you click "Add Organisation"
+document
+  .getElementById('submitButton-AddOrganisation')
+  .addEventListener('click', async event => {
+    event.preventDefault();
+    const organisationName = document.getElementById('organisationName').value;
+    await addOrganisationAnnotation(organisationName);
+    // Refresh the page so all the dropdowns get repopulated with the new data.
+    location.reload();
+  });
+
+// Processes what happens once you click "Add Person"
+document
+  .getElementById('submitButton-AddPerson')
+  .addEventListener('click', async event => {
+    event.preventDefault();
+    const personName = document.getElementById('personName').value;
+    await addPersonAnnotation(personName);
+    // Refresh the page so all the dropdowns get repopulated with the new data.
+    location.reload();
+  });
+
 // Processes what happens once you click "Link person to organisation"
 document
   .getElementById('submitButton-LinkPersonToOrganisation')
@@ -83,28 +89,6 @@ function populateOrganisationDropdown(organisationList) {
   }
   document.getElementById('dropdownOrganisations').innerHTML = options;
 }
-/* Old method when the person first had to choose the organisation.
-
-// Fills the dropdown menu based on the SPARQL Query
-async function populateExpertsDeleteDropDown(organisation) {
-  const expertList = await getAllExpertsFromOrganisation(organisation);
-  let options = '<option value="" disabled selected>Select</option>';
-  for (const expert of expertList) {
-    options += '<option>' + expert + '</option>';
-  }
-  document.getElementById('dropdownExperts-Delete').innerHTML = options;
-}
-
-async function populateExpertsAddDropDown(organisation) {
-  const expertList = await getAllExpertsFromOrganisation(organisation);
-  let options = '<option value="" disabled selected>Select</option>';
-  for (const expert of expertList) {
-    options += '<option>' + expert + '</option>';
-  }
-  document.getElementById('dropdownExperts-Add').innerHTML = options;
-}
-
-*/
 
 // Fills the Dropdown menu based on the information returned by the SPARQL query
 function populateExpertDropdown(expertList) {
@@ -133,6 +117,54 @@ async function populateConceptsAddDropDown(expert) {
     options += '<option>' + concept + '</option>';
   }
   document.getElementById('dropdownConcepts-Add').innerHTML = options;
+}
+
+async function addPersonAnnotation(personName) {
+  const personUUID = self.crypto.randomUUID();
+  const insertQuery = `
+  PREFIX eo4geo: <https://bok.eo4geo.eu/>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX boka: <http://example.org/BOKA/>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+  INSERT DATA {
+    GRAPH <https://bok.eo4geo.eu/applications-revised> {
+      eo4geo:${personUUID} rdf:type boka:Expert .
+      eo4geo:${personUUID} rdfs:label "${personName}" .
+      eo4geo:${personUUID} foaf:name "${personName}" .
+    }
+  }
+  `;
+
+  const response = await insertSPARQLStatement(insertQuery);
+  if (response === 204) {
+    alert(`${personName} succesvol toegevoegd als Expert`);
+  }
+}
+
+async function addOrganisationAnnotation(organisationName) {
+  const organisationUUID = self.crypto.randomUUID();
+  const insertQuery = `
+  PREFIX eo4geo: <https://bok.eo4geo.eu/>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX org: <http://www.w3.org/ns/org#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+  INSERT DATA {
+    GRAPH <https://bok.eo4geo.eu/applications-revised> {
+      eo4geo:${organisationUUID} rdf:type org:Organization .
+      eo4geo:${organisationUUID} rdfs:label "${organisationName}" .
+      eo4geo:${organisationUUID} foaf:name "${organisationName}" .
+    }
+  }
+`;
+
+  const response = await insertSPARQLStatement(insertQuery);
+  if (response === 204) {
+    alert(`${organisationName} succesvol toegevoegd als Organisatie`);
+  }
 }
 
 async function linkPersonToOrganisationAnnotation(
