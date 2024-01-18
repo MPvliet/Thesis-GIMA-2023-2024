@@ -30,7 +30,6 @@ async function getAllExpertsFromOrganisation(organisation) {
     } 
     `;
   }
-  console.log(query);
 
   try {
     const data = await genericSPARQLQuery(query);
