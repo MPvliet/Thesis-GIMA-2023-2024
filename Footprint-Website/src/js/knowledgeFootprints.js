@@ -200,12 +200,12 @@ document
       let includedEntities;
       if (footprintType === 'Individual') {
         includedEntities = `
-      <h4 style="margin-bottom: 1;">Included individuals in this query</h4>
+      <h4 style="margin-bottom: 1;">Included individuals in this footprint</h4>
       ${includedEntityList}
       `;
       } else if (footprintType === 'Organisational') {
         includedEntities = `
-      <h4 style="margin-bottom: 1;">Included organisations  in this query</h4>
+      <h4 style="margin-bottom: 1;">Included organisations  in this footprint</h4>
       ${includedEntityList}
       `;
       }
