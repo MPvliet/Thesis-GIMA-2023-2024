@@ -68,8 +68,6 @@ document
       namedGraph = 'FROM eo4geo:applications-revised FROM eo4geo:concepts';
     }
 
-    console.log(namedGraph);
-
     let query;
     if (footprintType === 'Individual') {
       query = `
@@ -143,6 +141,7 @@ document
       ORDER BY (?conceptName)
       `;
     }
+
     let queryIncludedEntities;
     if (footprintType === 'Individual') {
       queryIncludedEntities = `

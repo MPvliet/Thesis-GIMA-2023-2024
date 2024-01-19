@@ -42,7 +42,7 @@
               Radial Cluster Tree
             </option>
           </select>
-          <label for="dropdownFootprintEntityFirst"
+          <!-- <label for="dropdownFootprintEntityFirst"
             >Footprint of First Entity</label
           >
           <select id="dropdownFootprintEntityFirst" class="dropdown-menu">
@@ -53,7 +53,23 @@
           >
           <select id="dropdownFootprintEntitySecond" class="dropdown-menu">
             <option value="" disabled selected>Select</option>
-          </select>
+          </select> -->
+          <label for="dropdownFootprintEntityFirst"
+            >Footprint of First Entity</label
+          >
+          <input
+            id="dropdownFootprintEntityFirst"
+            type="text"
+            placeholder="Type here"
+          />
+          <label for="dropdownFootprintEntitySecond"
+            >Footprint of Second Entity</label
+          >
+          <input
+            id="dropdownFootprintEntitySecond"
+            type="text"
+            placeholder="Type here"
+          />
           <label for="chooseDataVersion">Show Original or Revised Data</label>
           <select id="chooseDataVersion" class="dropdown-menu">
             <option value="Original" selected>Original</option>
@@ -72,6 +88,9 @@
             value="Generate Footprint"
           />
         </form>
+        <div id="includedEntitySection" class="left-side">
+          <!-- Included entities that are returned by the query get parsed here -->
+        </div>
         <div id="detailsSection" class="left-side">
           <!-- Details will be displayed here -->
         </div>
