@@ -22,11 +22,12 @@ function createRadialClusterTreeChart(data) {
   const root = tree(d3.hierarchy(data));
 
   const svg = d3
-    .create('svg')
+    .select('.right-side')
+    .append('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [-cx, -cy, width, height])
-    .attr('style', 'width: auto; height: auto;')
+    .attr('style', 'width: 100%; height: auto;')
     .call(
       // enables zoom and pann
       d3
@@ -38,7 +39,7 @@ function createRadialClusterTreeChart(data) {
     );
 
   // Group to hold all chart elements, paths, nodes and labels.
-  const chartGroup = svg.append('g');
+  const chartGroup = svg.append('g').attr('name', 'chartGroup');
 
   // Append links
   chartGroup
@@ -237,8 +238,6 @@ function createRadialClusterTreeChart(data) {
 
   // Creates the outerDoughnut d3 chart
   radialClusterOuterDoughnut(root, radius, chartGroup);
-
-  document.getElementById('right-side').appendChild(svg.node());
 }
 
 export { createRadialClusterTreeChart };
