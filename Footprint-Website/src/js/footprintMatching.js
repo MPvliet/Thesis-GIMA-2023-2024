@@ -171,7 +171,7 @@ document
       ?expertURI rdf:type boka:Expert;
         foaf:name ?expertName .
       FILTER(CONTAINS(STR(?expertName), "${footprintEntityFirst}") || (CONTAINS(STR(?expertName), "${footprintEntitySecond}") ))
-    }
+    } ORDER BY ?expertName
     `;
     } else if (footprintType === 'Organisational') {
       queryIncludedEntities = `
@@ -183,7 +183,7 @@ document
       ?organisationURI rdf:type org:Organization;
         rdfs:label ?organisationName.
       FILTER(CONTAINS(STR(?organisationName), "${footprintEntityFirst}") || (CONTAINS(STR(?organisationName), "${footprintEntitySecond}") ))
-    }
+    } ORDER BY ?organisationName
     `;
     }
 
