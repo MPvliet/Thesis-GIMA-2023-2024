@@ -102,7 +102,7 @@ document
           }
         }
         BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "Match", "noMatch") AS ?matched)
-        BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "#7E10E1", IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 1 , "#ff4c4c", "#ffd966")) AS ?nodeColour)
+        BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "#FF0000", IF(?nodeValueFirstEntity = 1, "#008000", IF(?nodeValueSecondEntity = 1, "#FFA500" , "#FFFF00"))) AS ?nodeColour)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 1 , 0 ) AS ?nodeValue)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 16 , 0 ) AS ?labelSize)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 1 , 0 ) AS ?showLabel)
@@ -152,7 +152,7 @@ document
         }
         # applies the logic needed to create footprint matching.
         BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "Match", "noMatch") AS ?matched)
-        BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "#7E10E1", IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 1 , "#ff4c4c", "#ffd966")) AS ?nodeColour)
+        BIND(IF((?nodeValueFirstEntity + ?nodeValueSecondEntity) = 2 , "#FF0000", IF(?nodeValueFirstEntity = 1, "#008000", IF(?nodeValueSecondEntity = 1, "#FFA500" , "#FFFF00"))) AS ?nodeColour)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 1 , 0 ) AS ?nodeValue)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 16 , 0 ) AS ?labelSize)
         BIND(IF((?nodeValueFirstEntity = 1 ) || (?nodeValueSecondEntity = 1 ), 1 , 0 ) AS ?showLabel)
