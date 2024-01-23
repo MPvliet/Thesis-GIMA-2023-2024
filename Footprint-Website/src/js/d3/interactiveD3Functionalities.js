@@ -8,7 +8,7 @@ function showLabel() {
 
 function hideLabel() {
   if (document.getElementById('switchShowLabel').checked === true) {
-    if (d3.selectAll(`#${this.id}`).attr('fill') !== '#FF0000') {
+    if (d3.selectAll(`#${this.id}`).attr('fill') === '#FFFF00') {
       d3.selectAll(`#label-${this.id}`)
         .style('opacity', 0)
         .attr('font-size', 0); //if font-size stays 20 the label is just hidden, but lays over other nodes, that then become unhoverable..
@@ -16,7 +16,7 @@ function hideLabel() {
     }
   } else {
     d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
-    if (d3.selectAll(`#${this.id}`).attr('fill') !== '#FF0000') {
+    if (d3.selectAll(`#${this.id}`).attr('fill') === '#FFFF00') {
       d3.selectAll(`#${this.id}`).attr('fill-opacity', 0.15).attr('r', 2.5);
     }
   }
