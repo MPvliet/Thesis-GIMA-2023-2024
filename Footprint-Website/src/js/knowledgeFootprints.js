@@ -31,16 +31,28 @@ document
     }
   });
 
-/* Enable this if we want to go back to a predefined list of all org or persons in the KG.
-
 // Fills the HTML form based on type of footprint input.
 document
   .getElementById('typeOfFootprintDropDown')
   .addEventListener('change', function () {
-    createEntityDropDownList(this.value);
+    // createEntityDropDownList(this.value); // Enable this if we want to go back to a predefined list of all org or persons in the KG.
+    if (this.value === 'Paper') {
+      document.getElementById('dropdownFootprintEntityLabel').innerHTML =
+        'Footprint of which Paper?';
+      document.getElementById('dropdownFootprintEntity').placeholder =
+        'ex: doi.org/10.5194/agile-giss-2-25-2021';
+    } else if (this.value === 'Individual') {
+      document.getElementById('dropdownFootprintEntityLabel').innerHTML =
+        'Footprint of which Person?';
+      document.getElementById('dropdownFootprintEntity').placeholder =
+        'ex: John Doe';
+    } else if (this.value === 'Organisational') {
+      document.getElementById('dropdownFootprintEntityLabel').innerHTML =
+        'Footprint of which Organisation?';
+      document.getElementById('dropdownFootprintEntity').placeholder =
+        'ex: University of Twente';
+    }
   });
-
-*/
 
 // Processes what happens once you click Generate Footprint
 document

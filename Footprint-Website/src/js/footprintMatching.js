@@ -25,16 +25,40 @@ document
     }
   });
 
-/* Enable this if we want to go back to a predefined list of all org or persons in the KG.
-
 // Fills the HTML form based on type of footprint input.
 document
   .getElementById('typeOfFootprintDropDown')
   .addEventListener('change', function () {
-    createEntityDropDownList(this.value);
+    // createEntityDropDownList(this.value); // Enable this if we want to go back to a predefined list of all org or persons in the KG.
+    if (this.value === 'Paper') {
+      document.getElementById('dropdownFootprintEntityFirstLabel').innerHTML =
+        'Footprint for the first Paper?';
+      document.getElementById('dropdownFootprintEntityFirst').placeholder =
+        'ex: doi.org/10.5194/agile-giss-2-25-2021';
+      document.getElementById('dropdownFootprintEntitySecondLabel').innerHTML =
+        'Footprint for the second Paper?';
+      document.getElementById('dropdownFootprintEntitySecond').placeholder =
+        'ex: doi.org/10.5194/agile-giss-2-21-2021';
+    } else if (this.value === 'Individual') {
+      document.getElementById('dropdownFootprintEntityFirstLabel').innerHTML =
+        'Footprint for the first Person?';
+      document.getElementById('dropdownFootprintEntityFirst').placeholder =
+        'ex: John Doe';
+      document.getElementById('dropdownFootprintEntitySecondLabel').innerHTML =
+        'Footprint for the second Person?';
+      document.getElementById('dropdownFootprintEntitySecond').placeholder =
+        'ex: Jane Doe';
+    } else if (this.value === 'Organisational') {
+      document.getElementById('dropdownFootprintEntityFirstLabel').innerHTML =
+        'Footprint for the first Organisation?';
+      document.getElementById('dropdownFootprintEntityFirst').placeholder =
+        'ex: University of Twente';
+      document.getElementById('dropdownFootprintEntitySecondLabel').innerHTML =
+        'Footprint for the second Organisation?';
+      document.getElementById('dropdownFootprintEntitySecond').placeholder =
+        'ex: Utrecht University';
+    }
   });
-
-*/
 
 // Processes what happens once you click Generate Footprint
 document
