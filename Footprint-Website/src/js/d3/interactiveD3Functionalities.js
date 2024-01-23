@@ -3,7 +3,7 @@ import { genericSPARQLQuery } from '../../../src/js/sparql/genericSPARQLQuery.js
 // Functions to show and hide label text
 function showLabel() {
   d3.selectAll(`#label-${this.id}`).style('opacity', 1).attr('font-size', 16);
-  d3.selectAll(`#${this.id}`).attr('fill-opacity', 1).attr('r', 4); // makes the node more visible upon hover, so you know what you select.
+  d3.selectAll(`#${this.id}`).attr('fill-opacity', 1).attr('r', 3.5); // makes the node more visible upon hover, so you know what you select.
 }
 
 function hideLabel() {
