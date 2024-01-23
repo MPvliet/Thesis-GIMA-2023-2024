@@ -91,7 +91,7 @@ async function showDetails() {
 function searchConceptInD3Vis(searchQuery) {
   if (searchQuery.length >= 2) {
     let d3NodeID = searchQuery;
-    let d3Nodes = document.querySelectorAll('.concept-' + d3NodeID);
+    let d3Nodes = document.querySelectorAll(`[name*='${d3NodeID}']`); //document.querySelectorAll('.concept-' + d3NodeID);
 
     d3Nodes.forEach(function (d3Node) {
       d3Node.style.stroke = 'darkorange';

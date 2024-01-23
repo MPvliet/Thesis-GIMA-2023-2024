@@ -120,6 +120,7 @@ function createRadialClusterTreeChart(data) {
     .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.2)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
     .attr('id', d => `${d.data.id}`)
     .attr('class', d => `concept-${d.data.id}`)
+    .attr('name', d => `${d.data.name}`)
     .attr('r', d => (parseInt(d.data.showLabel) === 1 ? 3.5 : 2.5));
 
   // Append labels

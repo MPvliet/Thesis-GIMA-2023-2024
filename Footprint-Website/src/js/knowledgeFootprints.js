@@ -25,8 +25,10 @@ document
 // Search bar functionality - Highlight node.
 document
   .getElementById('searchBar')
-  .addEventListener('input', function (event) {
-    searchConceptInD3Vis(event.target.value);
+  .addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      searchConceptInD3Vis(event.target.value);
+    }
   });
 
 /* Enable this if we want to go back to a predefined list of all org or persons in the KG.
