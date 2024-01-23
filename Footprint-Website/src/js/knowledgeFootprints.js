@@ -98,7 +98,7 @@ document
             } AS ?knownByFirstEntity)
           }
         }
-        BIND(IF(?nodeValue = 1 , "#f03502", "#f0cd02") AS ?nodeColour)
+        BIND(IF(?nodeValue = 1 , "#FF0000", "#f0cd02") AS ?nodeColour)
         BIND(IF(?nodeValue = 1 , 16 , 0 ) AS ?labelSize)
         BIND(IF(?nodeValue = 1 , 1 , 0 ) AS ?showLabel)
       }
@@ -134,7 +134,7 @@ document
             } AS ?knownByFirstEntity)
           }
         }
-        BIND(IF((?nodeValue = 1 ), "#f03502", "#f0cd02" ) AS ?nodeColour)
+        BIND(IF((?nodeValue = 1 ), "#FF0000", "#f0cd02" ) AS ?nodeColour)
         BIND(IF((?nodeValue = 1 ), 16 , 0 ) AS ?labelSize)
         BIND(IF((?nodeValue = 1 ), 1 , 0 ) AS ?showLabel)
       }

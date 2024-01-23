@@ -41,12 +41,17 @@ function createRadialClusterTreeChart(data) {
   // Group to hold all chart elements, paths, nodes and labels.
   const chartGroup = svg.append('g').attr('name', 'chartGroup');
 
+  // const radialPath = d3
+  //   .linkRadial()
+  //   .angle(d => d.x)
+  //   .radius(d => d.y);
+
   // Append links
   chartGroup
     .append('g')
     .attr('fill', 'none')
     .attr('stroke', '#005ca2')
-    .attr('stroke-opacity', 0.1)
+    .attr('stroke-opacity', 0.2)
     .attr('stroke-width', 2.5)
     .selectAll()
     .data(root.links())
@@ -58,6 +63,25 @@ function createRadialClusterTreeChart(data) {
         .angle(d => d.x)
         .radius(d => d.y)
     )
+    // .attr('d', function (d) {
+    //   // https://stackoverflow.com/questions/58100069/d3-j-mixing-radial-tree-with-link-straight-tree
+    //   let adjust = 1.5708; //90 degrees in radians
+
+    //   // calculate the start and end points of the path, using trig
+    //   let sourceX = d.source.y * Math.cos(d.source.x - adjust);
+    //   let sourceY = d.source.y * Math.sin(d.source.x - adjust);
+    //   let targetX = d.target.y * Math.cos(d.target.x - adjust);
+    //   let targetY = d.target.y * Math.sin(d.target.x - adjust);
+
+    //   // if the source node is at the centre, depth = 0, then create a straight path using the L (lineto) SVG path. Else, use the radial path
+    //   if (d.source.depth == 0) {
+    //     return (
+    //       'M' + sourceX + ' ' + sourceY + ' ' + 'L' + targetX + ' ' + targetY
+    //     );
+    //   } else {
+    //     return radialPath(d);
+    //   }
+    // })
     .attr('source', d => `${d.source.data.name}`)
     .attr('target', d => `${d.target.data.name}`);
 
@@ -93,7 +117,7 @@ function createRadialClusterTreeChart(data) {
       d => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`
     )
     .attr('fill', d => (d.children ? d.data.nodeColour : d.data.nodeColour))
-    .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.1)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
+    .attr('fill-opacity', d => (parseInt(d.data.showLabel) === 1 ? 1 : 0.2)) // using showLabel here might be a bit weird, but it tells me the node should be coloured aswell.
     .attr('id', d => `${d.data.id}`)
     .attr('class', d => `concept-${d.data.id}`)
     .attr('r', 2.5);

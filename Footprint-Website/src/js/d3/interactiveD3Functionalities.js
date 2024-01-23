@@ -3,10 +3,23 @@ import { genericSPARQLQuery } from '../../../src/js/sparql/genericSPARQLQuery.js
 // Functions to show and hide label text
 function showLabel() {
   d3.selectAll(`#label-${this.id}`).style('opacity', 1).attr('font-size', 16);
+  d3.selectAll(`#${this.id}`).attr('fill-opacity', 1).attr('r', 4); // makes the node more visible upon hover, so you know what you select.
 }
 
 function hideLabel() {
-  d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0); //if font-size stays 20 the label is just hidden, but lays over other nodes, that then become unhoverable..
+  if (document.getElementById('switchShowLabel').checked === true) {
+    if (d3.selectAll(`#${this.id}`).attr('fill') !== '#FF0000') {
+      d3.selectAll(`#label-${this.id}`)
+        .style('opacity', 0)
+        .attr('font-size', 0); //if font-size stays 20 the label is just hidden, but lays over other nodes, that then become unhoverable..
+      d3.selectAll(`#${this.id}`).attr('fill-opacity', 0.15).attr('r', 2.5);
+    }
+  } else {
+    d3.selectAll(`#label-${this.id}`).style('opacity', 0).attr('font-size', 0);
+    if (d3.selectAll(`#${this.id}`).attr('fill') !== '#FF0000') {
+      d3.selectAll(`#${this.id}`).attr('fill-opacity', 0.15).attr('r', 2.5);
+    }
+  }
 }
 
 async function showDetails() {
