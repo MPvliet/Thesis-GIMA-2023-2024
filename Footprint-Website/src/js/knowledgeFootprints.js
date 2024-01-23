@@ -98,7 +98,7 @@ document
             } AS ?knownByFirstEntity)
           }
         }
-        BIND(IF(?nodeValue = 1 , "#FF0000", "#f0cd02") AS ?nodeColour)
+        BIND(IF(?nodeValue = 1 , "#FF0000", "#FFFF00") AS ?nodeColour)
         BIND(IF(?nodeValue = 1 , 16 , 0 ) AS ?labelSize)
         BIND(IF(?nodeValue = 1 , 1 , 0 ) AS ?showLabel)
       }
@@ -134,9 +134,45 @@ document
             } AS ?knownByFirstEntity)
           }
         }
-        BIND(IF((?nodeValue = 1 ), "#FF0000", "#f0cd02" ) AS ?nodeColour)
+        BIND(IF((?nodeValue = 1 ), "#FF0000", "#FFFF00" ) AS ?nodeColour)
         BIND(IF((?nodeValue = 1 ), 16 , 0 ) AS ?labelSize)
         BIND(IF((?nodeValue = 1 ), 1 , 0 ) AS ?showLabel)
+      }
+      ORDER BY (?conceptName)
+      `;
+    } else if (footprintType === 'Paper') {
+      query = `
+      PREFIX eo4geo: <https://bok.eo4geo.eu/>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX bibo: <http://purl.org/ontology/bibo/>
+      PREFIX boka: <http://example.org/BOKA/>
+
+      SELECT ?conceptName ?childName ?conceptID ?childID ?nodeColour ?showLabel ?labelSize ?nodeValue FROM eo4geo:applications
+      FROM eo4geo:concepts
+      WHERE {
+        {
+          SELECT ?concept ?conceptName ?childName ?conceptID ?childID (IF(?knownByFirstEntity, 1 , 0 ) AS ?nodeValue) WHERE {
+            ?concept rdf:type skos:Concept;
+              rdfs:label ?conceptName;
+              skos:notation ?conceptID.
+            OPTIONAL {
+              ?concept skos:narrower ?child.
+              ?child rdfs:label ?childName;
+                skos:notation ?childID.
+            }
+            BIND(EXISTS {
+              ?paperURI rdf:type bibo:Report;
+                bibo:doi ?DOIPaper.
+              FILTER(CONTAINS(STR(?DOIPaper), "${footprintEntity}"))
+              ?concept boka:describedIn ?paperURI.
+            } AS ?knownByFirstEntity)
+          }
+        }
+        BIND(IF(?nodeValue = 1 , "#FF0000", "#FFFF00") AS ?nodeColour)
+        BIND(IF(?nodeValue = 1 , 16 , 0 ) AS ?labelSize)
+        BIND(IF(?nodeValue = 1 , 1 , 0 ) AS ?showLabel)
       }
       ORDER BY (?conceptName)
       `;
@@ -167,6 +203,22 @@ document
       FILTER(CONTAINS(STR(?organisationName), "${footprintEntity}"))
     } ORDER BY ?organisationName
     `;
+    } else if (footprintType === 'Paper') {
+      queryIncludedEntities = `
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX boka: <http://example.org/BOKA/>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+      SELECT DISTINCT ?expertName WHERE {
+        ?expertURI rdf:type boka:Expert;
+          foaf:name ?expertName;
+          boka:authorOf ?paperURI.
+        ?paperURI bibo:doi ?paperDOI.
+        FILTER(CONTAINS(STR(?paperDOI), "${footprintEntity}"))
+      }
+      ORDER BY (?expertName)
+      `;
     }
 
     // Defines which function to call to generate the chosen visualisationType
@@ -192,6 +244,8 @@ document
           includedEntityList += `<li>${entitiy.expertName.value}</li>`;
         } else if (footprintType === 'Organisational') {
           includedEntityList += `<li>${entitiy.organisationName.value}</li>`;
+        } else if (footprintType === 'Paper') {
+          includedEntityList += `<li>${entitiy.expertName.value}</li>`;
         }
       });
       includedEntityList += '</ul>';
@@ -199,14 +253,19 @@ document
       let includedEntities;
       if (footprintType === 'Individual') {
         includedEntities = `
-      <h4 style="margin-bottom: 1;">Included individuals in this footprint</h4>
-      ${includedEntityList}
-      `;
+        <h4 style="margin-bottom: 1;">Included individuals in this footprint</h4>
+        ${includedEntityList}
+        `;
       } else if (footprintType === 'Organisational') {
         includedEntities = `
-      <h4 style="margin-bottom: 1;">Included organisations  in this footprint</h4>
-      ${includedEntityList}
-      `;
+        <h4 style="margin-bottom: 1;">Included organisations in this footprint</h4>
+        ${includedEntityList}
+        `;
+      } else if (footprintType === 'Paper') {
+        includedEntities = `
+        <h4 style="margin-bottom: 1;">Included authors in this footprint</h4>
+        ${includedEntityList}
+        `;
       }
 
       document.getElementById('includedEntitySection').innerHTML =
