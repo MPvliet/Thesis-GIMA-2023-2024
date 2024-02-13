@@ -4558,7 +4558,7 @@ eo4geo:applications {
         foaf:name "Elena Arsevska" .
 
     eo4geo:a728b939-e3cf-4715-a950-fd7fa5485547 a boka:Expert ;
-        rdfs:label "BÃ©nÃ©dicte Bucher" ;
+        rdfs:label "Bénédicte Bucher" ;
         boka:authorOf <https://doi.org/10.5194/agile-giss-2-43-2021> ;
         boka:hasKnowledgeOf eo4geo:DM2,
             eo4geo:GS1-6,
@@ -4566,7 +4566,7 @@ eo4geo:applications {
             eo4geo:IP4-1,
             eo4geo:OI3b ;
         org:memberOf eo4geo:ae58d06c-3e8a-46a9-8ac0-292b497a3bf5 ;
-        foaf:name "BÃ©nÃ©dicte Bucher" .
+        foaf:name "Bénédicte Bucher" .
 
     eo4geo:afe03c44-6412-4fa7-8fae-47bd3a396148 a boka:Expert ;
         rdfs:label "Thomas Lutz" ;
