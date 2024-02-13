@@ -172,6 +172,7 @@ function createRadialClusterTreeChart(data) {
     .on('mouseover.label', showLabel)
     .on('mouseout.label', hideLabel);
 
+  //https://stackoverflow.com/questions/70559083/allow-zoom-with-buttons-only-allow-pan-with-mouse-drag
   d3.select('#zoomOutButton').on('click', function () {
     zoom.scaleBy(svg.transition(), 1 / 1.3);
   });
