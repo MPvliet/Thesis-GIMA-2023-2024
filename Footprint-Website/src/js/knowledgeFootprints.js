@@ -292,8 +292,6 @@ document
       visualisationFunction[visualisationType](data);
     } catch (error) {
       console.error('Error creating D3 visualisation: ', error);
-      document.getElementById('right-side').innerText =
-        'Error creating D3 visualisation: ' + error.message;
     }
   });
 
