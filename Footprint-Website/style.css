@@ -136,6 +136,18 @@ input[type='submit']:hover {
 
 .search-bar {
   height: 10px;
+  width: 150px;
+  font-size: 16px;
+}
+
+.search-button {
+  height: 28px;
+  margin-left: 2px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #005ca2;
+  color: white;
   font-size: 16px;
 }
 
