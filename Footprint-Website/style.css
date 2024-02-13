@@ -160,6 +160,30 @@ input[type='text'] {
   color: #0e1d1f;
 }
 
+.zoom-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 10;
+  top: 20px;
+  background-color: #005ca2;
+  color: white;
+}
+
+#zoomInButton {
+  left: 20px;
+  top: 20px;
+}
+
+#zoomOutButton {
+  left: 20px;
+  top: 60px;
+}
+
 .bok-mangement-container {
   /* https://cssgrid-generator.netlify.app/ */
   display: grid;
