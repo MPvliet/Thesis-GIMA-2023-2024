@@ -334,6 +334,27 @@ document
     }
   });
 
+// Na drukken op de download button start de download
+document
+  .getElementById('downloadButton')
+  .addEventListener('click', function () {
+    const footprintEntity = document.getElementById(
+      'dropdownFootprintEntity'
+    ).value;
+    saveSvgAsPng(
+      document.getElementById('svgFootprint'),
+      `AGILE-KnowledgeFootprint-${footprintEntity}.png`,
+      {
+        left: -1500,
+        top: -1250,
+        height: 2500,
+        width: 3000,
+        encoderOptions: 1,
+        backgroundColor: '#0c1a1a',
+      }
+    );
+  });
+
 /* Enable this if we want to go back to a predefined list of all org or persons in the KG.
 
 async function createEntityDropDownList(footprintType) {
