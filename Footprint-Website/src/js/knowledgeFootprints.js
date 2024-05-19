@@ -36,7 +36,9 @@ function onPageLoad() {
   document.getElementById('chooseDataVersion').value =
     queryParams.namedGraphVersion;
 
-  document.getElementById('submitButton-Generate-Footprint').click(); // Trigger click event on the submit button
+  if (queryParams.footprintEntity !== '' && queryParams.footprintType !== '') {
+    document.getElementById('submitButton-Generate-Footprint').click(); // Trigger click event on the submit button
+  }
 }
 
 // Als pagina opent, check dan of er query parameters aanwezig zijn.
