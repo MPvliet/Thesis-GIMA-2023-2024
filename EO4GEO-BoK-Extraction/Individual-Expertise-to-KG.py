@@ -177,7 +177,7 @@ def processIndivudalExpertiseJson(jsonPrompt):
   expectedJSONResult = '{"doi": "https://doi.org/10.5194/agile-giss-4-20-2023","authors": ["Nick Bearman1","Rongbo Xu2","Patrick J. Roddy3","James D. Gaboardi4","Qunshan Zhao5","Huanfa Chen6","Levi Wolf7"],"organisations": ["1Geospatial Training Solutions and University College London, London, UK","2Urban Big Data Centre, University of Glasgow, Glasgow, UK","3Advanced Research Computing, University College London, London, UK","4Geospatial Science and Human Security Division, Oak Ridge National Laboratory, USA","5Urban Big Data Centre, University of Glasgow, Glasgow, UK","6CASA, University College London, London, UK","7University of Bristol, Bristol, UK"],"concepts": ["Time","Information-as-data-interpretation"]}'
 
   messages = [
-    {"role": "system", "content": 'You can help me parse a single JSON I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname and remove the "and" before the last author name. Also make sure to enclose property names in the json with double quotes. At last double check if the created output is indeed the specified format, othwerise adjust. Thanks!'},
+    {"role": "system", "content": 'You can help me parse a single JSON. I will provide, in the following JSON structure: `[{"doi": "","authors": [],"organisations": [],"concepts": []}] only return the json and you can keep the numbers before the organisation and behind each authorsname and remove the "and" before the last author name. Also make sure to enclose property names in the json with double quotes. At last double check if the created output is indeed the specified format, othwerise adjust. Double check the json keys as specified. Also only give me single json, not a single json in an array. Thanks!'},
     {"role": "user", "content": ' for example this json {"DOI": "https://doi.org/10.5194/agile-giss-4-20-2023","Title": "Developing capacitated p median location allocation model in the spopt library to allow UCL student teacher placements using public transport Nick Bearman \ufffd1 , Rongbo Xu2 , Patrick J. Roddy \ufffd3 , James D. Gaboardi \ufffd4 , Qunshan Zhao \ufffd5 , Huanfa Chen \ufffd6 , and Levi Wolf \ufffd7 1Geospatial Training Solutions and University College London , London , UK 2Urban Big Data Centre , University of Glasgow , Glasgow , UK 3Advanced Research Computing , University College London , London , UK 4Geospatial Science and Human Security Division , Oak Ridge National Laboratory , USA 5Urban Big Data Centre , University of Glasgow , Glasgow , UK 6CASA , University College London , London , UK 7University of Bristol , Bristol , UK Correspondence : Nick Bearman ( nick @ nickbearman.com )", "Concepts": ["Time","Information-as-data-interpretation"]}'},
     {"role": "assistant", "content": expectedJSONResult},
     {"role": "user", "content": '{}'.format(jsonPrompt)}
@@ -197,14 +197,14 @@ def processIndivudalExpertiseJson(jsonPrompt):
 
 
 def mergeToTotalExpertiseFile(newParsedData):
-  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'r') as file:
+  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise2024.json', 'r') as file:
     existingData = json.load(file)
   
   # Append the new data
   existingData.append(newParsedData)
   #existingData.extend(newParsesdData)
 
-  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise.json', 'w') as file:
+  with open('EO4GEO-BoK-Extraction\input\IndividualExpertise2024.json', 'w') as file:
     json.dump(existingData, file)
 
 def processAllInputJSON():
