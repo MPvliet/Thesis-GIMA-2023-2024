@@ -6,7 +6,7 @@ The thesis presents how the already existing relational nature of describing BoK
 
 For combining and storing expertise annotations, GEO BoK content and the semantics defined in the ontologies for bodies of knowledge (OBOK) and applications (BOKA), the GEO knowledge graph was created. And became the source for two new applications; a tool for generating knowledge footprints and a tool for knowledge footprint matching.
 
-This study further shows how visualisations can be leveraged and how they provide extra context in knowledge graph data retrieval through question and answering through visualisations. These visualisations are called knowledge footprints. They are created for the purpose of representing, promoting and retrieving someone’s expertise. This study introduces a user-evaluated website that combines the EO4GEO knowledge graph, SPARQL, JavaScript and the D3.js library to interactively create these knowledge footprints. This website can be seen [here.](https://mpvliet.github.io/)
+This study further shows how visualisations can be leveraged and how they provide extra context in knowledge graph data retrieval through question and answering through visualisations. These visualisations are called knowledge footprints. They are created for the purpose of representing, promoting and retrieving someone’s expertise. This study introduces a user-evaluated website that combines the EO4GEO knowledge graph, SPARQL, JavaScript and the D3.js library to interactively create these knowledge footprints.
 
 ## Repository Structure
 ```
@@ -16,3 +16,5 @@ This study further shows how visualisations can be leveraged and how they provid
 ├── 📂 Ontology-Development/   # Contains both ontologies (OBOK and BOKA) in the turtle format.
 ```
 
+## Website -> [Link](https://mpvliet.github.io/)
+<img width="1901" alt="image" src="https://github.com/user-attachments/assets/79bdb877-7991-4e3c-8947-a863e3811790" />
