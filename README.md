@@ -1,6 +1,8 @@
 # Introducing knowledge footprints: Enhancing knowledge graph data retrieval with visualisations for improved geoscience collaboration 
 
-This repository contains all data and scripts used for my master's thesis. The thesis presents how the already existing relational nature of describing BoK concepts in the EO4GEO BoK can be transformed to a RDF graph dataset following an upper ontology for describing bodies of knowledge. In addition, this graph dataset is then semi-automatically enriched with expertise annotations, which are created by extracting EO4GEO concepts from research papers by natural language processing tools (Levering the results of this thesis: https://github.com/UpekshaIndeewari/geotec_thesis_EO4GEO). 
+This repository contains all data and scripts used for my master's thesis. For the two-year joint-degree Master of Science programme Geographical Information Management and Applications (GIMA). (Utrecht University / Delft University of Technology / University of Twente / Wageningen University & Research)
+
+The thesis presents how the already existing relational nature of describing BoK concepts in the EO4GEO BoK can be transformed to a RDF graph dataset following an upper ontology for describing bodies of knowledge. In addition, this graph dataset is then semi-automatically enriched with expertise annotations, which are created by extracting EO4GEO concepts from research papers by natural language processing tools (Levering the results of this thesis: https://github.com/UpekshaIndeewari/geotec_thesis_EO4GEO). 
 
 For combining and storing expertise annotations, GEO BoK content and the semantics defined in the ontologies for bodies of knowledge (OBOK) and applications (BOKA), the GEO knowledge graph was created. And became the source for two new applications; a tool for generating knowledge footprints and a tool for knowledge footprint matching.
 
